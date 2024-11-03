@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
 </head>
+
 <body>
-    <h1><b>Hello aa e</b></h1>
+    <div class="container">
+        <div class="login-box">
+            <h2>Đăng Nhập</h2>
+            <form id="login-form">
+                <div class="textbox">
+                    <input type="text" placeholder="Tài khoản" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Mật khẩu" required>
+                    <div class="forgot-password">
+                        <a href="#">Quên mật khẩu?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Đăng Nhập</button>
+            </form>
+            <button class="btn register-btn" onclick="showRegister()">Đăng Ký</button>
+        </div>
+
+        <div class="register-box" style="display: none;">
+            <h2>Đăng Ký</h2>
+            <form id="register-form">
+                <div class="textbox">
+                    <input type="text" placeholder="Tài khoản" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Mật khẩu" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Nhập lại mật khẩu" required>
+                </div>
+                <button type="submit" class="btn">Đăng Ký</button>
+            </form>
+            <button class="btn login-btn" onclick="showLogin()">Quay lại Đăng Nhập</button>
+        </div>
+    </div>
+
+    <script>
+        function showRegister() {
+            document.querySelector('.login-box').style.display = 'none';
+            document.querySelector('.register-box').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.querySelector('.login-box').style.display = 'block';
+            document.querySelector('.register-box').style.display = 'none';
+        }
+    </script>
 </body>
+
 </html>
