@@ -68,6 +68,11 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
     text-align: center;
+    border: 1px solid #ccc; /* Đường viền cho khung sản phẩm */
+    padding: 10px; /* Khoảng cách bên trong khung */
+    margin: 10px; /* Khoảng cách giữa các khung sản phẩm */
+    width: 200px; /* Độ rộng của khung sản phẩm */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho khung sản phẩm */
 }
 
 .product img {
@@ -98,4 +103,30 @@ body {
 
 h2 {
     color: #007bff;
+}
+.price-container {
+    display: flex; /* Sử dụng flexbox để sắp xếp */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.buy, .add-to-cart {
+    margin-right: 10px; /* Khoảng cách giữa các nút */
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    border: none; /* Bỏ viền nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+    cursor: pointer; /* Hiển thị con trỏ chuột khi di chuột lên nút */
+}
+
+.buy {
+    background-color: green; /* Màu nền nút Mua */
+    color: white; /* Màu chữ nút Mua */
+}
+
+.add-to-cart {
+    background-color: blue; /* Màu nền nút Thêm vào giỏ hàng */
+    color: white; /* Màu chữ nút Thêm vào giỏ hàng */
+}
+
+.price {
+    margin-left: 10px; /* Khoảng cách giữa giá và các nút */
 }
