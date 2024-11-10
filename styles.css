@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropdown-btn:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.product-list {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid #ccc; /* Đường viền cho khung sản phẩm */
+    padding: 10px; /* Khoảng cách bên trong khung */
+    margin: 10px; /* Khoảng cách giữa các khung sản phẩm */
+    width: 200px; /* Độ rộng của khung sản phẩm */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho khung sản phẩm */
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.product p {
+    margin: 5px 0;
+    color: green;
+    
+}
+
+.price {
+    color: blue !important; 
+    font-weight: bold; 
+    font-size: 1.1em; 
+}
+
+
+h2 {
+    color: #007bff;
+}
+.price-container {
+    display: flex; /* Sử dụng flexbox để sắp xếp */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.buy, .add-to-cart {
+    margin-right: 10px; /* Khoảng cách giữa các nút */
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    border: none; /* Bỏ viền nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+    cursor: pointer; /* Hiển thị con trỏ chuột khi di chuột lên nút */
+}
+
+.buy {
+    background-color: green; /* Màu nền nút Mua */
+    color: white; /* Màu chữ nút Mua */
+}
+
+.add-to-cart {
+    background-color: blue; /* Màu nền nút Thêm vào giỏ hàng */
+    color: white; /* Màu chữ nút Thêm vào giỏ hàng */
+}
+
+.price {
+    margin-left: 10px; /* Khoảng cách giữa giá và các nút */
+}
