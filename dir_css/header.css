@@ -150,21 +150,36 @@ button :hover {
   color: black;
 }
 #section_deparment .container ul li .deparment_list_2 {
+  padding-top: 21px;
   position: absolute;
-  background-color: #ffc107;
   margin-left: -10px;
-  margin-top: 21px;
   display: none;
-  border-top: solid 1px #e5dada;
+  width: 200px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 #section_deparment .container ul li ul.deparment_list_2 li {
   display: block;
-  width: auto;
+  width: 100%;
   float: none;
-  border-bottom: solid 2px #e5dada;
+  padding: 10px;
+  border-bottom: solid 1px #e5dada;
   font-weight: 600;
   font-size: 13px;
+  background-color: #ffc107;
 }
+
+#section_deparment .container ul li ul.deparment_list_2 li:hover {
+  background-color: #c41a1a;
+  color: white;
+}
+
 #section_deparment .container ul li:hover .deparment_list_2 {
   display: block;
+}
+
+#section_deparment .container ul {
+  position: relative;
+  z-index: 999;
 }
