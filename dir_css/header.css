@@ -16,7 +16,7 @@ button :hover {
 }
 #section_header {
   background-color: white;
-  height: 200px;
+  height: 180px;
 }
 #section_header .container {
   width: 1200px;
@@ -121,6 +121,8 @@ button :hover {
 #section_deparment {
   background-color: #ffc107;
   height: 60px;
+  border-bottom: solid 1px black;
+  border-top: solid 1px black;
 }
 #section_deparment .container {
   width: 1200px;
