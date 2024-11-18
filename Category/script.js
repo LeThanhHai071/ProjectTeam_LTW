@@ -19,6 +19,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const sliderImages = document.querySelectorAll('.slider img'); // Thay đổi từ thumbnails thành slider img
+    const mainImage = document.querySelector('.main-image img'); // Thay đổi từ #mainImage thành .main-image img
+
+    // Hàm thay đổi ảnh khi chọn thumbnail
+    function changeImage(selectedThumbnail) {
+        mainImage.src = selectedThumbnail.src;
+        currentIndex = Array.from(sliderImages).indexOf(selectedThumbnail);
+    }
+
+    // Xử lý sự kiện khi nhấn nút "Previous"
+    document.getElementById('preBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+        mainImage.src = sliderImages[currentIndex].src;
+    });
+
+    // Xử lý sự kiện khi nhấn nút "Next"
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % sliderImages.length;
+        mainImage.src = sliderImages[currentIndex].src;
+    });
+
+    // Thêm sự kiện click cho tất cả các hình thu nhỏ trong slider
+    sliderImages.forEach(sliderImage => {
+        sliderImage.addEventListener('click', () => changeImage(sliderImage));
+    });
+});
+
 
 
 

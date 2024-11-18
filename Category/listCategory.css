@@ -1,8 +1,21 @@
 /* Đặt cho toàn trang */
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
+}
+
+.container-main {
+    margin-top: 10px;
+    /* Cách trên 10px */
+    margin-right: 15px;
+    /* Cách phải 15px */
+    margin-bottom: 20px;
+    /* Cách dưới 20px */
+    margin-left: 25px;
+    /* Cách trái 25px */
+    max-width: 1200px;
+
 }
 
 /* Định dạng container chính */
@@ -126,31 +139,48 @@ body {
     padding: 10px;
     background-color: #fff;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Thêm hiệu ứng mượt cho border */
-  
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    /* Thêm hiệu ứng mượt cho border */
+
 }
+
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-color: #28a745; /* Đổi màu viền khi hover */
+    border-color: #28a745;
+    /* Đổi màu viền khi hover */
 }
+
 .product-card img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    
+
 }
+
 .product-info {
     padding: 10px;
-    height: auto; /* Để tự động điều chỉnh chiều cao theo nội dung */
-    max-height: 100px; /* Giới hạn chiều cao tối đa nếu cần */
-    overflow-y: auto; /* Cho phép thanh cuộn dọc nếu văn bản quá dài */
+    height: auto;
+    /* Để tự động điều chỉnh chiều cao theo nội dung */
+    max-height: 100px;
+    /* Giới hạn chiều cao tối đa nếu cần */
+    overflow-y: auto;
+    /* Cho phép thanh cuộn dọc nếu văn bản quá dài */
     color: #007bff;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
+
+.product-info::-webkit-scrollbar {
+    display: none;
+    /* Ẩn thanh cuộn trên Chrome, Safari */
+}
+
 .description {
     font-size: 14px;
     color: rgb(53, 53, 240);
     overflow: hidden;
+
 }
 
 .buy-button {
@@ -162,7 +192,8 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    height: 40px; /* Chiều cao cố định cho nút */
+    height: 40px;
+    /* Chiều cao cố định cho nút */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,14 +202,16 @@ body {
 }
 
 .buy-button:hover {
-    
+
     background-color: #218838;
     transform: scale(1.05);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
-.buy-button:active{
+
+.buy-button:active {
     transform: scale(0.95);
 }
+
 .btn-link {
     display: block;
     margin-top: 20px;
@@ -190,4 +223,245 @@ body {
 
 .btn-link:hover {
     text-decoration: underline;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#bodyInforProduct {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container-productInfor {
+    display: flex;
+    width: 1200px;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-imageSlider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 8 px;
+    object-fit: cover;
+}
+
+.slider-margin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.slider img {
+    width: 60px;
+    height: 60px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.slider img:hover {
+    border-color: #007bff;
+}
+
+#preBtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+#nextBtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+#preBtn:hover {
+    color: #007bff;
+}
+
+#nextBtn:hover {
+    color: #007bff;
+}
+
+#link-to-productInfor {
+    text-decoration: none;
+    color: inherit;
+}
+
+#link-to-productInfor .buy-button {
+    display: inline-block;
+    /* Giữ nguyên nút dạng khối */
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#link-to-productInfor .buy-button:hover {
+    background-color: #218838;
+}
+
+
+.show-infor-product {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.show-infor-product h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: rgb(9, 128, 224);
+  
+}
+
+.show-infor-product p {
+    margin: 0;
+    color: #555;
+    font-weight: bolder;
+    font-size: larger;
+}
+.show-infor-product p .colorA{
+    color: green;
+}
+
+.purchase-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.purchase-options label {
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.buttons-in-product-infor {
+    display: flex;
+    gap: 10px;
+}
+
+.buy-button-in-product,
+.add-to-cart-button-in-product {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buy-button-in-product {
+    background-color: #007bff;
+    color: white;
+}
+
+.buy-button-in-product:hover {
+    background-color: #0056b3;
+}
+
+.add-to-cart-button-in-product {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.add-to-cart-button-in-ổd:hover {
+    background-color: #ec971f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.menu a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.section {
+    padding: 50px 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    scroll-margin-top: 15px;
+}
+
+
+.section h2 {
+    margin-top: 0;
+    color: green;
+    font-weight: bolder;
+}
+
+.section p {
+    size: 14px;
+}
+
+#OMRON-link {
+    text-decoration: none !important;
 }
