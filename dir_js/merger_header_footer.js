@@ -6,5 +6,5 @@ function loadHTML(id, url) {
 }
 
 // Tải header và footer
-loadHTML("header", "../section_web/header.html");
-loadHTML("footer", "../section_web/footer.html");
+loadHTML("header", "../dir_section/header.html");
+loadHTML("footer", "../dir_section/footer.html");
