@@ -65,3 +65,73 @@ document.getElementById('forgot-password-form').addEventListener('submit', funct
     // Reset form
     document.getElementById('forgot-password-form').reset();
 });
+
+    // Hàm chỉnh sửa thông tin người dùng
+function editUserInfo() {
+        // Hiển thị form chỉnh sửa và ẩn khu vực thông tin
+        document.getElementById('user-info').style.display = 'none';
+        document.getElementById('user-form').style.display = 'block';
+        document.getElementById('edit-button').style.display = 'none'; // Ẩn nút "Chỉnh sửa"
+        
+        // Điền thông tin hiện tại vào các trường trong form
+        document.getElementById('fullname').value = document.getElementById('user-fullname').textContent;
+        document.getElementById('phone').value = document.getElementById('user-phone').textContent;
+        document.getElementById('email').value = document.getElementById('user-email').textContent;
+        document.getElementById('address').value = document.getElementById('user-address').textContent;
+        document.getElementById('birthdate').value = document.getElementById('user-birthdate').textContent;
+      }
+  
+      // Xử lý khi nhấn "Cập nhật"
+      document.querySelector('#user-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngừng gửi form
+  
+        // Cập nhật thông tin từ các trường nhập liệu
+        var fullname = document.getElementById('fullname').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var address = document.getElementById('address').value;
+        var birthdate = document.getElementById('birthdate').value;
+  
+        // Cập nhật thông tin người dùng
+        document.getElementById('user-fullname').textContent = fullname;
+        document.getElementById('user-phone').textContent = phone;
+        document.getElementById('user-email').textContent = email;
+        document.getElementById('user-address').textContent = address;
+        document.getElementById('user-birthdate').textContent = birthdate;
+  
+        // Ẩn form và hiển thị lại khu vực thông tin
+        document.getElementById('user-info').style.display = 'block';
+        document.getElementById('user-form').style.display = 'none';
+        document.getElementById('edit-button').style.display = 'block'; // Hiển thị lại nút "Chỉnh sửa"
+      });
+      // Hàm để xử lý việc cập nhật ảnh
+  function updateAvatar() {
+    // Tạo input file cho phép chọn ảnh
+    var inputFile = document.createElement('input');
+    inputFile.type = 'file';
+    inputFile.accept = 'image/*';
+  
+    // Khi người dùng chọn ảnh, xử lý việc hiển thị ảnh đó
+    inputFile.addEventListener('change', function(event) {
+      var file = event.target.files[0];
+      
+      if (file) {
+        var reader = new FileReader();
+        
+        // Khi file được đọc thành công, cập nhật ảnh avatar
+        reader.onload = function(e) {
+          var avatarImg = document.getElementById('user-avatar');
+          avatarImg.src = e.target.result; // Đặt nguồn ảnh mới cho avatar
+        };
+        
+        reader.readAsDataURL(file); // Đọc file ảnh dưới dạng base64
+      }
+    });
+  
+    // Mở hộp thoại chọn ảnh
+    inputFile.click();
+  }
+  
+  // Gán sự kiện click cho nút "Cập nhật ảnh"
+  document.querySelector('button').addEventListener('click', updateAvatar);
+      
