@@ -112,7 +112,7 @@ button :hover {
   list-style-type: none;
 }
 #section_header .container .navbar_collapse_01 .navbar_icon ul li {
-  float: left;
+  float: right;
   padding: 37px 13px;
   font-weight: 500;
   font-size: 30px;
@@ -183,5 +183,4 @@ button :hover {
 
 #section_deparment .container ul {
   position: relative;
-  z-index: 999;
 }
