@@ -9,7 +9,7 @@ p {
   margin: 0;
   padding: 0;
 }
-.intro {
+.guide {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -24,15 +24,4 @@ h2 {
 }
 h2 {
   color: brown;
-}
-h3 {
-  color: green;
-}
-ul {
-  list-style-type: circle;
-  margin: 0;
-  padding-bottom: 10px;
-}
-.intro_content li.intro_item {
-  padding-bottom: 10px;
 }
