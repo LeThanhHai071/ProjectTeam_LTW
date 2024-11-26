@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const newsPage1 = [
     {
         src: "https://bizweb.dktcdn.net/thumb/large/100/389/346/articles/4-3661f3e3-d6e0-4d0d-98bd-dc58c5eb56de.png?v=1731904639130",
@@ -40,22 +41,44 @@ const newsPage1 = [
 
 ];
 
+const itemsPerPage = 6;
 const newsItemList = document.getElementById("blog_item_list");
 
-newsPage1.forEach((item) => {
-    const productDiv = document.createElement("div");
-    productDiv.className = "blog_item";
-    productDiv.innerHTML = `
-        <a href="">
-            <div class="news">
-                <img src="${item.src}"
-                alt="${item.alt}">
-                <p>${item.p}</p>
-                <p><i class="fa-regular fa-calendar-days"></i> ${item.date} <i
-                class="fa-solid fa-message"></i> ${item.comment} </p>
-                <p><i class="fa-solid fa-caret-right"></i>Đọc tiếp</p>
-            </div>
-        </a>
-    `;
-    newsItemList.appendChild(productDiv);
+function renderPage(data){
+    newsItemList.innerHTML = ""; //xoa noi dung cu
+    data.forEach((item) => {
+        const productDiv = document.createElement("div");
+        productDiv.className = "blog_item";
+        productDiv.innerHTML = `
+            <a href="">
+                <div class="news">
+                    <div class="news_content">
+                        <div class="img_intro_item"><img src="${item.src}" alt="${item.alt}"></div>
+                        <div class="intro_news_item">
+                            <p>${item.p}</p>
+                            <p><i class="fa-regular fa-calendar-days"></i> ${item.date} <i class="fa-solid fa-message"></i> ${item.comment} </p>
+                            <p><i class="fa-solid fa-caret-right"></i>Đọc tiếp</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        `;
+        newsItemList.appendChild(productDiv);
+    });
+}
+function changePage(pageNumber){
+    const start = (pageNumber - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const pageData = newsPage1.slice(start, end);
+    console.log("Page Number:", pageNumber, "Data:", pageData); // Theo dõi dữ liệu
+    renderPage(pageData);
+}
+// Gắn sự kiện cho các trang
+document.querySelectorAll(".page_item a").forEach((link, index) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        changePage(index + 1);
+    });
+});
+changePage(1);
 });
