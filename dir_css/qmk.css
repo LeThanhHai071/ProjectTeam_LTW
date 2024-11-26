@@ -1,0 +1,119 @@
+/* Toàn bộ trang */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Container chính */
+.container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+/* Tiêu đề */
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Mô tả dưới tiêu đề */
+p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Form Group */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Trường nhập email */
+input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fafafa;
+    color: #555;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Tạo hiệu ứng khi người dùng focus vào trường nhập */
+input[type="email"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Nút gửi */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Hiệu ứng nâng nút khi hover */
+}
+
+/* Thông báo */
+#message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Tạo khoảng cách giữa các phần tử nhỏ trong form */
+input[type="email"], button {
+    margin-bottom: 20px;
+}
+
+/* Hiệu ứng chuyển động cho form */
+.container {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Định nghĩa hiệu ứng fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
