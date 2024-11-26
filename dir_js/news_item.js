@@ -52,10 +52,14 @@ function renderPage(data){
         productDiv.innerHTML = `
             <a href="">
                 <div class="news">
-                    <img src="${item.src}" alt="${item.alt}">
-                    <p>${item.p}</p>
-                    <p><i class="fa-regular fa-calendar-days"></i> ${item.date} <i class="fa-solid fa-message"></i> ${item.comment} </p>
-                    <p><i class="fa-solid fa-caret-right"></i>Đọc tiếp</p>
+                    <div class="news_content">
+                        <div class="img_intro_item"><img src="${item.src}" alt="${item.alt}"></div>
+                        <div class="intro_news_item">
+                            <p>${item.p}</p>
+                            <p><i class="fa-regular fa-calendar-days"></i> ${item.date} <i class="fa-solid fa-message"></i> ${item.comment} </p>
+                            <p><i class="fa-solid fa-caret-right"></i>Đọc tiếp</p>
+                        </div>
+                    </div>
                 </div>
             </a>
         `;
