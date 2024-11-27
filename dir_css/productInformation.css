@@ -1,0 +1,259 @@
+/*CSS của trang thông tin sản phẩm*/
+/* Định nghĩa chung cho toàn trang */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+
+} 
+
+.container,
+.wrap {
+    width: 1200px;
+    /* Chiều rộng cố định */
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu điều hướng (chung) */
+.menu {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    /* Thêm khoảng đệm cho các mục menu */
+    border-radius: 5px;
+    /* Làm mềm các cạnh */
+    margin: 0 5px;
+    /* Khoảng cách giữa các menu */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Hiệu ứng mượt */
+    border: 1px solid transparent;
+    /* Đường viền mặc định (ẩn) */
+}
+
+.menu a:hover {
+    background-color: #005bb5;
+    /* Đổi màu nền khi hover */
+    color: #fff;
+    /* Màu chữ không thay đổi */
+    border: 1px solid #003f8c;
+    /* Thêm hiệu ứng đường viền khi hover */
+    text-decoration: none;
+}
+
+/* Nội dung thông tin sản phẩm */
+.container-productInfor {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Bên trái (Hình ảnh và slider) */
+.image-imageSlider {
+    width: 50%;
+    /* Chiếm nửa màn hình */
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.slider-margin {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.slider-margin button {
+    background-color: #0073e6;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-margin button:hover {
+    background-color: #005bb5;
+}
+
+.slider {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    scrollbar-width: none;
+    overflow-y: hidden;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+    /* Ẩn thanh cuộn trên Chrome */
+}
+
+.slider img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Bên phải (Thông tin sản phẩm) */
+.show-infor-product {
+    width: 50%;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.show-infor-product h1 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.show-infor-product .colorA {
+    font-weight: bold;
+    color: #0073e6;
+}
+
+.purchase-options {
+    margin-top: 30px;
+}
+
+.purchase-options label {
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+.purchase-options input {
+    width: 50px;
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.buttons-in-product-infor {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa các nút theo chiều ngang */
+    align-items: center;
+    /* Căn giữa các nút theo chiều dọc */
+    gap: 30px;
+    /* Khoảng cách giữa các nút */
+    margin-top: 30px;
+    /* Khoảng cách từ trên */
+}
+
+.buttons-in-product-infor button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buy-button-in-product {
+    background-color: #e67e22;
+    font-size: 20px;
+}
+
+.add-to-cart-button-in-product {
+    background-color: #0073e6;
+    font-size: 20px;
+}
+
+
+.buttons-in-product-infor button:hover {
+    opacity: 0.9;
+}
+
+/* Các vùng nội dung bổ sung */
+.section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 22px;
+}
+
+.section h2 {
+    font-size: 25px;
+    color: #0073e6;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 5px;
+}
+
+.fs-large {
+    font-size: 24px;
+}
+
+.green-color {
+    font-weight: bolder;
+    color: green;
+}
+
+.buttons-in-product-infor {
+    padding-top: 50px;
+}
+
+/* Thiết kế nút mũi tên */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    /* Khoảng cách từ dưới */
+    right: 20px;
+    /* Khoảng cách từ phải */
+    background-color: #007bff;
+    /* Màu nền nút */
+    color: white;
+    /* Màu chữ */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    /* Ẩn nút ban đầu */
+    transition: opacity 0.3s;
+    /* Hiệu ứng mờ dần */
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #0056b3;
+}
+
+#quantity {
+    font-size: 20px;
+    font-weight: bold;
+}
