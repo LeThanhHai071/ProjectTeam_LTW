@@ -2,11 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 
-#body {
+body {
     margin: 0;
     font-family: sans-serif;
     background-color: #f9f9f9;
-    padding-top: 20px;
+    margin-top: 2px;
    
 }
 
@@ -19,7 +19,6 @@ html {
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding-top: 2px;
 }
 
 /* Sidebar danh mục */
