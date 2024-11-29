@@ -1,4 +1,8 @@
 /*CSS của trang thông tin sản phẩm*/
+/*Cuộn mượt*/
+html{
+    scroll-behavior: smooth;
+}
 /* Định nghĩa chung cho toàn trang */
 body {
     margin: 0;
