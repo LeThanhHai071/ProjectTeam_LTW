@@ -7,18 +7,18 @@ html{
 body {
     margin: 0;
     font-family: sans-serif;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; */
     background-color: #f9f9f9;
 
 } 
 
-.container,
+/* .container, */
 .wrap {
     width: 1200px;
     /* Chiều rộng cố định */
-    margin: 0 auto;
+    margin: 3px auto;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -138,8 +138,8 @@ body {
 
 .show-infor-product h1 {
     font-size: 24px;
-    color: white;
-    margin-bottom: 10px;
+    color: rgba(7, 23, 247, 0.808);
+    margin-bottom: 20px;
 }
 
 .show-infor-product .colorA {
