@@ -1,6 +1,6 @@
 // script.js
 const products1 = [
-  { img: "https://www.sieuthiyte.com.vn/data/images/San-Pham/may-do-huyet-ap-bap-tay-dien-tu-vofonn-bsav1.jpg", name: "Máy đo huyết áp điện tử bắp tay VOFONN AXD-806", price: "560.000 VND", link: ""},
+  { img: "https://www.sieuthiyte.com.vn/data/images/San-Pham/may-do-huyet-ap-bap-tay-dien-tu-vofonn-bsav1.jpg", name: "Máy đo huyết áp điện tử bắp tay VOFONN AXD-806", price: "560.000 VND", link: "../dir_html/productInformation.html"},
   { img: "https://www.sieuthiyte.com.vn/data/images/San-Pham/may-do-huyet-ap-dien-tu-bap-tay-wellmed-axd-804-avt-04072024.jpg", name: "Máy đo huyết áp điện tử bắp tay Wellmed AXD-804", price: "650.000 VND", link: ""},
   { img: "https://www.sieuthiyte.com.vn/data/product/201809/may-do-duong-huyet-sapphire-plus1537408230.nv.jpg", name: "Máy đo đường huyết Medismart Sapphire Plus", price: "399.000 VND", link: ""},
   { img: "https://www.sieuthiyte.com.vn/data/product/202003/ne-c801-21584072317.nv.png", name: "Máy xông mũi họng Omron NE-C801", price: "1.160.000 VND", link: ""},

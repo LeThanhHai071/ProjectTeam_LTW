@@ -19,13 +19,35 @@
 }
 
 //Hàm sử lý đăng nhập
-function login() {
-    var email = document.getElementById('log-email').value;
-    var password = document.getElementById('log-log-password')
-    if (email && password) {
-        alert('Đăng nhập thành công ');
-    } else {
+// function login() {
+//     var email = document.getElementById('log-email').value;
+//     var password = document.getElementById('log-log-password')
+//     if (email && password) {
+//         alert('Đăng nhập thành công ');
+//     } else {
+//         alert('Vui lòng điền đầy đủ thông tin đăng nhập!');
+//     }
+// }
+
+// function login() {
+document.getElementById('login-btn').onclick = function() {
+    var username = document.getElementById('log-email').value;
+    var password = document.getElementById('log-password').value;
+
+    if (!username || !password) {
         alert('Vui lòng điền đầy đủ thông tin đăng nhập!');
+        return false;
+    }
+
+    if (username === "root" && password === "123") {
+        alert('Đăng nhập thành công!');
+        window.location.href = "../dir_html/admin_home.html";
+    }
+    if (username === "user" && password === "123") {
+        alert('Đăng nhập thành công!');
+        window.location.href = "../dir_html/manage.html";
+    } else {
+        alert('Tên đăng nhập hoặc mật khẩu không đúng!');
     }
 }
 

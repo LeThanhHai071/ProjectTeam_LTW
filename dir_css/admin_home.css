@@ -9,6 +9,12 @@ a{
     text-decoration: none;
     color: #8486a7;
 }
+a:hover{
+    color: #ff6c2f;
+}
+.body{
+    height: 100%;
+}
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -27,9 +33,10 @@ a{
 }
 .topbar h4 {
     margin: 0;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     color: #6c757d; 
+    padding-left: 50px;
 }
 .topbar .d-flex {
     display: flex;
@@ -320,73 +327,72 @@ a{
     background-color: #ff6c2f;
     filter: brightness(0.8);
 }
-/* Sidebar styles */
-.main-nav {
-    width: 100px; /* Width khi mở rộng */
-    background-color: #2e3442;
-    color: #ffffff;
-    height: 100vh;
-    transition: width 0.3s ease;
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* overflow-y: auto; */
-    /* overflow: hidden; */
-    z-index: 10;
+.main-nav{
+    width: calc(20% - 2px);
+    height: 100%;
+    float: left;
+    background-color: #262d34;
+    border-right: 2px solid #333;
 }
-
-.main-nav.collapsed {
-    width: 60px; /* Width khi thu gọn */
+.wrapper{
+    width: 80%;
+    float: right;
 }
-
-/* Adjust content margin when sidebar expands/collapses */
-.page_content {
-    margin-left: 100px; /* Để cách taskbar khi mở rộng */
-    transition: margin-left 0.3s ease;
+.logo-lg{
+    height: 100px;
+    width: 100%;
 }
-
-.page_content.collapsed {
-    margin-left: 60px; /* Để cách taskbar khi thu gọn */
+.logo-lg_img{
+    width: 30%;
+    height: auto;
+    float: left;
 }
-
-/* Hide/show full logo text based on sidebar state */
-.logo-box .logo-lg {
-    display: flex;
-    flex-direction: column;
+.logo_p{
+    width: 70%;
+    height: 100%;
+    float: right;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
 }
-
-.logo-box .logo-lg[hidden] {
-    display: none;
+.logo_p_1, .logo_p_2{
+    width: 70%;
+    height: 50%;
+    margin: 0 auto;
 }
-
-.button-sm-hover {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    margin: 10px;
-    cursor: pointer;
-    outline: none;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    transition: transform 0.3s ease;
+.logo_p_1{
+    text-align: left;
+    color: blue;
+    margin-top: 10px;
+    margin-bottom: -20px;
 }
-
-.button-sm-hover i {
-    font-size: 1.5rem;
+.logo_p_2{
+    text-align: right;
+    color: red;
+    font-size: 25px;
 }
-
-/* Adjust icon direction */
-.button-sm-hover i:first-child {
-    display: none;
+.navbar-nav{
+    list-style-type: none;
+    font-size: 20px;
+    padding: 0;
 }
-
-.main-nav.collapsed .button-sm-hover i:first-child {
-    display: inline;
+.menu-title{
+    font-size: 15px;
+    font-weight: bold;
+    color: #656d79;
+    padding: 10px 20px;
 }
-
-.main-nav.collapsed .button-sm-hover i:last-child {
-    display: none;
+.nav-item{
+    padding: 10px 25px;
+    color: #9097a7;
+}
+.sub-navbar-nav{
+    list-style-type: none;
+    font-size: 18px;
+    padding: 0;
+}
+.sub-nav-item{
+    padding: 5px 25px;
+    color: #9097a7;
 }
 
