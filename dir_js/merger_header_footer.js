@@ -1,8 +1,8 @@
 function loadHTML(id, url) {
-  fetch(url)
-    .then((response) => response.text())
-    .then((data) => (document.getElementById(id).innerHTML = data))
-    .catch((error) => console.error("Error:", error));
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => (document.getElementById(id).innerHTML = data))
+        .catch((error) => console.error("Error:", error));
 }
 
 // Tải header và footer

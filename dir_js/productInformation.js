@@ -51,5 +51,6 @@ function setupScrollToTop() {
         });
     }
 }
+
 setupScrollToTop();
 setupImageSlider();

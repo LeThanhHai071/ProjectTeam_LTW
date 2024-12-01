@@ -1,8 +1,3 @@
-
-
-
-
-
 const checkoutButton = document.querySelector(".checkout-button button");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");

@@ -11,10 +11,10 @@ function toggleDropdown() {
 }
 
 // Đóng dropdown khi click ra ngoài
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     const dropdown = document.getElementById('dropdown-menu');
     const button = document.getElementById('page-header-user-dropdown');
-    
+
     // Kiểm tra nếu click không phải vào button hoặc dropdown
     if (!button.contains(event.target) && !dropdown.contains(event.target)) {
         dropdown.classList.remove('visible');

@@ -5,20 +5,25 @@ body {
     font-size: 16px;
     background-color: #f8f9fa;
 }
-a{
+
+a {
     text-decoration: none;
     color: #8486a7;
 }
-a:hover{
+
+a:hover {
     color: #ff6c2f;
 }
-.body{
+
+.body {
     height: 100%;
 }
+
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .navbar-header {
     display: flex;
     justify-content: space-between;
@@ -26,18 +31,21 @@ a:hover{
     padding-left: 0px;
     height: 100px;
 }
-.page_content{
+
+.page_content {
     padding: 10px 20px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .topbar h4 {
     margin: 0;
     font-size: 25px;
     font-weight: bold;
-    color: #6c757d; 
+    color: #6c757d;
     padding-left: 50px;
 }
+
 .topbar .d-flex {
     display: flex;
     align-items: center;
@@ -114,9 +122,11 @@ a:hover{
 .app-search i {
     color: #6c757d;
 }
-.form-control{
+
+.form-control {
     width: calc(100% - 40px);
 }
+
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -141,6 +151,7 @@ a:hover{
 .table tbody tr:nth-child(even) {
     background-color: #f9f9f9; /* Tô màu hàng chẵn */
 }
+
 .avatar-sm {
     width: 50px;
     height: 50px;
@@ -148,6 +159,7 @@ a:hover{
     border-radius: 5px;
     margin-right: 10px; /* Tạo khoảng cách giữa ảnh và text */
 }
+
 .completed_status {
     color: #28a745; /* Màu xanh hoàn thành */
     font-weight: bold;
@@ -157,13 +169,16 @@ a:hover{
     color: #fd7e14; /* Màu cam đang xử lý */
     font-weight: bold;
 }
+
 .table tbody tr:hover {
     background-color: #f1f3f5;
     transition: background-color 0.3s;
 }
-.table tr{
+
+.table tr {
     color: #8486a7;
 }
+
 .card-footer {
     padding: 20px 15px;
     background-color: #fff;
@@ -238,6 +253,7 @@ a:hover{
 .page-link i {
     font-size: 12px;
 }
+
 /* Thống kê biểu đồ */
 .statistics-wrapper {
     display: flex;
@@ -323,31 +339,36 @@ a:hover{
     z-index: 10;
 }
 
-.bar.clicked{
+.bar.clicked {
     background-color: #ff6c2f;
     filter: brightness(0.8);
 }
-.main-nav{
+
+.main-nav {
     width: calc(20% - 2px);
     height: 100%;
     float: left;
     background-color: #262d34;
     border-right: 2px solid #333;
 }
-.wrapper{
+
+.wrapper {
     width: 80%;
     float: right;
 }
-.logo-lg{
+
+.logo-lg {
     height: 100px;
     width: 100%;
 }
-.logo-lg_img{
+
+.logo-lg_img {
     width: 30%;
     height: auto;
     float: left;
 }
-.logo_p{
+
+.logo_p {
     width: 70%;
     height: 100%;
     float: right;
@@ -355,43 +376,51 @@ a:hover{
     font-size: 20px;
     font-weight: bold;
 }
-.logo_p_1, .logo_p_2{
+
+.logo_p_1, .logo_p_2 {
     width: 70%;
     height: 50%;
     margin: 0 auto;
 }
-.logo_p_1{
+
+.logo_p_1 {
     text-align: left;
     color: blue;
     margin-top: 10px;
     margin-bottom: -20px;
 }
-.logo_p_2{
+
+.logo_p_2 {
     text-align: right;
     color: red;
     font-size: 25px;
 }
-.navbar-nav{
+
+.navbar-nav {
     list-style-type: none;
     font-size: 20px;
     padding: 0;
 }
-.menu-title{
+
+.menu-title {
     font-size: 15px;
     font-weight: bold;
     color: #656d79;
     padding: 10px 20px;
 }
-.nav-item{
+
+.nav-item {
     padding: 10px 25px;
     color: #9097a7;
 }
-.sub-navbar-nav{
+
+.sub-navbar-nav {
     list-style-type: none;
     font-size: 18px;
     padding: 0;
 }
-.sub-nav-item{
+
+.sub-nav-item {
     padding: 5px 25px;
     color: #9097a7;
 }

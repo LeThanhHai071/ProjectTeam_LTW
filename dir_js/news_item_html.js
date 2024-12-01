@@ -7,49 +7,82 @@ const newsData = {
         {
             heading: "1. Lợi ích của việc sử dụng máy tạo oxy",
             details: [
-                { text: "+ Cung cấp oxy tức thời", description: "Đáp ứng nhu cầu thiếu oxy." },
-                { text: "+ Tăng cường chất lượng hô hấp", description: "Giảm cảm giác khó thở, hỗ trợ người bệnh duy trì nồng độ oxy trong máu ổn định." },
-                { text: "+ Hỗ trợ điều trị bệnh", description: "Máy tạo oxy thường được sử dụng kết hợp trong các phác đồ điều trị bệnh về phổi, tim mạch hoặc các vấn đề liên quan đến giấc ngủ như ngưng thở khi ngủ."},
-                { image: "https://bizweb.dktcdn.net/100/389/346/files/khi-nao-can-su-dung-may-tao-oxy-1-a4b8d6da-4af8-4ae3-b69b-37f9f969d853.jpg?v=1731904296238" },
-                {para : "Máy tạo oxy mang lại nhiều lợi ích"}
+                {text: "+ Cung cấp oxy tức thời", description: "Đáp ứng nhu cầu thiếu oxy."},
+                {
+                    text: "+ Tăng cường chất lượng hô hấp",
+                    description: "Giảm cảm giác khó thở, hỗ trợ người bệnh duy trì nồng độ oxy trong máu ổn định."
+                },
+                {
+                    text: "+ Hỗ trợ điều trị bệnh",
+                    description: "Máy tạo oxy thường được sử dụng kết hợp trong các phác đồ điều trị bệnh về phổi, tim mạch hoặc các vấn đề liên quan đến giấc ngủ như ngưng thở khi ngủ."
+                },
+                {image: "https://bizweb.dktcdn.net/100/389/346/files/khi-nao-can-su-dung-may-tao-oxy-1-a4b8d6da-4af8-4ae3-b69b-37f9f969d853.jpg?v=1731904296238"},
+                {para: "Máy tạo oxy mang lại nhiều lợi ích"}
             ]
         },
         {
             heading: "2. Có nên mở máy tạo oxy trong phòng kín?",
             details: [
-                {para : "Dù máy tạo oxy mang lại nhiều lợi ích, việc sử dụng thiết bị này trong phòng kín cần cân nhắc kỹ lưỡng:"},
-                { text: "Trường hợp nên mở máy tạo oxy"},
-                { description: "+ Khi người bệnh có chỉ định từ bác sĩ, cần hỗ trợ oxy liên tục."},
-                { description: "+ Người bệnh ở trong môi trường có nồng độ oxy thấp hoặc không gian hạn chế không khí lưu thông."},
-                { text: "Lưu ý quan trọng"},
-                { text: "+ Không sử dụng bừa bãi", description: "Nếu không được chỉ định, việc lạm dụng oxy có thể dẫn đến các biến chứng như giảm thông khí ở phổi."},
-                { text: "+ Đảm bảo thông gió", description: "Không gian phòng cần được thông thoáng để tránh tích tụ CO2, đặc biệt khi có nhiều người cùng ở trong phòng."},
-                { text: "+ Không thay thế hoàn toàn không khí tự nhiên", description: "Máy tạo oxy chỉ hỗ trợ người bệnh, không cải thiện chất lượng không khí chung trong phòng."},
+                {para: "Dù máy tạo oxy mang lại nhiều lợi ích, việc sử dụng thiết bị này trong phòng kín cần cân nhắc kỹ lưỡng:"},
+                {text: "Trường hợp nên mở máy tạo oxy"},
+                {description: "+ Khi người bệnh có chỉ định từ bác sĩ, cần hỗ trợ oxy liên tục."},
+                {description: "+ Người bệnh ở trong môi trường có nồng độ oxy thấp hoặc không gian hạn chế không khí lưu thông."},
+                {text: "Lưu ý quan trọng"},
+                {
+                    text: "+ Không sử dụng bừa bãi",
+                    description: "Nếu không được chỉ định, việc lạm dụng oxy có thể dẫn đến các biến chứng như giảm thông khí ở phổi."
+                },
+                {
+                    text: "+ Đảm bảo thông gió",
+                    description: "Không gian phòng cần được thông thoáng để tránh tích tụ CO2, đặc biệt khi có nhiều người cùng ở trong phòng."
+                },
+                {
+                    text: "+ Không thay thế hoàn toàn không khí tự nhiên",
+                    description: "Máy tạo oxy chỉ hỗ trợ người bệnh, không cải thiện chất lượng không khí chung trong phòng."
+                },
                 {image: "https://cdn.tgdd.vn/Files/2021/10/28/1394201/su-dung-may-tao-oxy-tai-nha-co-tot-khong-nhung-lu-1.jpg"},
-                {para : "Cần cân nhắc kỹ lưỡng khi sử dụng máy tạo oxy trong phòng kín"}
+                {para: "Cần cân nhắc kỹ lưỡng khi sử dụng máy tạo oxy trong phòng kín"}
             ]
         },
         {
             heading: "3. Rủi ro khi sử dụng máy tạo oxy không đúng cách",
             details: [
-                {para : "Việc sử dụng máy tạo oxy không đúng cách có thể gây ra một số vấn đề:"},
-                { text: "+ Tăng nguy cơ khô đường hô hấp", description: "Oxy từ máy thường khô, có thể làm khô niêm mạc mũi và miệng." },
-                { text: "+ Nguy cơ cháy nổ", description: "Oxy dễ bắt lửa, vì vậy không nên sử dụng máy gần nguồn lửa hoặc thiết bị điện phát nhiệt." },
-                { text: "+ Phụ thuộc vào oxy", description: "Người khỏe mạnh nếu sử dụng máy tạo oxy không cần thiết có thể làm giảm khả năng tự điều chỉnh của cơ thể."}
+                {para: "Việc sử dụng máy tạo oxy không đúng cách có thể gây ra một số vấn đề:"},
+                {
+                    text: "+ Tăng nguy cơ khô đường hô hấp",
+                    description: "Oxy từ máy thường khô, có thể làm khô niêm mạc mũi và miệng."
+                },
+                {
+                    text: "+ Nguy cơ cháy nổ",
+                    description: "Oxy dễ bắt lửa, vì vậy không nên sử dụng máy gần nguồn lửa hoặc thiết bị điện phát nhiệt."
+                },
+                {
+                    text: "+ Phụ thuộc vào oxy",
+                    description: "Người khỏe mạnh nếu sử dụng máy tạo oxy không cần thiết có thể làm giảm khả năng tự điều chỉnh của cơ thể."
+                }
             ]
         },
         {
             heading: "4. Hướng dẫn sử dụng máy tạo oxy an toàn",
             details: [
-                {text: "+ Chỉ sử dụng khi có chỉ định y tế", description: "Luôn tuân thủ hướng dẫn của bác sĩ về lưu lượng oxy và thời gian sử dụng."},
-                {text: "+ Đảm bảo vệ sinh máy", description: "+ Đảm bảo vệ sinh máy: </strong>Vệ sinh bộ lọc và bình tạo ẩm định kỳ để ngăn ngừa vi khuẩn và nấm mốc."},
-                {text: "+ Không để máy hoạt động liên tục trong không gian kín", description: "Đảm bảo không gian có cửa sổ hoặc máy thông gió hoạt động hiệu quả."},
+                {
+                    text: "+ Chỉ sử dụng khi có chỉ định y tế",
+                    description: "Luôn tuân thủ hướng dẫn của bác sĩ về lưu lượng oxy và thời gian sử dụng."
+                },
+                {
+                    text: "+ Đảm bảo vệ sinh máy",
+                    description: "+ Đảm bảo vệ sinh máy: </strong>Vệ sinh bộ lọc và bình tạo ẩm định kỳ để ngăn ngừa vi khuẩn và nấm mốc."
+                },
+                {
+                    text: "+ Không để máy hoạt động liên tục trong không gian kín",
+                    description: "Đảm bảo không gian có cửa sổ hoặc máy thông gió hoạt động hiệu quả."
+                },
             ]
         },
         {
             heading: "5. Kết luận",
             details: [
-                {para : "Mở máy tạo oxy trong phòng là cần thiết đối với những người có nhu cầu y tế cụ thể. Tuy nhiên, để đảm bảo an toàn và hiệu quả, người dùng cần tuân thủ hướng dẫn sử dụng từ bác sĩ và đảm bảo không gian phòng luôn thông thoáng."}
+                {para: "Mở máy tạo oxy trong phòng là cần thiết đối với những người có nhu cầu y tế cụ thể. Tuy nhiên, để đảm bảo an toàn và hiệu quả, người dùng cần tuân thủ hướng dẫn sử dụng từ bác sĩ và đảm bảo không gian phòng luôn thông thoáng."}
             ]
         }
     ]
@@ -60,7 +93,7 @@ function generateNewsPage(news) {
 
     const sectionContainer = document.querySelector(".news_item_content");
 
-    if(!sectionContainer){
+    if (!sectionContainer) {
         const newContainer = document.createElement("div");
         newContainer.className = "news_item_content";
         const bodyContainer = document.querySelector(".body");
