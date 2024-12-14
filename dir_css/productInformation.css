@@ -1,8 +1,9 @@
 /*CSS của trang thông tin sản phẩm*/
 /*Cuộn mượt*/
-html{
+html {
     scroll-behavior: smooth;
 }
+
 /* Định nghĩa chung cho toàn trang */
 body {
     margin: 0;
@@ -12,7 +13,7 @@ body {
     align-items: flex-start; */
     background-color: #f9f9f9;
 
-} 
+}
 
 /* .container, */
 .wrap {

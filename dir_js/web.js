@@ -1,5 +1,5 @@
- // Chuyển đổi form đăng nhập , đăng ký
- function toggleForm(formType) {
+// Chuyển đổi form đăng nhập , đăng ký
+function toggleForm(formType) {
     var loginTab = document.getElementById('login-tab');
     var registerTab = document.getElementById('register-tab');
     var loginForm = document.getElementById('login-form');
@@ -30,7 +30,7 @@
 // }
 
 // function login() {
-document.getElementById('login-btn').onclick = function() {
+document.getElementById('login-btn').onclick = function () {
     var username = document.getElementById('log-email').value;
     var password = document.getElementById('log-password').value;
 
@@ -63,23 +63,23 @@ function register() {
     }
 }
 
-  // Hàm chỉnh sửa thông tin người dùng
-  function editUserInfo() {
+// Hàm chỉnh sửa thông tin người dùng
+function editUserInfo() {
     // Hiển thị form chỉnh sửa và ẩn khu vực thông tin
     document.getElementById('user-info').style.display = 'none';
     document.getElementById('user-form').style.display = 'block';
     document.getElementById('edit-button').style.display = 'none'; // Ẩn nút "Chỉnh sửa"
-    
+
     // Điền thông tin hiện tại vào các trường trong form
     document.getElementById('fullname').value = document.getElementById('user-fullname').textContent;
     document.getElementById('phone').value = document.getElementById('user-phone').textContent;
     document.getElementById('email').value = document.getElementById('user-email').textContent;
     document.getElementById('address').value = document.getElementById('user-address').textContent;
     document.getElementById('birthdate').value = document.getElementById('user-birthdate').textContent;
-  }
+}
 
-  // Xử lý khi nhấn "Cập nhật"
-  document.querySelector('#user-form').addEventListener('submit', function(event) {
+// Xử lý khi nhấn "Cập nhật"
+document.querySelector('#user-form').addEventListener('submit', function (event) {
     event.preventDefault(); // Ngừng gửi form
 
     // Cập nhật thông tin từ các trường nhập liệu
@@ -100,5 +100,5 @@ function register() {
     document.getElementById('user-info').style.display = 'block';
     document.getElementById('user-form').style.display = 'none';
     document.getElementById('edit-button').style.display = 'block'; // Hiển thị lại nút "Chỉnh sửa"
-  });
+});
       
