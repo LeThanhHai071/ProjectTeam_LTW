@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
             p: "Có Nên Mở Máy Tạo Oxy Trong Phòng? Lợi Ích...",
             date: "18/11/2024",
             comment: "0 bình luận",
-            link: ""
+            link: "../dir_html/news_item.html"
         },
         {
             src: "https://bizweb.dktcdn.net/thumb/large/100/389/346/articles/may-tao-oxy-nen-dung-khi-nao.png?v=1731902932887",
