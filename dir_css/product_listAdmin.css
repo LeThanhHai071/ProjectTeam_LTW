@@ -4,10 +4,22 @@ body{
     padding: 0;
     background-color: #f8f9fa;
     color: #333;
+    width: auto;
+    height: auto;
 }
 .avatar-md {
     width: 20px !important;
     height: 20px !important;
+}
+.main-nav{
+    width: 500px;
+    height: auto;
+    display: flex;
+}
+.container-fluid{
+    width: auto;
+    height: auto;
+    display: flex;
 }
 
 
