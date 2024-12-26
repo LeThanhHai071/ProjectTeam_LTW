@@ -44,6 +44,13 @@
     ></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="../dir_css/homeAdmin.css" />
+    <style>
+      @media (max-width: 1200px) {
+        #orders-table {
+          display: inline-block;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -164,7 +171,10 @@
                 <!-- end card body -->
                 <div>
                   <!-- <div class="table-responsive table-centered"> -->
-                  <table id="orders-table" class="table mb-0">
+                  <table
+                    id="orders-table"
+                    class="table align-middle mb-0 table-hover table-centered"
+                  >
                     <thead class="bg-light">
                       <tr>
                         <th class="ps-3">Order ID.</th>

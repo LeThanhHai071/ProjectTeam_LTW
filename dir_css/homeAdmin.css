@@ -176,13 +176,10 @@ table.dataTable tbody tr {
   height: 50px;
 }
 table.dataTable tbody tr.odd {
-  background-color: #f9f9f9;
+  background-color: #f9f9f9d0;
 }
 table.dataTable tbody tr.even {
   background-color: #ffffff;
-}
-table.dataTable tbody tr:hover {
-  background-color: #f1f1f1;
 }
 table.dataTable thead th {
   background-color: #364254;
@@ -223,17 +220,16 @@ table.dataTable {
   border-color: #007bff;
   outline: none;
 }
-#orders-table_info{
+#orders-table_info {
   padding: 0 12px;
   margin-top: 24px;
 }
-#orders-table_wrapper::-webkit-scrollbar{
+#orders-table_wrapper::-webkit-scrollbar {
   display: none;
 }
-#orders-table{
+#orders-table {
   overflow-x: auto;
-  display: inline-block;
 }
-#orders-table::-webkit-scrollbar{
+#orders-table::-webkit-scrollbar {
   display: none;
 }
