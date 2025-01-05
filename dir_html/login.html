@@ -9,9 +9,7 @@
 </head>
 
 <body>
-<div id="header"></div>
-<div id="body">
-    <div class="container_login">
+    <div class="container">
         <div class="tabs">
             <div id="login-tab" class="active" onclick="toggleForm('login')">Đăng Nhập</div>
             <div id="register-tab" onclick="toggleForm('register')">Đăng Ký</div>
@@ -20,12 +18,12 @@
         <div class="form-container" id="login-form" style="display: block;">
             <h2>Đăng Nhập</h2>
 
-            <div class="form-gr">
+        <div class="form-gr">
 
-                <input type="email" id="log-email" placeholder="Email" required>
-            </div>
-            <div class="form-gr">
-                <input type="password" id="log-password" name="password" placeholder="Nhập mật khẩu" required>
+            <input type="email" id="log-email" placeholder="Email" required>
+        </div>
+        <div class="form-gr">
+            <input type="password" id="log-password" name="password" placeholder="Nhập mật khẩu" required>
 
             </div>
             <div class="form-gr">
@@ -61,10 +59,7 @@
             </div>
         </div>
     </div>
-</div>
-<div id="footer"></div>
-    <script src="../dir_js/merger_header_footer.js"></script>
-    <script src="../dir_js/web.js"></script>
+    <script src="web.js"></script>
 </body>
 
 </html>
