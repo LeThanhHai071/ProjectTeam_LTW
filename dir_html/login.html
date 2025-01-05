@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Đăng Nhập</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../dir_css/main.css">
 </head>
 
 <body>
-    <div class="container">
+<div id="header"></div>
+<div id="body">
+    <div class="container_login">
         <div class="tabs">
             <div id="login-tab" class="active" onclick="toggleForm('login')">Đăng Nhập</div>
             <div id="register-tab" onclick="toggleForm('register')">Đăng Ký</div>
@@ -59,7 +61,10 @@
             </div>
         </div>
     </div>
-    <script src="web.js"></script>
+</div>
+<div id="footer"></div>
+    <script src="../dir_js/merger_header_footer.js"></script>
+    <script src="../dir_js/web.js"></script>
 </body>
 
 </html>
