@@ -28,7 +28,6 @@
     />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="../dir_css/headerAdmin.css" />
-    <!-- <link rel="stylesheet" href="../dir_section/menuAdmin.css" /> -->
   </head>
   <body>
     <div class="wrapper">
@@ -42,15 +41,7 @@
                   <iconify-icon
                     icon="solar:hamburger-menu-broken"
                     class="fs-24 align-middle"
-                    ><template shadowrootmode="open"
-                      ><style>
-                        span,
-                        svg {
-                          display: block;
-                        }
-                      </style></template
-                    ></iconify-icon
-                  >
+                  ></iconify-icon>
                 </button>
               </div>
 
@@ -375,6 +366,50 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="../dir_js/admin_home.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.querySelector(".button-toggle-menu");
+        const mainNav = document.querySelector(".main-nav");
+        const body = document.querySelector("body");
+
+        toggleButton.addEventListener("click", function () {
+          mainNav.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function (event) {
+          if (
+            !mainNav.contains(event.target) &&
+            !toggleButton.contains(event.target)
+          ) {
+            mainNav.classList.remove("active");
+          }
+        });
+
+        mainNav.addEventListener("click", function (event) {
+          event.stopPropagation();
+        });
+
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        const button = document.getElementById("page-header-user-dropdown");
+
+        function toggleDropdown() {
+          dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+        }
+
+        button.addEventListener("click", function (event) {
+          toggleDropdown();
+        });
+
+        document.addEventListener("click", function (event) {
+          if (
+            !button.contains(event.target) &&
+            !dropdownMenu.contains(event.target)
+          ) {
+            dropdownMenu.style.display = "none"; 
+          }
+        });
+      });
+    </script>
   </body>
 </html>
