@@ -1,0 +1,49 @@
+html,
+body,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.news_item_img {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    padding: 10px;
+}
+
+h2 {
+    color: brown;
+}
+
+.news_item_p {
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+.news_item_ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

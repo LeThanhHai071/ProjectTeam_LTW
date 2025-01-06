@@ -1,0 +1,211 @@
+body,
+html,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a,
+button :hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#section_header {
+    background-color: white;
+    height: 180px;
+}
+
+#section_header .container {
+    width: 1200px;
+    height: 120px;
+    margin: 0 auto;
+    color: #000000;
+    background-color: white;
+}
+
+#section_header .container .navbar_icon_web_part {
+    padding-top: 18px;
+    float: left;
+    width: 20%;
+}
+
+#section_header .container .navbar_icon_web_part .img_item {
+    width: 40%;
+    float: left;
+}
+
+#section_header .container .navbar_icon_web_part .img_item img {
+    padding-left: 12px;
+    width: 70px;
+    height: auto;
+    margin-top: 3px;
+}
+
+#section_header .container .navbar_icon_web_part .text_item {
+    width: 60%;
+    float: right;
+}
+
+#section_header .container .navbar_icon_web_part .text_item p.text_part_1 {
+    font-size: 23px;
+    font-weight: bold;
+    color: blue;
+    text-align: left;
+}
+
+#section_header .container .navbar_icon_web_part .text_item p.text_part_2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+    text-align: right;
+}
+
+#section_header .container .navbar_collapse_01 {
+    float: right;
+    width: 80%;
+}
+
+#section_header .container .navbar_collapse_01 .navbar_search {
+    width: calc(80% - 15px);
+    float: left;
+    padding-left: 15px;
+    padding-top: 40px;
+}
+
+#section_header .container .navbar_collapse_01 .navbar_search .input_search {
+    width: calc(90% - 3px);
+    float: left;
+}
+
+#section_header
+.container
+.navbar_collapse_01
+.navbar_search
+.input_search
+input {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+    border-radius: 5px;
+    height: 37px;
+}
+
+#section_header
+.container
+.navbar_collapse_01
+.navbar_search
+.icon_search
+button.search_button {
+    border: solid 2px black;
+    width: 100%;
+    height: 40px;
+    background-color: orange;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+#section_header .container .navbar_collapse_01 .navbar_search .icon_search {
+    width: 10%;
+    float: right;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+#section_header .container .navbar_collapse_01 .navbar_icon {
+    width: 20%;
+    float: right;
+}
+
+#section_header .container .navbar_collapse_01 .navbar_icon ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#section_header .container .navbar_collapse_01 .navbar_icon ul li {
+    float: right;
+    padding: 37px 13px;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+#section_deparment {
+    background-color: #ffc107;
+    height: 60px;
+    border-bottom: solid 1px black;
+    border-top: solid 1px black;
+}
+
+#section_deparment .container {
+    width: 1200px;
+    height: calc(100% - 20px);
+    margin: 0 auto;
+    background-color: #ffc107;
+}
+
+#section_deparment .container ul {
+    margin: 0;
+    padding: 0;
+}
+
+#section_deparment .container ul li {
+    list-style-type: none;
+    float: left;
+    width: fit-content;
+    padding: 20px 10px;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+#section_deparment .container ul li:hover {
+    background-color: #c41a1a;
+    color: #000000;
+    cursor: pointer;
+}
+
+#section_deparment .container .deparment_list a {
+    text-decoration: none;
+    color: black;
+}
+
+#section_deparment .container ul li .deparment_list_2 {
+    padding-top: 21px;
+    position: absolute;
+    margin-left: -10px;
+    display: none;
+    width: 200px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#section_deparment .container ul li ul.deparment_list_2 li {
+    display: block;
+    width: 100%;
+    float: none;
+    padding: 10px;
+    border-bottom: solid 1px #e5dada;
+    font-weight: 600;
+    font-size: 13px;
+    background-color: #ffc107;
+}
+
+#section_deparment .container ul li ul.deparment_list_2 li:hover {
+    background-color: #c41a1a;
+    color: white;
+}
+
+#section_deparment .container ul li:hover .deparment_list_2 {
+    display: block;
+}
+
+#section_deparment .container ul {
+    position: relative;
+}
