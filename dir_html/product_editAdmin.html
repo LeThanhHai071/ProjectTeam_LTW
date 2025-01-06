@@ -4,7 +4,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Admin</title>
+     <title>Edit Product Admin</title>
      <link rel="stylesheet" href="../dir_css/product_editAdmin.css">
      <link rel="stylesheet" href="..//dir_css/admin_home.css">
      <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" rel="stylesheet" />
@@ -137,7 +137,7 @@
                                    <div class="mt-3">
                                         <h4>Máy đo huyết áp<span class="fs-14 text-muted ms-1">(Thiết bị y tế)</span>
                                         </h4>
-                                        <h5 class="text-dark fw-medium mt-3">Giá:</h5>
+                                        <h5 class="text-dark fw-medium mt-3">Giá: 1.240.000</h5>
                                    </div>
                               </div>
                          </div>
@@ -192,9 +192,10 @@
                                                        <li data-value="medical-devices">Thiết bị y tế</li>
                                                        <li data-value="consumable-supplies">Vật tư tiêu hao</li>
                                                        <li data-value="surgical-tools">Dụng cụ phẫu thuật</li>
-                                                       <li data-value="personal-care-tools">Dụng cụ chăm sóc cá nhân</li>
-                                                   </ul>
-                                                   
+                                                       <li data-value="personal-care-tools">Dụng cụ chăm sóc cá nhân
+                                                       </li>
+                                                  </ul>
+
                                                   <input type="hidden" id="selectedCategory" name="product-category"
                                                        value="">
                                              </div>
@@ -264,19 +265,7 @@
 
      </div>
      <div class="footer"></div>
-     <script src="..//dir_js/product_listAdmin.js"></script>
-     <script>
-          // Khởi tạo Dropzone cho form có ID là 'myAwesomeDropzone'
-          Dropzone.options.myAwesomeDropzone = {
-               url: '/upload',  // Thay đổi URL này thành endpoint của bạn để xử lý việc tải lên ảnh
-               paramName: 'file', // Tên file khi gửi lên server
-               maxFilesize: 2, // Kích thước tối đa của mỗi file (2MB)
-               acceptedFiles: 'image/*', // Cho phép chỉ tải lên ảnh
-               dictDefaultMessage: "Kéo và thả hình ảnh vào đây, hoặc nhấp để chọn",
-               dictFallbackMessage: "Trình duyệt của bạn không hỗ trợ tính năng này.",
-               dictInvalidFileType: "Loại file không hợp lệ. Chỉ cho phép tải lên hình ảnh.",
-               dictFileTooBig: "Tệp quá lớn ({{filesize}}MB). Kích thước tối đa là {{maxFilesize}}MB.",
-               dictResponseError: "Lỗi tải lên, vui lòng thử lại.",
-          };
-     </script>
+     <script src="..//dir_js/product_editAdmin.js"></script>
 </body>
+
+</html>

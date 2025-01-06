@@ -29,3 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+// Khởi tạo Dropzone cho form có ID là 'myAwesomeDropzone'
+Dropzone.options.myAwesomeDropzone = {
+     url: '/upload',  // Thay đổi URL này thành endpoint của bạn để xử lý việc tải lên ảnh
+     paramName: 'file', // Tên file khi gửi lên server
+     maxFilesize: 2, // Kích thước tối đa của mỗi file (2MB)
+     acceptedFiles: 'image/*', // Cho phép chỉ tải lên ảnh
+     dictDefaultMessage: "Kéo và thả hình ảnh vào đây, hoặc nhấp để chọn",
+     dictFallbackMessage: "Trình duyệt của bạn không hỗ trợ tính năng này.",
+     dictInvalidFileType: "Loại file không hợp lệ. Chỉ cho phép tải lên hình ảnh.",
+     dictFileTooBig: "Tệp quá lớn ({{filesize}}MB). Kích thước tối đa là {{maxFilesize}}MB.",
+     dictResponseError: "Lỗi tải lên, vui lòng thử lại.",
+};
+
