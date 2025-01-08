@@ -1,464 +1,1221 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Acer
-  Date: 07-01-2025
-  Time: 10:26
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
-    <link rel="stylesheet" href="css/menu.css">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+            type="text/javascript"
+            charset="utf8"
+            src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"
+    ></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="css/category.css">
 </head>
 <body>
 <div>
-    <div class="body">
-        <div class="container" id="list">
-            <!-- Sidebar danh mục -->
-            <div class="sidebar">
-                <div class="dropdown">
-                    <button class="dropdown-btn">
-                        <i class="fa-solid fa-bars"></i> Danh Mục
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#medical" data-target="medical"><i class="fa-solid fa-stethoscope"></i>&nbsp;Thiết
-                            bị y
-                            tế</a>
-                        <a href="#consumable" data-target="consumable"><i class="fa-solid fa-syringe"></i>&nbsp;Vật
-                            tư
-                            tiêu
-                            hao</a>
-                        <a href="#surgical" data-target="surgical"><i class="fa-solid fa-scissors"></i>&nbsp;Dụng cụ
-                            phẫu
-                            thuật</a>
-                        <a href="#personal-care" data-target="personal-care"><i
-                                class="fa-solid fa-bandage"></i>&nbsp;Dụng
-                            cụ chăm sóc cá nhân</a>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col-left col-12 col-lg-4 col-md-4">
+                <div class="filter-wrap">
+                    <div class="filter-pane filter-category">
+                        <p class="category-title">
+                            <a href="" title="Y tế gia đình">Y tế gia đình</a>
+                        </p>
+                        <div class="filter-category-container">
+                            <div class="filter-category-item">
+                                <img
+                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/May-do-huyet-ap.png"
+                                        alt="Máy đo huyết áp"
+                                        width="30"
+                                        height="30"
+                                />
+                                <a class="" href="" title="Máy đo huyết áp"
+                                >Máy đo huyết áp</a
+                                >
+                            </div>
+                            <div class="filter-category-item">
+                                <img
+                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/May-do-duong-huyet.png"
+                                        alt="Máy đo đường huyết"
+                                        width="30"
+                                        height="30"
+                                />
+                                <a class="" href="" title="Máy đo đường huyết"
+                                >Máy đo đường huyết</a
+                                >
+                            </div>
+                            <div class="filter-category-item">
+                                <img
+                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/May-xong-mui-hong.png"
+                                        alt="Máy xông mũi họng"
+                                        width="30"
+                                        height="30"
+                                />
+                                <a class="" href="" title="Máy xông mũi họng"
+                                >Máy xông mũi họng</a
+                                >
+                            </div>
+                            <div class="filter-category-item">
+                                <img
+                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/Vo-y-khoa.png"
+                                        alt="Vớ y khoa"
+                                        width="30"
+                                        height="30"
+                                />
+                                <a class="" href="" title="Vớ y khoa">Vớ y khoa</a>
+                            </div>
+                            <div class="filter-category-item">
+                                <img
+                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-danhmuc/may-tro-thinh.png"
+                                        alt="Máy trợ thính"
+                                        width="30"
+                                        height="30"
+                                />
+                                <a class="" href="" title="Máy trợ thính">Máy trợ thính</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-pane filter-brand">
+                        <p class="brand-title">Thương hiệu</p>
+                        <div class="filter-brand-container">
+                            <div class="filter-brand-list" id="fillter-product-brand">
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Aergo"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_1"
+                                            id="brand_1"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_1"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_1"
+                                            data-typeselect="1"
+                                    >
+                                        Aergo
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Alphamed"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_2"
+                                            id="brand_2"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_2"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_2"
+                                            data-typeselect="1"
+                                    >
+                                        Alphamed
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Alphay"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_3"
+                                            id="brand_3"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_3"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_3"
+                                            data-typeselect="1"
+                                    >
+                                        Alphay
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="ALPK2"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_4"
+                                            id="brand_4"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_4"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_4"
+                                            data-typeselect="1"
+                                    >
+                                        ALPK2
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Berrcom"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_5"
+                                            id="brand_5"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_5"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_5"
+                                            data-typeselect="1"
+                                    >
+                                        Berrcom
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Beurer"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_6"
+                                            id="brand_6"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_6"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_6"
+                                            data-typeselect="1"
+                                    >
+                                        Beurer
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Boso"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_7"
+                                            id="brand_7"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_7"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_7"
+                                            data-typeselect="1"
+                                    >
+                                        Boso
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="DrKare"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_8"
+                                            id="brand_8"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_8"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_8"
+                                            data-typeselect="1"
+                                    >
+                                        DrKare
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Duomed"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_9"
+                                            id="brand_9"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_9"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_9"
+                                            data-typeselect="1"
+                                    >
+                                        Duomed
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="elife"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_10"
+                                            id="brand_10"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_10"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_10"
+                                            data-typeselect="1"
+                                    >
+                                        elife
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="ENNO"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_11"
+                                            id="brand_11"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_11"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_11"
+                                            data-typeselect="1"
+                                    >
+                                        ENNO
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="FarmaCell"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_12"
+                                            id="brand_12"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_12"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_12"
+                                            data-typeselect="1"
+                                    >
+                                        FarmaCell
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="General_Life_Biotechnology"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_13"
+                                            id="brand_13"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_13"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_13"
+                                            data-typeselect="1"
+                                    >
+                                        General Life Biotechnology
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Gia_Hưng"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_14"
+                                            id="brand_14"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_14"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_14"
+                                            data-typeselect="1"
+                                    >
+                                        Gia Hưng
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Heal_Force"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_15"
+                                            id="brand_15"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_15"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_15"
+                                            data-typeselect="1"
+                                    >
+                                        Heal Force
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Laica"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_16"
+                                            id="brand_16"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_16"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_16"
+                                            data-typeselect="1"
+                                    >
+                                        Laica
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Leamai"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_17"
+                                            id="brand_17"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_17"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_17"
+                                            data-typeselect="1"
+                                    >
+                                        Leamai
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Little_Bees"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_18"
+                                            id="brand_18"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_18"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_18"
+                                            data-typeselect="1"
+                                    >
+                                        Little Bees
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Loye"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_19"
+                                            id="brand_19"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_19"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_19"
+                                            data-typeselect="1"
+                                    >
+                                        Loye
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Lumbamed"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_20"
+                                            id="brand_20"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_20"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_20"
+                                            data-typeselect="1"
+                                    >
+                                        Lumbamed
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="MEDICOSH"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_21"
+                                            id="brand_21"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_21"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_21"
+                                            data-typeselect="1"
+                                    >
+                                        MEDICOSH
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="MediSmart"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_22"
+                                            id="brand_22"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_22"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_22"
+                                            data-typeselect="1"
+                                    >
+                                        MediSmart
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Microlife"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_23"
+                                            id="brand_23"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_23"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_23"
+                                            data-typeselect="1"
+                                    >
+                                        Microlife
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Omron"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_24"
+                                            id="brand_24"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_24"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_24"
+                                            data-typeselect="1"
+                                    >
+                                        Omron
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="OSAKA"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_25"
+                                            id="brand_25"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_25"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_25"
+                                            data-typeselect="1"
+                                    >
+                                        OSAKA
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Owgels"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_26"
+                                            id="brand_26"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_26"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_26"
+                                            data-typeselect="1"
+                                    >
+                                        Owgels
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Philips"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_27"
+                                            id="brand_27"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_27"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_27"
+                                            data-typeselect="1"
+                                    >
+                                        Philips
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Reiwa"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_28"
+                                            id="brand_28"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_28"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_28"
+                                            data-typeselect="1"
+                                    >
+                                        Reiwa
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="RelaxSan"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_29"
+                                            id="brand_29"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_29"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_29"
+                                            data-typeselect="1"
+                                    >
+                                        RelaxSan
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Rycom"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_30"
+                                            id="brand_30"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_30"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_30"
+                                            data-typeselect="1"
+                                    >
+                                        Rycom
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Scala"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_31"
+                                            id="brand_31"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_31"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_31"
+                                            data-typeselect="1"
+                                    >
+                                        Scala
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Scian"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_32"
+                                            id="brand_32"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_32"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_32"
+                                            data-typeselect="1"
+                                    >
+                                        Scian
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Spirit"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_33"
+                                            id="brand_33"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_33"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_33"
+                                            data-typeselect="1"
+                                    >
+                                        Spirit
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="VOFONN"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_34"
+                                            id="brand_34"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_34"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_34"
+                                            data-typeselect="1"
+                                    >
+                                        VOFONN
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Waterpulse"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_35"
+                                            id="brand_35"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_35"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_35"
+                                            data-typeselect="1"
+                                    >
+                                        Waterpulse
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Wellmed"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_36"
+                                            id="brand_36"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_36"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_36"
+                                            data-typeselect="1"
+                                    >
+                                        Wellmed
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-brand-item"
+                                        style="display: flex"
+                                        data-brand="Xinda"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            name="brand_37"
+                                            id="brand_37"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            data-typeselect="0"
+                                            for="brand_37"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="brand_37"
+                                            data-typeselect="1"
+                                    >
+                                        Xinda
+                                    </label>
+                                </div>
+                                <input
+                                        type="hidden"
+                                        id="listbrand"
+                                        name="listbrand"
+                                        value=""
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-pane filter-price">
+                        <p class="price-title">Khoảng giá</p>
+                        <div class="filter-price-container">
+                            <div class="filter-price-list" id="fillter-product-price">
+                                <div
+                                        class="filter-price-item"
+                                        style="display: flex"
+                                        data-price="1999999"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            id="price_2"
+                                            name="price_2"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            for="price_2"
+                                            data-typeselect="0"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="price_2"
+                                            data-typeselect="1"
+                                    >
+                                        Dưới 2 triệu
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-price-item"
+                                        style="display: flex"
+                                        data-price="1999999-3999999"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            id="price_3"
+                                            name="price_3"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            for="price_3"
+                                            data-typeselect="0"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="price_3"
+                                            data-typeselect="1"
+                                    >
+                                        2 triệu - Dưới 4 triệu
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-price-item"
+                                        style="display: flex"
+                                        data-price="3999999-5999999"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            id="price_4"
+                                            name="price_4"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            for="price_4"
+                                            data-typeselect="0"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="price_4"
+                                            data-typeselect="1"
+                                    >
+                                        4 triệu - Dưới 6 triệu
+                                    </label>
+                                </div>
+                                <div
+                                        class="filter-price-item"
+                                        style="display: flex"
+                                        data-price="5999999"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            id="price_5"
+                                            name="price_5"
+                                            value="1"
+                                    />
+                                    <label
+                                            class="checkmark"
+                                            for="price_5"
+                                            data-typeselect="0"
+                                    ></label>
+                                    <label
+                                            class="check-group"
+                                            for="price_5"
+                                            data-typeselect="1"
+                                    >
+                                        6 triệu trở lên
+                                    </label>
+                                </div>
+                                <input
+                                        type="hidden"
+                                        id="listprice"
+                                        name="listprice"
+                                        value=""
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Nội dung sản phẩm -->
-            <div class="content">
-                <!--Thiết bị y tế-->
-                <div id="medical" class="content-section">
-                    <h2>Thiết bị y tế</h2>
-                    <a href="../dir_html/productInformation.html">
-                        <div class="product-card">
-                            <img class="product-image" src="../image/Thiết bị y tế/Máy đo huyết áp/7143T1 full pk.webp"
-                                 alt="Máy đo huyết áp bắp tay tự động Omron HEM-7143T1">
-                            <div class="product-info">
-                                <h3>Máy đo huyết áp bắp tay tự động Omron HEM-7143T1
-                                </h3>
+            <div class="col-right col-12 col-lg-8 col-md-8">
+                <c:forEach var="cate" items="${category}">
+                    <div class="cate-list">
+                        <div class="cate-list-bar">
+                            <h2 class="bar-title">
+                                <a
+                                        class="icon"
+                                        href=""
+                                        title="${cate.categoryName}"
+                                >
+                                    <img
+                                            class="img-cate-icon"
+                                            src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/iconmobile-40x40/May-do-huyet-ap.png"
+                                            width="30"
+                                            alt="Y tế gia đình"
+                                    /></a>
+                                <a
+                                        href=""
+                                        title="Máy đo huyết áp"
+                                ></a
+                                >
+                            </h2>
+                            <p class="bar-more">
+                                <a
+                                        href=""
+                                        title="Xem thêm"
+                                >Xem thêm</a
+                                >
+                            </p>
+                        </div>
+                        <c:forEach var="p" items="${product}">
+                            <c:if test="${cate.categoryId == p.categoryId}">
+                            <div class="product-item product-category">
+                                <div class="item-slide col-md-3 col-lg-3">
+                                    <a
+                                            href="product?pid=${p.productId}"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                    class="owl-lazy img-fluid lazyloaded"
+                                                    alt="${p.productName}"
+                                                    src="${p.productImage}"
+                                            />
+                                        </div>
+                                        <h3 class="title">
+                                                ${p.productName}
+                                        </h3>
+                                        <p class="price"><span><f:formatNumber value="${p.unitPrice}"/></span></p>
+                                        <div class="full-stars">
+                                            <label
+                                                    aria-label="1 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i
+                                                    class="rating__icon rating__icon--star fa fa-star"
+                                            ></i></label
+                                            ><label
+                                                aria-label="2 star"
+                                                class="rating__label"
+                                                data-rating="5"
+                                        ><i
+                                                class="rating__icon rating__icon--star fa fa-star"
+                                        ></i></label
+                                        ><label
+                                                aria-label="3 star"
+                                                class="rating__label"
+                                                data-rating="5"
+                                        ><i
+                                                class="rating__icon rating__icon--star fa fa-star"
+                                        ></i></label
+                                        ><label
+                                                aria-label="4 star"
+                                                class="rating__label"
+                                                data-rating="5"
+                                        ><i
+                                                class="rating__icon rating__icon--star fa fa-star"
+                                        ></i></label
+                                        ><label
+                                                aria-label="5 star"
+                                                class="rating__label"
+                                                data-rating="5"
+                                        ><i class="rating__icon rating__icon--star fa fa-star"></i
+                                        ></label>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="product-actions">
-                                <span class="price">1.240.000 VND</span>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="product-card">
-                        <img class="product-image" src="../image/Thiết bị y tế/Máy đo huyết áp/7120-1.webp" alt="Máy đo huyết áp bắp tay tự động Omron HEM-7120
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo huyết áp bắp tay tự động Omron HEM-7120
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">940.000 VND</span>
-                        </div>
+                            </c:if>
+                        </c:forEach>
                     </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo huyết áp/YE610D-1.webp" alt="Máy đo huyết áp điện tử bắp tay Yuwell YE610D
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo huyết áp điện tử bắp tay Yuwell YE610D
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">588.000 VND</span>
-
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo huyết áp/800B18-1.webp" alt="Máy đo huyết áp bắp tay tự động Fuji PG-800B18
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo huyết áp bắp tay tự động Fuji PG-800B18
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">679.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo huyết áp/JPN750-1.webp" alt="Máy đo huyết áp bắp tay tự động Omron JPN750
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo huyết áp bắp tay tự động Omron JPN750
-                            </h3>
-
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">2.299.000 VND</span>
-
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo SPO2/PC60A/60A-1.webp" alt="Máy đo nồng độ oxy trong máu SpO2 Metech - PC - 60A hỗ trợ đo nhanh chóng và chính xác
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo nồng độ oxy trong máu SpO2 Metech - PC - 60A
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">399.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="" alt="Máy đo nồng độ oxy trong máu Jumper JPD 500E Led thiết kế nhỏ gọn và sử dụng dễ dàng
-
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo nồng độ oxy trong máu Jumper JPD 500E Led
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">490.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo SPO2/OXY 200/OXY-200-1.webp" alt="Máy đo nồng độ oxy trong máu Microlife Oxy 200 hỗ trợ đo nhanh chóng và chính xác
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo nồng độ oxy trong máu Microlife Oxy 200
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">690.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo SPO2/A4 OROMI/OROMI-1.webp" alt="Máy đo nồng độ oxy trong máu (SPO2) Pulse Fingertip Oximeter A4 Oromi hỗ trợ đo nhanh chóng và chính xác
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo nồng độ oxy trong máu (SPO2) A4 Oromi
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">690.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo đường huyết/GM3300/GM3300-1.webp"
-                             alt="Máy đo đường huyết tự động MediUSA GM3300 thiết kế gọn nhẹ, thao tác sử dụng đơn giản
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo đường huyết tự động MediUSA GM3300
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">939.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Thiết bị y tế/Máy đo đường huyết/Alpha/Alpha-1.webp"
-                             alt="Máy đo đường huyết Nipro Premier Alpha giúp đo đường huyết một cách an toàn, nhanh chóng, chính xác
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo đường huyết tự động Nipro Premier Alpha
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">799.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="../image/Thiết bị y tế/Máy đo đường huyết/Accu-Check/AC-1.webp"
-                             alt="Máy đo đường huyết Accu-Chek Guide đo nhanh chóng chỉ với một nút bấm và an toàn
-                        ">
-                        <div class="product-info">
-                            <h3>Máy đo đường huyết tự động Accu-Chek Guide
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">690.000 VND</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Vật tư tiêu hao-->
-                <div id="consumable" class="content-section">
-                    <h2>Vật tư tiêu hao</h2>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Băng y tế/Quick Nurse/Nurse-1.webp"
-                             alt="Bông y tế Quick Nurse 1kg dùng cho vết thương ngoài da, sát trùng, vệ sinh cho bé (Gói)
-                        ">
-                        <div class="product-info">
-                            <h3>Bông y tế Quick Nurse 1kg dùng cho vết thương ngoài da
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">200.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Băng y tế/Bạch Tuyết/Tuyết-1.webp"
-                             alt="Bông cuộn thấm nước y tế Bông Bạch Tuyết dùng trong y tế và chăm sóc cá nhân (25g)
-                        ">
-                        <div class="product-info">
-                            <h3>Bông cuộn thấm nước y tế Bông Bạch Tuyết dùng trong y tế
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">7.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Băng y tế/Bảo Thạch/Thạch-1.webp" alt="Bông gạc đắp vết thương Bảo Thạch (8cm x 12cm)
-                        ">
-                        <div class="product-info">
-                            <h3>Bông gạc đắp vết thương Bảo Thạch (8cm x 12cm)
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">23.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Băng y tế/YB2/YB2-1.webp" alt="Bông viên Niva YB2 dùng trong phòng khám, vệ sinh cá nhân, vệ sinh vết thương, tẩy trang (100 viên)
-                        ">
-                        <div class="product-info">
-                            <h3>Bông viên Niva YB2 dùng trong phàm khám, vệ sinh cá nhân
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">32.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Kim tiêm/BL-28/BL28-1.webp" alt="Kim Lancet lấy máu BL-28 (100 cái)
-                        ">
-                        <div class="product-info">
-                            <h3>Đầu kim tiêm khử trùng Lancet lấy máu BL-28 (100 cái)
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">32.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Kim tiêm/PIC-IO/PIC-IO-1.webp" alt="Đầu kim tiêm tiểu đường PIC Insupen Original dùng để gắn vào đầu bút tiêm insulin (100 Cái)
-                        ">
-                        <div class="product-info">
-                            <h3>Đầu kim tiêm PIC Insupen Original tiêm insulin (100 cái)
-
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">200.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Kim tiêm/B22/B22-1.webp" alt="Kim luồn Braun 22 hỗ trợ truyền dịch, nước vào cơ thể (1 cái)
-                        ">
-                        <div class="product-info">
-                            <h3>Kim luồn Braun 22 hỗ trợ truyền dịch, nước vào cơ thể (1 cái)
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">17.500 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Kim tiêm/VINA/VINA-1.webp" alt="Bơm tiêm sử dụng một lần Vinahankook 1ml/cc được khử trùng bằng khí E.O (100 chiếc)
-                        ">
-                        <div class="product-info">
-                            <h3>Bơm tiêm sử dụng một lần Vinahankook khử trùng (100 cái)
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">75.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="../image/Vật tư tiêu hao/Khẩu trang/SM/SM-1.webp" alt="Khẩu trang 3D trẻ em quai vải Swan Mask ngăn giọt bắn, vi khuẩn, khói bụi (10 cái)
-                        ">
-                        <div class="product-info">
-                            <h3>Khẩu trang 3D trẻ em quai vải Swan Mask (10 cái)
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">20.400 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Vật tư tiêu hao/Khẩu trang/Vĩnh Tiến/Vĩnh Tiến-1.webp"
-                             alt="Khẩu trang y tế cao cấp 3Hmask 4D Vĩnh Tiến màu trắng hỗ trợ ngăn khói, bụi, kháng khuẩn (20 cái)
-                        ">
-                        <div class="product-info">
-                            <h3>Khẩu trang y tế cao cấp 3Hmask 4D Vĩnh Tiến (20 cái)
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">69.000 VND</span>
-                        </div>
-                    </div>
-                </div>
-                <!--Dụng cụ phẫu thuật-->
-                <div id="surgical" class="content-section">
-                    <h2>Dụng cụ phẫu thuật</h2>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ phẫu thuật/Kéo phẫu thuật/Fino/Fino-1.webp"
-                             alt="Kéo Metzenbaum Fino thẳng 20 cm Hilbro 10.0360.20
-                        ">
-                        <div class="product-info">
-                            <h3>Kéo Metzenbaum Fino thẳng 20 cm Hilbro 10.0360.20
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">330.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image"
-                             src="..//image/Dụng cụ phẫu thuật/Kéo phẫu thuật/Ecolenee/Ecolene-1.webp" alt="Chỉ phẫu thuật Ecolene, USP 7/0, 60cm, RH, 10mm, 2 kim R76RH102
-                        ">
-                        <div class="product-info">
-                            <h3>Chỉ phẫu thuật Ecolene, USP 7/0, 60cm, RH, 10mm
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">90.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ phẫu thuật/Kéo phẫu thuật/Gomel/Gomel-1.webp"
-                             alt="Kẹp phẫu tích Gomel Micro 1x2T, 18cm G14.12.0328.18
-                        ">
-                        <div class="product-info">
-                            <h3>Kẹp phẫu tích Gomel Micro 1x2T, 18cm G14.12.0328.18
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">880.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image"
-                             src="..//image/Dụng cụ phẫu thuật/Kéo phẫu thuật/Kẹp bông/Kẹp bông-1.webp" alt="Kẹp bông phẫu thuật Ulrich thẳng 25cm Hilbro 16.0090.25
-                        ">
-                        <div class="product-info">
-                            <h3>Kẹp bông phẫu thuật Ulrich thẳng 25cm Hilbro 16.0090.25
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">600.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ phẫu thuật/Kéo phẫu thuật/Nopa/Nopa-1.webp"
-                             alt="Kẹp khăn phẫu thuật Backhaus 11cm Nopa AA 751/11
-                        ">
-                        <div class="product-info">
-                            <h3>Kẹp khăn phẫu thuật Backhaus 11cm Nopa AA 751/11
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">440.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ phẫu thuật/Kéo phẫu thuật/Kìm/Kìm-1.webp" alt="Kìm chết 18cm (dùng trong phẫu thuật xương) Hilbro 26.0244.18
-                        ">
-                        <div class="product-info">
-                            <h3>Kìm chết 18cm (dùng trong phẫu thuật xương) 26.0244.18
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">2.050.000 VND</span>
-                        </div>
-                    </div>
-                </div>
-                <!--Dụng cụ chăm sóc cá nhân-->
-                <div id="personal-care" class="content-section">
-                    <h2>Dụng cụ chăm sóc cá nhân</h2>
-                    <div class="product-card">
-                        <img class="product-image"
-                             src="..//image/Dụng cụ chăm sóc cá nhân/Máy massage/AS-888/AS888-1.webp" alt="Máy massage mini cầm tay Fascial Gun AS-888
-                        ">
-                        <div class="product-info">
-                            <h3>Máy massage đa năng mini cầm tay Fascial Gun AS-888
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">550.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ chăm sóc cá nhân/Máy massage/5612/5612-1.webp"
-                             alt="Máy massage cầm tay 5 chế độ Wellmed HY-5612
-                        ">
-                        <div class="product-info">
-                            <h3>Máy massage cầm tay 5 chế độ Wellmed HY-5612
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">1.060.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ chăm sóc cá nhân/Máy massage/AI/AI-1.webp"
-                             alt="Súng massage cầm tay cao cấp công nghệ AI KALG 211
-                        ">
-                        <div class="product-info">
-                            <h3>Súng massage cầm tay cao cấp công nghệ AI KALG 211
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">1.190.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ chăm sóc cá nhân/Máy massage/A3/A3-1.webp"
-                             alt="Súng massage gun cầm tay đa năng KASJ A3
-                        ">
-                        <div class="product-info">
-                            <h3>Súng massage gun cầm tay đa năng KASJ A3
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">1.490.000 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image" src="..//image/Dụng cụ chăm sóc cá nhân/Miếng dán/Lion/Lion-1.webp"
-                             alt="Miếng dán Lion Hiepita For Baby giảm cơn sốt khó chịu, làm mát đến 8 giờ (6 gói x 2 miếng)
-                        ">
-                        <div class="product-info">
-                            <h3>Miếng dán Lion Hiepita For Baby giảm cơn sốt ( 12 miếng )
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">100.800 VND</span>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-image"
-                             src="..//image/Dụng cụ chăm sóc cá nhân/Miếng dán/Salonpas/Salonpas-1.webp" alt="Miếng dán giữ nhiệt Salonpas Jikabari Hisamitsu làm ấm dễ chịu nơi đau và tê cứng kéo dài đến 6 giờ (8 miếng)
-                        ">
-                        <div class="product-info">
-                            <h3>Miếng dán giữ nhiệt Salonpas Jikabari Hisamitsu ( 8 miếng )
-                            </h3>
-                        </div>
-                        <div class="product-actions">
-                            <span class="price">140.000 VND</span>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
         </div>
     </div>
 </div>
-<script>
-
-</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
