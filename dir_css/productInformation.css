@@ -94,6 +94,7 @@ body {
 
 .product-detail-price {
     margin-bottom: 20px;
+    font-size: 27px;
 }
 
 .product-detail-price label {
@@ -108,7 +109,7 @@ body {
 }
 
 .product-detail-price .price-line-through {
-    color: #777;
+    color: rgb(22, 184, 248);
     font-weight: 300;
     font-style: italic;
 }
@@ -334,4 +335,7 @@ body {
 .menu{
     display: flex;
     justify-content: space-between;
+}
+.green{
+    color: rgb(22, 243, 22);
 }
