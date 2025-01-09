@@ -94,7 +94,13 @@
                               <div class="d-flex card-header justify-content-between align-items-center">
                                    <div>
                                         <h4 class="card-title">Danh sách khách hàng</h4>
-                                   </div>
+                                        <div class="btn-group mt-2" role="group">
+                                            <button type="button" class="btn btn-primary active" onclick="showCustomerList('all')">Tất cả</button>
+                                            <button type="button" class="btn btn-primary" onclick="showCustomerList('active')">Đang hoạt động</button>
+                                            <button type="button" class="btn btn-primary" onclick="showCustomerList('pending')">Chờ thanh toán</button>
+                                            <button type="button" class="btn btn-primary" onclick="showCustomerList('cancelled')">Đã hủy</button>
+                                        </div>
+                                    </div>
                               </div>
                               <div>
                                    <div class="table-responsive">
@@ -269,6 +275,7 @@
                </div>
             </div>
     </div>
+    <script src="../dir_js/cus_list.js"></script>
     <script src="../dir_js/admin_home.js"></script>
 </body>
 </html>
