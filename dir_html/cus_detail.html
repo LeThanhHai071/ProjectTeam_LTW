@@ -143,8 +143,40 @@
                                                   </div>
                                              </div>
                                              <div class="card-footer border-top gap-1 hstack">
-                                                  <a href="https://techzaa.in/larkon/admin/customer-detail.html#!"><i
-                                                            class="fa-regular fa-pen-to-square"></i></a>
+                                                  <a href="#" onclick="toggleEditForm()">
+                                                       <i class="fa-regular fa-pen-to-square"></i>
+                                                   </a>
+                                                   
+                                                   <!-- Form edit -->
+                                                   <div id="editCustomerForm" style="display: none;" class="edit-customer-form">
+                                                       <div class="card">
+                                                           <div class="card-header">
+                                                               <h5 class="card-title">Chỉnh sửa thông tin</h5>
+                                                           </div>
+                                                           <div class="card-body">
+                                                               <div class="mb-3">
+                                                                   <label class="form-label">Tên khách hàng</label>
+                                                                   <input type="text" class="form-control" id="customerName" value="Michael A. Miner">
+                                                               </div>
+                                                               <div class="mb-3">
+                                                                   <label class="form-label">Email</label>
+                                                                   <input type="email" class="form-control" id="customerEmail" value="michaelaminer@dayrep.com">
+                                                               </div>
+                                                               <div class="mb-3">
+                                                                   <label class="form-label">Điện thoại</label>
+                                                                   <input type="tel" class="form-control" id="customerPhone" value="+28 (57) 760-010-27">
+                                                               </div>
+                                                               <div class="mb-3">
+                                                                   <label class="form-label">Địa chỉ</label>
+                                                                   <input type="text" class="form-control" id="customerAddress" value="TPHCM">
+                                                               </div>
+                                                           </div>
+                                                           <div class="card-footer text-end">
+                                                               <button type="button" class="btn btn-secondary me-2" onclick="toggleEditForm()">Hủy</button>
+                                                               <button type="button" class="btn btn-primary" onclick="saveCustomerInfo()">Lưu thay đổi</button>
+                                                           </div>
+                                                       </div>
+                                                   </div>
                                              </div>
                                         </div>
 
@@ -352,7 +384,8 @@
                          </div>
                     </div>
                </div>   
-          </div>      
+          </div>   
+          <script src="../dir_js/cus_admin.js"></script>   
 </body>
 
 </html>
