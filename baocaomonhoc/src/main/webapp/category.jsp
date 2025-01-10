@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -1121,96 +1123,84 @@
                 </div>
             </div>
             <div class="col-right col-12 col-lg-8 col-md-8">
-                <c:forEach var="cate" items="${category}">
-                    <div class="cate-list">
-                        <div class="cate-list-bar">
-                            <h2 class="bar-title">
+                <div class="cate-list">
+                    <div class="cate-list-bar">
+                        <h2 class="bar-title">
+                            <a class="icon" href="" title="">
+                                <img class="img-cate-icon"
+                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/iconmobile-40x40/May-do-huyet-ap.png"
+                                        width="30"
+                                        alt="Y tế gia đình"
+                                />
+                            </a>
+                            <a href="" title="Máy đo huyết áp">phan loai n</a>
+                        </h2>
+                        <p class="bar-more">
+                            <a
+                                    href=""
+                                    title="Xem thêm"
+                            >Xem thêm</a
+                            >
+                        </p>
+                    </div>
+                    <div class="product-item product-category">
+                        <c:forEach var="p" items="${list}">
+                            <div class="item-slide col-md-3 col-lg-3">
                                 <a
-                                        class="icon"
                                         href=""
-                                        title="${cate.categoryName}"
                                 >
-                                    <img
-                                            class="img-cate-icon"
-                                            src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/iconmobile-40x40/May-do-huyet-ap.png"
-                                            width="30"
-                                            alt="Y tế gia đình"
-                                    /></a>
-                                <a
-                                        href=""
-                                        title="Máy đo huyết áp"
-                                ></a
-                                >
-                            </h2>
-                            <p class="bar-more">
-                                <a
-                                        href=""
-                                        title="Xem thêm"
-                                >Xem thêm</a
-                                >
-                            </p>
-                        </div>
-                        <c:forEach var="p" items="${product}">
-                            <c:if test="${cate.categoryId == p.categoryId}">
-                            <div class="product-item product-category">
-                                <div class="item-slide col-md-3 col-lg-3">
-                                    <a
-                                            href="product?pid=${p.productId}"
-                                    >
-                                        <div class="img">
-                                            <img
-                                                    class="owl-lazy img-fluid lazyloaded"
-                                                    alt="${p.productName}"
-                                                    src="${p.productImage}"
-                                            />
-                                        </div>
-                                        <h3 class="title">
-                                                ${p.productName}
-                                        </h3>
-                                        <p class="price"><span><f:formatNumber value="${p.unitPrice}"/></span></p>
-                                        <div class="full-stars">
-                                            <label
-                                                    aria-label="1 star"
-                                                    class="rating__label"
-                                                    data-rating="5"
-                                            ><i
-                                                    class="rating__icon rating__icon--star fa fa-star"
-                                            ></i></label
-                                            ><label
-                                                aria-label="2 star"
+                                    <div class="img">
+                                        <img
+                                                class="owl-lazy img-fluid lazyloaded"
+                                                alt=""
+                                                src="${p.productImage}"
+                                        />
+                                    </div>
+                                    <h3 class="title">
+                                            ${p.productName}
+                                    </h3>
+                                    <p class="price"><span><f:formatNumber value="${p.unitPrice}" />đ</span></p>
+                                    <div class="full-stars">
+                                        <label
+                                                aria-label="1 star"
                                                 class="rating__label"
                                                 data-rating="5"
                                         ><i
                                                 class="rating__icon rating__icon--star fa fa-star"
                                         ></i></label
                                         ><label
-                                                aria-label="3 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                                aria-label="4 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                                aria-label="5 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i class="rating__icon rating__icon--star fa fa-star"></i
-                                        ></label>
-                                        </div>
-                                    </a>
-                                </div>
+                                            aria-label="2 star"
+                                            class="rating__label"
+                                            data-rating="5"
+                                    ><i
+                                            class="rating__icon rating__icon--star fa fa-star"
+                                    ></i></label
+                                    ><label
+                                            aria-label="3 star"
+                                            class="rating__label"
+                                            data-rating="5"
+                                    ><i
+                                            class="rating__icon rating__icon--star fa fa-star"
+                                    ></i></label
+                                    ><label
+                                            aria-label="4 star"
+                                            class="rating__label"
+                                            data-rating="5"
+                                    ><i
+                                            class="rating__icon rating__icon--star fa fa-star"
+                                    ></i></label
+                                    ><label
+                                            aria-label="5 star"
+                                            class="rating__label"
+                                            data-rating="5"
+                                    ><i class="rating__icon rating__icon--star fa fa-star"></i
+                                    ></label>
+                                    </div>
+                                </a>
                             </div>
-                            </c:if>
                         </c:forEach>
                     </div>
-                </c:forEach>
+                </div>
             </div>
         </div>
     </div>

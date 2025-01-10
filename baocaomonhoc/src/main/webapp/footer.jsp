@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Acer
-  Date: 06-01-2025
-  Time: 10:35
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +11,7 @@
             crossorigin="anonymous"
     />
     <style>
-        .container {
+        .container.footer {
             max-width: 95%;
             height: 100%;
             color: black;
@@ -73,13 +66,13 @@
             padding: 1rem;
         }
 
-        a:hover {
+        .footer a:hover {
             color: #153cd5;
         }
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container footer">
     <div class="footer_nav">
         <div class="icon_web_part">
             <div class="img_item">
@@ -91,7 +84,7 @@
                 />
             </div>
             <div class="d-none d-lg-block ms-2">
-                <a href="../dir_html/home.html" class="footer_home_link">
+                <a href="index.jsp" class="footer_home_link">
                     <h3 class="pe-none text-uppercase mb-0" style="color: #707793">
                         Y Te Hoang Kim
                     </h3>
@@ -124,7 +117,7 @@
                     <a href="#">Chính sách thanh toán</a>
                 </li>
                 <li class="policy_item">
-                    <a href="../dir_html/policy.html">Chính sách giao hàng</a>
+                    <a href="">Chính sách giao hàng</a>
                 </li>
                 <li class="policy_item">
                     <a href="#">Chính sách đổi trả</a>
@@ -147,7 +140,7 @@
                     <a href="#">Hướng dẫn giao hàng</a>
                 </li>
                 <li class="instruct_item">
-                    <a href="../dir_html/guide.html">Điều khoản dịch vụ</a>
+                    <a href="">Điều khoản dịch vụ</a>
                 </li>
             </ul>
         </div>
