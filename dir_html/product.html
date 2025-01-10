@@ -1,300 +1,161 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../dir_css/product.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
-      integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//dir_css/productInformation.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <title>Chi tiết sản phẩm</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="wrap">
-      <div class="row"></div>
-      <!-- Nội dung chính -->
-      <div class="detail-product">
-        <div class="product-slides">
-          <div class="fea-img-blk">
-            <img
-              src="..//image/Thiết bị y tế/7143T1 full pk.webp"
-              alt="Main Product Image"
-            />
-          </div>
+        <div class="row"></div>
+        <!-- Nội dung chính -->
+        <div class="detail-product">
+            <div class="product-slides">
+                <div class="fea-img-blk">
+                    <img src="..//image/Thiết bị y tế/7143T1 full pk.webp" alt="Main Product Image">
+                </div>
+            </div>
+            <div class="product-info">
+                <h1 class="title">Máy đo đường huyết, mỡ máu, gút BeneCheck</h1>
+                <form name="" action="#" method="post" class="add-item-cart form-horizontal">
+                    <div class="product-detail-attrs">
+                        <div class="product-detail-price" style="height:auto;display: block; line-height:30px;color: red;">
+                            <div style="display: block;"><label style="width: 110px;">Giá sản phẩm:</label>
+                                <span class="price-line-through" style="display: inline-block;">1.660.000đ
+                                </span>
+                            </div>
+                        </div>
+                        <div class="product-detail-quantity">
+                            <label>Số lượng:</label>
+                            <div class="group">
+                                <i class="fa fa-minus" id="product_quantity_minus"></i>
+                                <input type="text" value="1" min="1" max="99" id="qty" name="qty">
+                                <i class="fa fa-plus" id="product_quantity_plus"></i>
+                            </div>
+                        </div>
+                        <div class="product-detail-others">
+                            <ul>
+                                <li><strong>Thương hiệu</strong>: General Life Biotechnology</li>
+                                <li><strong>Trạng thái</strong>: <span class="green">
+                                        Còn hàng</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <input type="hidden" value="81" name="id_product">
+                    <input type="hidden" value="490000" name="p_price_sales">
+                    <input type="hidden" value="1660000" name="p_price">
+                    <input type="hidden" value="Máy đo đường huyết, mỡ máu, gút BeneCheck" name="p_name">
+                    <input type="hidden" value="0" name="codeSize" id="codeSize">
+                    <input type="hidden" value="0" name="codeColor" id="codeColor">
+                    <input type="hidden" value="[]" name="otherInfo" id="otherInfo">
+                    <input type="hidden" value="" name="rate_of_discount">
+                    <input type="hidden" value="data/product/201902/2-min1551153488.nv.png" name="feature_image_thumb">
+                    <input type="hidden" value="[]" name="orther_cart">
+                    <input type="hidden" value="888fdf3a4725c2464b315f7c3b189f91" name="token">
+                    <a href="..//dir_html/payment.html" class="btn-order add-to-cart normal-btn outline btn-addtocart", style="text-decoration: none;"><i class="fa fa-shopping-cart"></i> Đặt hàng</a>
+
+                </form>
+            </div>
         </div>
-        <div class="product-info">
-          <h1 class="title">Máy đo đường huyết, mỡ máu, gút BeneCheck</h1>
-          <form
-            name=""
-            action="#"
-            method="post"
-            class="add-item-cart form-horizontal"
-          >
-            <div class="product-detail-attrs">
-              <div
-                class="product-detail-price"
-                style="
-                  height: auto;
-                  display: block;
-                  line-height: 30px;
-                  color: red;
-                "
-              >
-                <div style="display: block">
-                  <label style="width: 110px">Giá sản phẩm:</label>
-                  <span class="price-line-through" style="display: inline-block"
-                    >1.660.000đ
-                  </span>
+        <!-- Menu -->
+        <div class="product-content">
+            <div class="menu">
+                <a href="#product-info">Thông tin sản phẩm</a>
+                <a href="#specifications">Thông số kỹ thuật</a>
+                <a href="#usage">Lưu ý</a>
+                <a href="#note">Đánh giá</a>
+            </div>
+            <!-- Các vùng nội dung -->
+            <div id="product-infor" class="section">
+                <h3>Thông tin sản phẩm</h3>
+                Thiết bị tầm soát sức khỏe của thời đại mới
+                Máy đo huyết áp bắp tay tự động Omron HEM 7143T1 là dòng sản phẩm mới của nhà <a id="OMRON-link"
+                    href="https://www.omron.com/global/en/">OMRON</a>
+                – thương hiệu đến từ
+                Nhật Bản. Áp dụng công nghệ IntelliSense giúp đo huyết áp tự động, nhanh chóng, chính xác và thoải mái.
+                Bên cạnh đó, sản phẩm có tích hợp tiện ích kết nối bluetooth, đồng bộ không dây với điện thoại thông
+                minh để theo dõi kết quả đo thông qua ứng dụng Omron connect, vì vậy việc xem, lưu và quản lý dữ liệu
+            </div>
+            <div id="specifications" class="section">
+                <div class="product-stats">
+                    <h3>Thông số kỹ thuật</h3>
+                    <div class="product-stat-table">
+                        <div class="product-stat-table-row">
+                            <div>Nguồn điện</div>
+                            <div>1 pin 3V CR2032</div>
+                        </div>
+                        <div class="product-stat-table-row">
+                            <div>Bộ nhớ</div>
+                            <div>Máy tự động lưu trữ với bộ nhớ 360 bao gồm cả glucose trong máu, cholesterol và acid
+                                uric toàn phần</div>
+                        </div>
+                        <div class="product-stat-table-row">
+                            <div>Mẫu máu</div>
+                            <div>1-1.5 µl (glucose và acid uric), 10 µl (cholesterol toàn phần)</div>
+                        </div>
+                        <div class="product-stat-table-row">
+                            <div>Bao gồm</div>
+                            <div>- 25 kim - 1 bút thử máu - 3 que code - 10 que đo Gút (Axit Uric ) - 5 que đo Mỡ trong
+                                máu (Cholesterol) - 10 que đo Đường huyết (Glucose)</div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="product-detail-quantity">
-                <label>Số lượng:</label>
-                <div class="group">
-                  <i class="fa fa-minus" id="product_quantity_minus"></i>
-                  <input
-                    type="text"
-                    value="1"
-                    min="1"
-                    max="99"
-                    id="qty"
-                    name="qty"
-                  />
-                  <i class="fa fa-plus" id="product_quantity_plus"></i>
+            </div>
+            <div id="note" class="section">
+                <h3>Lưu ý</h3>
+                Ngừng sử dụng máy đo huyết áp Omron HEM 7143T1 và tham khảo ý kiến bác sĩ nếu bạn cảm thấy kích ứng hoặc
+                khó chịu trên da.
+            </div>
+            <div id="ratingproduct" class="section">
+                <h3>Đánh giá sản phẩm</h3>
+                <div>
+                    <form class="frmRating">
+                        <div class="ui-formRow clearfix">
+                            <input type="text" class="form-control required" name="fullname" id="fullname"
+                                placeholder="Vui lòng nhập họ tên">
+                        </div>
+                        <div class="ui-formRow clearfix">
+                            <input type="email" class="form-control required" name="email_contact" id="email_contact"
+                                placeholder="Vui lòng nhập email liên hệ">
+                        </div>
+                        <div class="ui-formRow clearfix">
+                            <textarea class="form-control required" name="contentRating" rows="5" id="contentRating"
+                                placeholder="Vui lòng nhập nội dung đánh giá"></textarea>
+                        </div>
+                        <div class="product-comment-action">
+                            <div class="list_start">
+                                <input type="radio" name="example" class="rating" value="1" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="2" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="3" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="4" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="5" style="display: none;">
+                                Đánh giá
+                                <div class="stars">
+                                    <i class="fa fa-star" data-value="1"></i>
+                                    <i class="fa fa-star" data-value="2"></i>
+                                    <i class="fa fa-star" data-value="3"></i>
+                                    <i class="fa fa-star" data-value="4"></i>
+                                    <i class="fa fa-star" data-value="5"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="msg_star"></div>
+                                <button id="send" type="submit" class="ui-buttonCta btn-comment">Gửi</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-              </div>
-              <div class="product-detail-others">
-                <ul>
-                  <li>
-                    <strong>Thương hiệu</strong>: General Life Biotechnology
-                  </li>
-                  <li>
-                    <strong>Trạng thái</strong>:
-                    <span class="green"> Còn hàng</span>
-                  </li>
-                </ul>
-              </div>
             </div>
 
-            <input type="hidden" value="81" name="id_product" />
-            <input type="hidden" value="490000" name="p_price_sales" />
-            <input type="hidden" value="1660000" name="p_price" />
-            <input
-              type="hidden"
-              value="Máy đo đường huyết, mỡ máu, gút BeneCheck"
-              name="p_name"
-            />
-            <input type="hidden" value="0" name="codeSize" id="codeSize" />
-            <input type="hidden" value="0" name="codeColor" id="codeColor" />
-            <input type="hidden" value="[]" name="otherInfo" id="otherInfo" />
-            <input type="hidden" value="" name="rate_of_discount" />
-            <input
-              type="hidden"
-              value="data/product/201902/2-min1551153488.nv.png"
-              name="feature_image_thumb"
-            />
-            <input type="hidden" value="[]" name="orther_cart" />
-            <input
-              type="hidden"
-              value="888fdf3a4725c2464b315f7c3b189f91"
-              name="token"
-            />
-            <a
-              href="..//dir_html/payment.html"
-              class="btn-order add-to-cart normal-btn outline btn-addtocart"
-              ,
-              style="text-decoration: none"
-              ><i class="fa fa-shopping-cart"></i> Đặt hàng</a
-            >
-          </form>
         </div>
-      </div>
-      <!-- Menu -->
-      <div class="product-content">
-        <div class="menu">
-          <a href="#product-info">Thông tin sản phẩm</a>
-          <a href="#specifications">Thông số kỹ thuật</a>
-          <a href="#usage">Lưu ý</a>
-          <a href="#note">Đánh giá</a>
-        </div>
-        <!-- Các vùng nội dung -->
-        <div id="product-infor" class="section">
-          <h3>Thông tin sản phẩm</h3>
-          Thiết bị tầm soát sức khỏe của thời đại mới Máy đo huyết áp bắp tay tự
-          động Omron HEM 7143T1 là dòng sản phẩm mới của nhà
-          <a id="OMRON-link" href="https://www.omron.com/global/en/">OMRON</a>
-          – thương hiệu đến từ Nhật Bản. Áp dụng công nghệ IntelliSense giúp đo
-          huyết áp tự động, nhanh chóng, chính xác và thoải mái. Bên cạnh đó,
-          sản phẩm có tích hợp tiện ích kết nối bluetooth, đồng bộ không dây với
-          điện thoại thông minh để theo dõi kết quả đo thông qua ứng dụng Omron
-          connect, vì vậy việc xem, lưu và quản lý dữ liệu
-        </div>
-        <div id="specifications" class="section">
-          <div class="product-stats">
-            <h3>Thông số kỹ thuật</h3>
-            <div class="product-stat-table">
-              <div class="product-stat-table-row">
-                <div>Nguồn điện</div>
-                <div>1 pin 3V CR2032</div>
-              </div>
-              <div class="product-stat-table-row">
-                <div>Bộ nhớ</div>
-                <div>
-                  Máy tự động lưu trữ với bộ nhớ 360 bao gồm cả glucose trong
-                  máu, cholesterol và acid uric toàn phần
-                </div>
-              </div>
-              <div class="product-stat-table-row">
-                <div>Mẫu máu</div>
-                <div>
-                  1-1.5 µl (glucose và acid uric), 10 µl (cholesterol toàn phần)
-                </div>
-              </div>
-              <div class="product-stat-table-row">
-                <div>Bao gồm</div>
-                <div>
-                  - 25 kim - 1 bút thử máu - 3 que code - 10 que đo Gút (Axit
-                  Uric ) - 5 que đo Mỡ trong máu (Cholesterol) - 10 que đo Đường
-                  huyết (Glucose)
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="note" class="section">
-          <h3>Lưu ý</h3>
-          Ngừng sử dụng máy đo huyết áp Omron HEM 7143T1 và tham khảo ý kiến bác
-          sĩ nếu bạn cảm thấy kích ứng hoặc khó chịu trên da.
-        </div>
-        <div id="ratingproduct" class="section">
-          <h3>Đánh giá sản phẩm</h3>
-          <div>
-            <form class="frmRating">
-              <div class="ui-formRow clearfix">
-                <input
-                  type="text"
-                  class="form-control required"
-                  name="fullname"
-                  id="fullname"
-                  placeholder="Vui lòng nhập họ tên"
-                />
-              </div>
-              <div class="ui-formRow clearfix">
-                <input
-                  type="email"
-                  class="form-control required"
-                  name="email_contact"
-                  id="email_contact"
-                  placeholder="Vui lòng nhập email liên hệ"
-                />
-              </div>
-              <div class="ui-formRow clearfix">
-                <textarea
-                  class="form-control required"
-                  name="contentRating"
-                  rows="5"
-                  id="contentRating"
-                  placeholder="Vui lòng nhập nội dung đánh giá"
-                ></textarea>
-              </div>
-              <div class="product-comment-action">
-                <div class="list_start">
-                  <input
-                    type="radio"
-                    name="example"
-                    class="rating"
-                    value="1"
-                    style="display: none"
-                  />
-                  <input
-                    type="radio"
-                    name="example"
-                    class="rating"
-                    value="2"
-                    style="display: none"
-                  />
-                  <input
-                    type="radio"
-                    name="example"
-                    class="rating"
-                    value="3"
-                    style="display: none"
-                  />
-                  <input
-                    type="radio"
-                    name="example"
-                    class="rating"
-                    value="4"
-                    style="display: none"
-                  />
-                  <input
-                    type="radio"
-                    name="example"
-                    class="rating"
-                    value="5"
-                    style="display: none"
-                  />
-                  Đánh giá
-                  <div class="stars">
-                    <i class="fa fa-star" data-value="1"></i>
-                    <i class="fa fa-star" data-value="2"></i>
-                    <i class="fa fa-star" data-value="3"></i>
-                    <i class="fa fa-star" data-value="4"></i>
-                    <i class="fa fa-star" data-value="5"></i>
-                  </div>
-                </div>
-                <div>
-                  <div id="msg_star"></div>
-                  <button
-                    id="send"
-                    type="submit"
-                    class="ui-buttonCta btn-comment"
-                  >
-                    Gửi
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </div>
     <script src="..//dir_js/productInformation.js" defer></script>
-  </body>
+</body>
+
 </html>
