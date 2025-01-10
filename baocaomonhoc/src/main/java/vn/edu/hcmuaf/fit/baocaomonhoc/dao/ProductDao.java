@@ -10,53 +10,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDao {
-//    public List<Products> getAll() {
-//        Statement statement = DBConnect.get();
-//        ResultSet resultSet = null;
-//        ArrayList<Products> products = new ArrayList<>();
-//        try {
-//            resultSet = statement.executeQuery("select * from products");
-//            while (resultSet.next()) {
-//                products.add(new Products(
-//                        resultSet.getInt(1),
-//                        resultSet.getString(2),
-//                        resultSet.getDouble(3),
-//                        resultSet.getString(4),
-//                        resultSet.getString(5),
-//                        resultSet.getInt(6),
-//                        resultSet.getInt(7),
-//                        resultSet.getInt(8),
-//                        resultSet.getInt(9)));
-//            }
-//            return products;
-//        } catch (SQLException e) {
-//            return products;
-//
-//        }
-//    }
+    public List<Products> getAll() {
+        Statement statement = DBConnect.get();
+        ResultSet resultSet = null;
+        ArrayList<Products> products = new ArrayList<>();
+        String sql = "select * from products";
+        try {
+            resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                products.add(new Products(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getDouble(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getInt(6)
+                ));
+            }
+            return products;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
 
-//    public Products getById(int id) {
-//        Statement statement = DBConnect.get();
-//        ResultSet resultSet = null;
-//        ArrayList<Products> products = new ArrayList<>();
-//        try {
-//            resultSet = statement.executeQuery("select * from products where id = " + id);
-//            if (resultSet.next()) {
-//                return new Products(
-//                        resultSet.getInt(1),
-//                        resultSet.getString(2),
-//                        resultSet.getDouble(3),
-//                        resultSet.getString(4),
-//                        resultSet.getString(5),
-//                        resultSet.getInt(6),
-//                        resultSet.getInt(7),
-//                        resultSet.getInt(8),
-//                        resultSet.getInt(9));
-//            }
-//            return null;
-//        } catch (SQLException e) {
-//            return null;
-//        }
-//    }
+    public static void main(String[] args) {
+        ProductDao dao = new ProductDao();
+        List<Products> products = dao.getAll();
+        for (Products p : products) {
+            System.out.println(p);
+        }
+    }
 
 }

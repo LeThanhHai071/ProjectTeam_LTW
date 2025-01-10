@@ -1,26 +1,46 @@
 package vn.edu.hcmuaf.fit.baocaomonhoc.controller;
 
-import jakarta.servlet.*;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Products;
 import vn.edu.hcmuaf.fit.baocaomonhoc.services.ProductServices;
 
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(name = "Servlet", value = "/Servlet")
+@WebServlet("/category")
 public class ProductController extends HttpServlet {
+//    @Override
+//    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        try {
+//            ProductServices service = new ProductServices();
+//            List<Products> products = service.getAll();
+//            for (Products product : products) {
+//                System.out.println(product);
+//            }
+//            request.setAttribute("data", products);
+//            request.getRequestDispatcher("category.jsp").forward(request, response);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("error");
+//        }
+//    }
+
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String pid = request.getParameter("pid");
-//        ProductServices service = new ProductServices();
-//        Products detail = service.getDetail(pid);
-//        request.setAttribute("product", detail);
-//        request.getRequestDispatcher("products.jsp").forward(request, response);
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ProductServices productService = new ProductServices();
+        List<Products> list = productService.getAll();
+        for (Products p : list) {
+            System.out.println(p.getProductImage());
+        }
+        req.setAttribute("list", list);
+        req.getRequestDispatcher("/category.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }
