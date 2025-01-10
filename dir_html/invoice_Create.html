@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://techzaa.in/larkon/admin/invoice-add.html -->
+<html lang="en" data-bs-theme="light" data-topbar-color="light" data-menu-color="dark" data-menu-size="sm-hover"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <!-- Title Meta -->
+     
+     <title>Invoices Create | Larkon - Responsive Admin Dashboard Template</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="A fully responsive premium admin dashboard template">
+     <meta name="author" content="Techzaa">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+     <!-- App favicon -->
+     <link rel="shortcut icon" href="https://techzaa.in/larkon/admin/assets/images/favicon.ico">
+
+     <!-- Vendor css (Require in all Page) -->
+     <link href="../bootcss/vendor.min.css" rel="stylesheet" type="text/css">
+
+     <!-- Icons css (Require in all Page) -->
+     <link href="../bootcss/icons.min.css" rel="stylesheet" type="text/css">
+
+     <!-- App css (Require in all Page) -->
+     <link href="../bootcss/app.min.css" rel="stylesheet" type="text/css">
+
+     <!-- Theme Config js (Require in all Page) -->
+     <script src="./Invoices Create_files/config.js.download"></script>
+
+     <link rel="stylesheet" href="../dir_css/invoice_Detail.css">
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-xxl">
+
+                    <div class="row justify-content-center">
+                         <div class="col-lg-10">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <!-- Logo & title -->
+
+                                        <div class="pb-3 mb-4 position-relative border-bottom">
+                                             <div class="row justify-content-between">
+                                                  <div class="col-lg-5">
+                                                       <div class="">
+                                                            <div class="w-50 auth-logo border border-primary bg-light-subtle p-2 rounded" style="border-style: dashed !important;">
+                                                                 <div class="profile-photo-edit">
+                                                                      <input id="profile-img-file-input" type="file" class="profile-img-file-input">
+                                                                      <label for="profile-img-file-input" class="profile-photo-edit avatar-xs"><img src="./Invoices Create_files/logo-dark.png" class="logo-dark me-1 user-profile-image" alt="user-profile-image" height="24"></label>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="mt-5 pt-2">
+                                                                 <form>
+                                                                      <div class="mb-3">
+                                                                           <label for="sender-name" class="form-label text-dark">Sender Name</label>
+                                                                           <input type="text" id="sender-name" class="form-control" placeholder="First name">
+                                                                      </div>
+                                                                 </form>
+                                                                 <form>
+                                                                      <div class="mb-3">
+                                                                           <label for="sender-address" class="form-label text-dark">Sender Full Address</label>
+                                                                           <textarea class="form-control" id="sender-address" rows="3" placeholder="Enter address"></textarea>
+                                                                      </div>
+                                                                 </form>
+                                                                 <form>
+                                                                      <div class="mb-3">
+                                                                           <label for="sender-number" class="form-label text-dark">Phone number</label>
+                                                                           <input type="number" id="sender-number" class="form-control" placeholder="Number">
+                                                                      </div>
+                                                                 </form>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-lg-5">
+                                                       <form>
+                                                            <div class="mb-3">
+                                                                 <label for="invoice-no" class="form-label text-dark">Invoice Number :</label>
+                                                                 <input type="text" id="invoice-no" class="form-control" placeholder="#INV-****" value="#INV-0758267/90">
+                                                            </div>
+                                                       </form>
+                                                       <form>
+                                                            <div class="mb-3">
+                                                                 <label for="schedule-date" class="form-label text-dark">Issue Date :</label>
+                                                                 <input type="text" id="schedule-date" class="form-control flatpickr-input active" placeholder="dd-mm-yyyy" readonly="readonly">
+                                                            </div>
+                                                       </form>
+                                                       <form>
+                                                            <div class="mb-3">
+                                                                 <label for="due-date" class="form-label text-dark">Due Date :</label>
+                                                                 <input type="text" id="due-date" class="form-control flatpickr-input active" placeholder="dd-mm-yyyy" readonly="readonly">
+                                                            </div>
+                                                       </form>
+                                                       <form>
+                                                            <label for="product-price" class="form-label text-dark">Amount :</label>
+                                                            <div class="input-group mb-3">
+                                                                 <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                                 <input type="number" id="product-price" class="form-control" placeholder="000">
+                                                            </div>
+                                                       </form>
+                                                       <form>
+                                                            <label for="status" class="form-label text-dark">Status :</label>
+                                                            <select class="form-select" id="status" aria-label="Default select example">
+                                                                 <option selected="">Paid</option>
+                                                                 <option value="Cancel">Cancel</option>
+                                                                 <option value="Pending">Pending</option>
+                                                            </select>
+                                                       </form>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+
+                                        <div class="row justify-content-between">
+                                             <div class="col-lg-5">
+                                                  <h4 class="mb-3">Issue From :</h4>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <input type="text" id="buyer-from" class="form-control" placeholder="First name">
+                                                       </div>
+                                                  </form>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <textarea class="form-control" id="buyer-address" rows="3" placeholder="Enter address"></textarea>
+                                                       </div>
+                                                  </form>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <input type="number" id="buyer-number" class="form-control" placeholder="Number">
+                                                       </div>
+                                                  </form>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <input type="email" id="buyer-email" class="form-control" placeholder="Email Address">
+                                                       </div>
+                                                  </form>
+                                             </div>
+                                             <div class="col-lg-5">
+                                                  <h4 class="mb-3">Issue For :</h4>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <input type="text" id="issuer-from" class="form-control" placeholder="First name">
+                                                       </div>
+                                                  </form>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <textarea class="form-control" id="issuer-address" rows="3" placeholder="Enter address"></textarea>
+                                                       </div>
+                                                  </form>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <input type="number" id="issuer-number" class="form-control" placeholder="Number">
+                                                       </div>
+                                                  </form>
+                                                  <form>
+                                                       <div class="mb-2">
+                                                            <input type="email" id="issuer-email" class="form-control" placeholder="Email Address">
+                                                       </div>
+                                                  </form>
+                                             </div>
+                                        </div>
+
+                                        <div class="row mt-4">
+                                             <div class="col-12">
+                                                  <div class="table-responsive table-borderless text-nowrap table-centered">
+                                                       <table class="table mb-0">
+                                                            <thead class="bg-light bg-opacity-50">
+                                                                 <tr>
+                                                                      <th class="border-0 py-2">Product Name</th>
+                                                                      <th class="border-0 py-2">Quantity</th>
+                                                                      <th class="border-0 py-2">Price</th>
+                                                                      <th class="border-0 py-2">Tax</th>
+                                                                      <th class="border-0 py-2">Total</th>
+                                                                 </tr>
+                                                            </thead> <!-- end thead -->
+                                                            <tbody>
+                                                                 <tr>
+                                                                      <td>
+                                                                           <div class="d-flex gap-3">
+                                                                                <div class="auth-logo border-0 rounded" style="border-style: dashed !important;">
+                                                                                     <div class="profile-photo-edit">
+                                                                                          <input id="profile-img-file-input1" type="file" class="profile-img-file-input1">
+                                                                                          <label for="profile-img-file-input1" class="profile-photo-edit avatar bg-light rounded"><img src="https://techzaa.in/larkon/admin/invoice-add.html" alt="" class="me-1 user-profile-image1 img-fluid"></label>
+                                                                                     </div>
+                                                                                </div>
+                                                                                <div class="w-75">
+                                                                                     <form>
+                                                                                          <div class="mb-3">
+                                                                                               <input type="text" id="product-name" class="form-control" placeholder="Product Name">
+                                                                                          </div>
+                                                                                     </form>
+                                                                                     <form>
+                                                                                          <div class="mb-3">
+                                                                                               <input type="text" id="product-name" class="form-control" placeholder="Product Size">
+                                                                                          </div>
+                                                                                     </form>
+                                                                                </div>
+                                                                           </div>
+                                                                      </td>
+                                                                      <td>
+                                                                           <div class="quantity">
+                                                                                <div class="input-step border bg-body-secondary p-1 rounded d-inline-flex overflow-visible">
+                                                                                     <button type="button" class="minus bg-light text-dark border-0 rounded-1 fs-20 lh-1 h-100">-</button>
+                                                                                     <input type="number" class="text-dark text-center border-0 bg-body-secondary rounded h-100" value="1" min="0" max="100" readonly="">
+                                                                                     <button type="button" class="plus bg-light text-dark border-0 rounded-1 fs-20 lh-1 h-100">+</button>
+                                                                                </div>
+                                                                           </div>
+                                                                      </td>
+                                                                      <td>
+                                                                           <form>
+                                                                                <div class="input-group">
+                                                                                     <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                                                     <input type="number" id="product-price-table" class="form-control" placeholder="000">
+                                                                                </div>
+                                                                           </form>
+                                                                      </td>
+                                                                      <td>
+                                                                           <form>
+                                                                                <div class="input-group">
+                                                                                     <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                                                     <input type="number" id="product-tax" class="form-control" placeholder="000">
+                                                                                </div>
+                                                                           </form>
+                                                                      </td>
+                                                                      <td class="">
+                                                                           <form>
+                                                                                <div class="input-group">
+                                                                                     <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                                                     <input type="number" id="total" class="form-control" placeholder="000">
+                                                                                </div>
+                                                                           </form>
+                                                                      </td>
+                                                                 </tr>
+                                                            </tbody> <!-- end tbody -->
+                                                            
+                                                       </table> <!-- end table -->
+                                                  </div> <!-- end table responsive -->
+                                                  <div class="text-end border-top">
+                                                       <div class="pt-3">
+                                                            <a href="https://techzaa.in/larkon/admin/invoice-add.html#!" class="btn btn-primary">Clear Product</a>
+                                                            <a href="https://techzaa.in/larkon/admin/invoice-add.html#!" class="btn btn-outline-primary">Add More</a>
+                                                       </div>
+                                                  </div>
+                                             </div> <!-- end col -->
+                                        </div>
+
+                                        <div class="row justify-content-end">
+                                             <div class="col-lg-4">
+                                                  <label for="sub-total" class="form-label text-dark">Sub Total :</label>
+                                                  <div class="input-group mb-3">
+                                                       <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                       <input type="number" id="sub-total" class="form-control" placeholder="000">
+                                                  </div>
+                                                  <label for="discount-price" class="form-label text-dark">Discount :</label>
+                                                  <div class="input-group mb-3">
+                                                       <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                       <input type="number" id="discount-price" class="form-control" placeholder="000">
+                                                  </div>
+                                                  <label for="discount-price" class="form-label text-dark">Estimated Tax (15.5%) :</label>
+                                                  <div class="input-group mb-3">
+                                                       <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                       <input type="number" id="discount-price" class="form-control" placeholder="000">
+                                                  </div>
+                                                  <div class="border-top">
+                                                       <label for="grand-total" class="form-label text-dark pt-3">Grand Amount :</label>
+                                                       <div class="input-group mb-3">
+                                                            <span class="input-group-text fs-20 bg-light text-dark"><i class="bx bx-dollar"></i></span>
+                                                            <input type="number" id="grand-total" class="form-control" placeholder="000">
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                             <div class="col-lg-12">
+                                                 <div class="alert alert-danger alert-icon p-2" role="alert">
+                                                     <div class="d-flex align-items-center">
+                                                         <div class="avatar-sm rounded bg-danger d-flex justify-content-center align-items-center fs-18 me-2 flex-shrink-0">
+                                                             <i class="bx bx-info-circle text-white"></i>
+                                                         </div>
+                                                         <div class="flex-grow-1">
+                                                            All accounts are to be paid within 7 days from receipt of invoice. To be paid by cheque or credit card or direct payment online. If account is not paid within 7 days the credits details supplied as confirmation of work undertaken will be charged the agreed quoted fee noted above.
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+
+
+               </div>
+               <!-- End Container Fluid -->
+
+               <!-- ========== Footer Start ========== -->
+               <footer class="footer">
+                   <div class="container-fluid">
+                       <div class="row">
+                           <div class="col-12 text-center">
+                               <script>document.write(new Date().getFullYear())</script>2025 © Larkon. Crafted by <iconify-icon icon="iconamoon:heart-duotone" class="fs-18 align-middle text-danger"><template shadowrootmode="open"><style data-style="data-style">:host{display:inline-block;vertical-align:0}span,svg{display:block}</style></template></iconify-icon> <a href="https://1.envato.market/techzaa" class="fw-bold footer-text" target="_blank">Techzaa</a>
+                           </div>
+                       </div>
+                   </div>
+               </footer>
+               <!-- ========== Footer End ========== -->
+
+          </div>
+          <!-- ==================================================== -->
+          <!-- End Page Content -->
+          <!-- ==================================================== -->
+
+     </div>
+     <!-- END Wrapper -->
+
+     <!-- Vendor Javascript (Require in all Page) -->
+     <script src="./Invoices Create_files/vendor.js.download"></script>
+
+     <!-- App Javascript (Require in all Page) -->
+     <script src="./Invoices Create_files/app.js.download"></script>
+
+     <script src="./Invoices Create_files/invoice-add.js.download"></script><div class="flatpickr-calendar animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option><option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option><option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option><option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option><option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option><option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option><option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option><option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option><option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option><option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option><option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option><option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+      <span class="flatpickr-weekday">
+        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+      </span>
+      </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay" aria-label="December 29, 2024" tabindex="-1">29</span><span class="flatpickr-day prevMonthDay" aria-label="December 30, 2024" tabindex="-1">30</span><span class="flatpickr-day prevMonthDay" aria-label="December 31, 2024" tabindex="-1">31</span><span class="flatpickr-day" aria-label="January 1, 2025" tabindex="-1">1</span><span class="flatpickr-day" aria-label="January 2, 2025" tabindex="-1">2</span><span class="flatpickr-day" aria-label="January 3, 2025" tabindex="-1">3</span><span class="flatpickr-day" aria-label="January 4, 2025" tabindex="-1">4</span><span class="flatpickr-day" aria-label="January 5, 2025" tabindex="-1">5</span><span class="flatpickr-day" aria-label="January 6, 2025" tabindex="-1">6</span><span class="flatpickr-day" aria-label="January 7, 2025" tabindex="-1">7</span><span class="flatpickr-day" aria-label="January 8, 2025" tabindex="-1">8</span><span class="flatpickr-day today" aria-label="January 9, 2025" aria-current="date" tabindex="-1">9</span><span class="flatpickr-day" aria-label="January 10, 2025" tabindex="-1">10</span><span class="flatpickr-day" aria-label="January 11, 2025" tabindex="-1">11</span><span class="flatpickr-day" aria-label="January 12, 2025" tabindex="-1">12</span><span class="flatpickr-day" aria-label="January 13, 2025" tabindex="-1">13</span><span class="flatpickr-day" aria-label="January 14, 2025" tabindex="-1">14</span><span class="flatpickr-day" aria-label="January 15, 2025" tabindex="-1">15</span><span class="flatpickr-day" aria-label="January 16, 2025" tabindex="-1">16</span><span class="flatpickr-day" aria-label="January 17, 2025" tabindex="-1">17</span><span class="flatpickr-day" aria-label="January 18, 2025" tabindex="-1">18</span><span class="flatpickr-day" aria-label="January 19, 2025" tabindex="-1">19</span><span class="flatpickr-day" aria-label="January 20, 2025" tabindex="-1">20</span><span class="flatpickr-day" aria-label="January 21, 2025" tabindex="-1">21</span><span class="flatpickr-day" aria-label="January 22, 2025" tabindex="-1">22</span><span class="flatpickr-day" aria-label="January 23, 2025" tabindex="-1">23</span><span class="flatpickr-day" aria-label="January 24, 2025" tabindex="-1">24</span><span class="flatpickr-day" aria-label="January 25, 2025" tabindex="-1">25</span><span class="flatpickr-day" aria-label="January 26, 2025" tabindex="-1">26</span><span class="flatpickr-day" aria-label="January 27, 2025" tabindex="-1">27</span><span class="flatpickr-day" aria-label="January 28, 2025" tabindex="-1">28</span><span class="flatpickr-day" aria-label="January 29, 2025" tabindex="-1">29</span><span class="flatpickr-day" aria-label="January 30, 2025" tabindex="-1">30</span><span class="flatpickr-day" aria-label="January 31, 2025" tabindex="-1">31</span><span class="flatpickr-day nextMonthDay" aria-label="February 1, 2025" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="February 2, 2025" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="February 3, 2025" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="February 4, 2025" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="February 5, 2025" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="February 6, 2025" tabindex="-1">6</span><span class="flatpickr-day nextMonthDay" aria-label="February 7, 2025" tabindex="-1">7</span><span class="flatpickr-day nextMonthDay" aria-label="February 8, 2025" tabindex="-1">8</span></div></div></div></div></div><div class="flatpickr-calendar animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option><option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option><option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option><option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option><option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option><option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option><option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option><option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option><option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option><option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option><option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option><option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+      <span class="flatpickr-weekday">
+        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+      </span>
+      </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay" aria-label="December 29, 2024" tabindex="-1">29</span><span class="flatpickr-day prevMonthDay" aria-label="December 30, 2024" tabindex="-1">30</span><span class="flatpickr-day prevMonthDay" aria-label="December 31, 2024" tabindex="-1">31</span><span class="flatpickr-day" aria-label="January 1, 2025" tabindex="-1">1</span><span class="flatpickr-day" aria-label="January 2, 2025" tabindex="-1">2</span><span class="flatpickr-day" aria-label="January 3, 2025" tabindex="-1">3</span><span class="flatpickr-day" aria-label="January 4, 2025" tabindex="-1">4</span><span class="flatpickr-day" aria-label="January 5, 2025" tabindex="-1">5</span><span class="flatpickr-day" aria-label="January 6, 2025" tabindex="-1">6</span><span class="flatpickr-day" aria-label="January 7, 2025" tabindex="-1">7</span><span class="flatpickr-day" aria-label="January 8, 2025" tabindex="-1">8</span><span class="flatpickr-day today" aria-label="January 9, 2025" aria-current="date" tabindex="-1">9</span><span class="flatpickr-day" aria-label="January 10, 2025" tabindex="-1">10</span><span class="flatpickr-day" aria-label="January 11, 2025" tabindex="-1">11</span><span class="flatpickr-day" aria-label="January 12, 2025" tabindex="-1">12</span><span class="flatpickr-day" aria-label="January 13, 2025" tabindex="-1">13</span><span class="flatpickr-day" aria-label="January 14, 2025" tabindex="-1">14</span><span class="flatpickr-day" aria-label="January 15, 2025" tabindex="-1">15</span><span class="flatpickr-day" aria-label="January 16, 2025" tabindex="-1">16</span><span class="flatpickr-day" aria-label="January 17, 2025" tabindex="-1">17</span><span class="flatpickr-day" aria-label="January 18, 2025" tabindex="-1">18</span><span class="flatpickr-day" aria-label="January 19, 2025" tabindex="-1">19</span><span class="flatpickr-day" aria-label="January 20, 2025" tabindex="-1">20</span><span class="flatpickr-day" aria-label="January 21, 2025" tabindex="-1">21</span><span class="flatpickr-day" aria-label="January 22, 2025" tabindex="-1">22</span><span class="flatpickr-day" aria-label="January 23, 2025" tabindex="-1">23</span><span class="flatpickr-day" aria-label="January 24, 2025" tabindex="-1">24</span><span class="flatpickr-day" aria-label="January 25, 2025" tabindex="-1">25</span><span class="flatpickr-day" aria-label="January 26, 2025" tabindex="-1">26</span><span class="flatpickr-day" aria-label="January 27, 2025" tabindex="-1">27</span><span class="flatpickr-day" aria-label="January 28, 2025" tabindex="-1">28</span><span class="flatpickr-day" aria-label="January 29, 2025" tabindex="-1">29</span><span class="flatpickr-day" aria-label="January 30, 2025" tabindex="-1">30</span><span class="flatpickr-day" aria-label="January 31, 2025" tabindex="-1">31</span><span class="flatpickr-day nextMonthDay" aria-label="February 1, 2025" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="February 2, 2025" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="February 3, 2025" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="February 4, 2025" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="February 5, 2025" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="February 6, 2025" tabindex="-1">6</span><span class="flatpickr-day nextMonthDay" aria-label="February 7, 2025" tabindex="-1">7</span><span class="flatpickr-day nextMonthDay" aria-label="February 8, 2025" tabindex="-1">8</span></div></div></div></div></div>
+
+
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>

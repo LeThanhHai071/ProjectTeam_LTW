@@ -101,4 +101,3 @@ document.querySelector('#user-form').addEventListener('submit', function (event)
     document.getElementById('user-form').style.display = 'none';
     document.getElementById('edit-button').style.display = 'block'; // Hiển thị lại nút "Chỉnh sửa"
 });
-      
