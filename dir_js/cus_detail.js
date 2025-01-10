@@ -123,7 +123,7 @@ function updatePaginationActive(page) {
 }
 
 function changePage(page) {
-    if (page === 'prev') {
+    if (page === 'prev') {          
         currentPage = Math.max(1, currentPage - 1);
     } else if (page === 'next') {
         currentPage = Math.min(3, currentPage + 1);
@@ -140,5 +140,37 @@ document.addEventListener('DOMContentLoaded', () => {
     displayTransactions(1);
     updatePaginationActive(1);
 });
+
+// Xử lý thông tin khách hàng
+function toggleEditForm() {
+    const infoSection = document.querySelector('.mt-4.pt-3');
+    const name = infoSection.querySelector('h4');
+    const email = infoSection.querySelector('p:nth-child(1)');
+    const phone = infoSection.querySelector('p:nth-child(2)');
+
+    // Toggle contenteditable
+    if (name.contentEditable === 'true') {
+        // Save mode
+        name.contentEditable = 'false';
+        email.contentEditable = 'false';
+        phone.contentEditable = 'false';
+        
+        // Remove edit styling
+        infoSection.classList.remove('editing');
+        
+        // Update badge and username if name changed
+        const username = document.querySelector('.link-primary');
+        username.textContent = '@' + name.textContent.toLowerCase().replace(/\s+/g, '_');
+        
+    } else {
+        // Edit mode
+        name.contentEditable = 'true';
+        email.contentEditable = 'true';
+        phone.contentEditable = 'true';
+        
+        // Add edit styling
+        infoSection.classList.add('editing');
+    }
+}
 
 

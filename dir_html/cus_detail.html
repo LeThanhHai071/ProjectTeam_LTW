@@ -25,94 +25,13 @@
      
      <link rel="stylesheet" href="detail.css">
      <script src="./bootjs/config.js"></script>
-     <style type="text/css" data-href="lib\style.css">
-          .star-rating {
-               width: 0;
-               position: relative;
-               display: inline-block;
-               background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDguOSIgaGVpZ2h0PSIxMDMuNiIgdmlld0JveD0iMCAwIDEwOC45IDEwMy42Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2UzZTZlNjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPnN0YXJfMDwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMTA4LjkgMzkuNiA3MS4zIDM0LjEgNTQuNCAwIDM3LjYgMzQuMSAwIDM5LjYgMjcuMiA2Ni4xIDIwLjggMTAzLjYgNTQuNCA4NS45IDg4LjEgMTAzLjYgODEuNyA2Ni4xIDEwOC45IDM5LjYiLz48L2c+PC9nPjwvc3ZnPg0K);
-               background-position: 0 0;
-               background-repeat: repeat-x;
-               cursor: pointer;
-          }
-
-          .star-rating .star-value {
-               position: absolute;
-               height: 100%;
-               width: 100%;
-               background: url('data:image/svg+xml;base64,PHN2Zw0KCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwOC45IiBoZWlnaHQ9IjEwMy42IiB2aWV3Qm94PSIwIDAgMTA4LjkgMTAzLjYiPg0KCTxkZWZzPg0KCQk8c3R5bGU+LmNscy0xe2ZpbGw6I2YxYzk0Nzt9PC9zdHlsZT4NCgk8L2RlZnM+DQoJPHRpdGxlPnN0YXIxPC90aXRsZT4NCgk8ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj4NCgkJPGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj4NCgkJCTxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI1NC40IDAgNzEuMyAzNC4xIDEwOC45IDM5LjYgODEuNyA2Ni4xIDg4LjEgMTAzLjYgNTQuNCA4NS45IDIwLjggMTAzLjYgMjcuMiA2Ni4xIDAgMzkuNiAzNy42IDM0LjEgNTQuNCAwIi8+DQoJCTwvZz4NCgk8L2c+DQo8L3N2Zz4NCg==');
-               background-repeat: repeat-x;
-          }
-
-          .star-rating.disabled {
-               cursor: default;
-          }
-
-          .star-rating.is-busy {
-               cursor: wait;
-          }
-
-          .star-rating .star-value.rtl {
-               -moz-transform: scaleX(-1);
-               -o-transform: scaleX(-1);
-               -webkit-transform: scaleX(-1);
-               transform: scaleX(-1);
-               filter: FlipH;
-               -ms-filter: "FlipH";
-               right: 0;
-               left: auto;
-          }
-     </style>
+     <link rel="stylesheet" href="../dir_css/cus_Detail.css">
 </head>
 
 <body style="">
 
      <!-- START Wrapper -->
      <div class="wrapper">
-          <header class="topbar">
-               <div class="container-fluid">
-                    <div class="navbar-header">
-                         <div class="d-flex align-items-center">
-                              <div class="topbar-item">
-                                   <h4 class="fw-bold topbar-button pe-none text-uppercase mb-0">Chào Mừng!</h4>
-                              </div>
-                         </div>
-
-                         <div class="d-flex align-items-center gap-1">
-
-                              <div class="dropdown topbar-item">
-                                   <a type="button" class="topbar-button" id="page-header-user-dropdown"
-                                        onclick="toggleDropdown()">
-                                        <img class="rounded-circle" width="32" src="./home.png"
-                                             alt="avatar-3">
-                                   </a>
-                                   <!-- dropdown-menu-end -->
-                                   <div id="dropdown-menu" class="dropdown-menu dropdown-menu-end hidden">
-                                        <h6 class="dropdown-header">Xin chào Gaston!</h6>
-                                        <a class="dropdown-item" href="pages-profile.html">
-                                             <i class="fa-solid fa-circle-user"></i><span class="align-middle">Thông
-                                                  tin</span>
-                                        </a>
-
-                                        <a class="dropdown-item text-danger" href="auth-signin.html">
-                                             <i class="fa-solid fa-right-from-bracket"></i><span
-                                                  class="align-middle">Đăng xuất</span>
-                                        </a>
-                                   </div>
-                              </div>
-
-                              <form class="app-search d-none d-md-block ms-2">
-                                   <div class="position-relative">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                        <input type="search" class="form-control" placeholder="Tìm kiếm..."
-                                             autocomplete="off" value="">
-                                   </div>
-                              </form>
-                         </div>
-                    </div>
-
-               </div>
-          </header>
                     <!-- Start Container Fluid -->
                     <div class="page-content">
                          <div class="container-xxl">
@@ -127,12 +46,9 @@
                                                             class="avatar-lg border border-light border-3 rounded-circle position-absolute top-100 start-0 translate-middle ms-5">
                                                   </div>
                                                   <div class="mt-4 pt-3">
-                                                       <h4 class="mb-1"> Michael A. Miner<i
-                                                                 class="bx bxs-badge-check text-success align-middle"></i>
+                                                       <h4 class="mb-1"> Michael A. Miner
                                                        </h4>
                                                        <div class="mt-2">
-                                                            <a href="https://techzaa.in/larkon/admin/customer-detail.html#!"
-                                                                 class="link-primary fs-15">@michael_cus_2025</a>
                                                             <p class="fs-15 mb-1 mt-1"><span
                                                                       class="text-dark fw-semibold">Email : </span>
                                                                  michaelaminer@dayrep.com</p>
@@ -142,43 +58,44 @@
                                                                  (57) 760-010-27</p>
                                                        </div>
                                                   </div>
+                                                  <div class="card-footer border-top gap-1 hstack">
+                                                       <a href="#" onclick="toggleEditForm()">
+                                                            <i class="fa-regular fa-pen-to-square"></i>
+                                                       </a>
+
+                                                        <!-- Form edit -->
+                                                        <div id="editCustomerForm" style="display: none;" class="edit-customer-form">
+                                                            <div class="card">
+                                                                <div class="card-header">
+                                                                    <h5 class="card-title">Chỉnh sửa thông tin</h5>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Tên khách hàng</label>
+                                                                        <input type="text" class="form-control" id="customerName" value="Michael A. Miner">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Email</label>
+                                                                        <input type="email" class="form-control" id="customerEmail" value="michaelaminer@dayrep.com">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Điện thoại</label>
+                                                                        <input type="tel" class="form-control" id="customerPhone" value="+28 (57) 760-010-27">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Địa chỉ</label>
+                                                                        <input type="text" class="form-control" id="customerAddress" value="TPHCM">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer text-end">
+                                                                    <button type="button" class="btn btn-secondary me-2" onclick="toggleEditForm()">Hủy</button>
+                                                                    <button type="button" class="btn btn-primary" onclick="saveCustomerInfo()">Lưu thay đổi</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                  </div>
                                              </div>
-                                             <div class="card-footer border-top gap-1 hstack">
-                                                  <a href="#" onclick="toggleEditForm()">
-                                                       <i class="fa-regular fa-pen-to-square"></i>
-                                                   </a>
-                                                   
-                                                   <!-- Form edit -->
-                                                   <div id="editCustomerForm" style="display: none;" class="edit-customer-form">
-                                                       <div class="card">
-                                                           <div class="card-header">
-                                                               <h5 class="card-title">Chỉnh sửa thông tin</h5>
-                                                           </div>
-                                                           <div class="card-body">
-                                                               <div class="mb-3">
-                                                                   <label class="form-label">Tên khách hàng</label>
-                                                                   <input type="text" class="form-control" id="customerName" value="Michael A. Miner">
-                                                               </div>
-                                                               <div class="mb-3">
-                                                                   <label class="form-label">Email</label>
-                                                                   <input type="email" class="form-control" id="customerEmail" value="michaelaminer@dayrep.com">
-                                                               </div>
-                                                               <div class="mb-3">
-                                                                   <label class="form-label">Điện thoại</label>
-                                                                   <input type="tel" class="form-control" id="customerPhone" value="+28 (57) 760-010-27">
-                                                               </div>
-                                                               <div class="mb-3">
-                                                                   <label class="form-label">Địa chỉ</label>
-                                                                   <input type="text" class="form-control" id="customerAddress" value="TPHCM">
-                                                               </div>
-                                                           </div>
-                                                           <div class="card-footer text-end">
-                                                               <button type="button" class="btn btn-secondary me-2" onclick="toggleEditForm()">Hủy</button>
-                                                               <button type="button" class="btn btn-primary" onclick="saveCustomerInfo()">Lưu thay đổi</button>
-                                                           </div>
-                                                       </div>
-                                                   </div>
-                                             </div>
+                                             
                                         </div>
 
                                         <div class="card">
@@ -373,34 +290,6 @@
 
                                    </div>
                               </div>
-                              <!-- ========== Footer Start ========== -->
-                              <footer class="footer">
-                                   <div class="container-fluid">
-                                        <div class="row">
-                                             <div class="col-12 text-center">
-                                                  <script>document.write(new Date().getFullYear())</script>2025 ©
-                                                  Larkon. Crafted by <iconify-icon icon="iconamoon:heart-duotone"
-                                                       class="fs-18 align-middle text-danger"><template
-                                                            shadowrootmode="open">
-                                                            <style data-style="data-style">
-                                                                 :host {
-                                                                      display: inline-block;
-                                                                      vertical-align: 0
-                                                                 }
-
-                                                                 span,
-                                                                 svg {
-                                                                      display: block
-                                                                 }
-                                                            </style>
-                                                       </template></iconify-icon> <a
-                                                       href="https://1.envato.market/techzaa"
-                                                       class="fw-bold footer-text" target="_blank">Techzaa</a>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </footer>
-                              <!-- ========== Footer End ========== -->
 
                          </div>
                     </div>
