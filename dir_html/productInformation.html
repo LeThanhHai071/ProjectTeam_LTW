@@ -5,179 +5,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..//dir_css/productInformation.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <title>Chi tiết sản phẩm</title>
 </head>
 
-<body id="bodyInforProduct">
-<div id="header"></div>
-<div class="wrap">
-    <button id="scrollToTopBtn" class="scroll-to-top-btn">
-        ↑
-    </button>
-    <!-- Menu -->
-    <div class="menu">
-        <a href="#product-info">Thông tin sản phẩm</a>
-        <a href="#specifications">Thông số kỹ thuật</a>
-        <a href="#usage">Hướng dẫn sử dụng</a>
-        <a href="#note">Lưu ý</a>
-    </div>
-
-    <!-- Nội dung chính -->
-    <div class="container-productInfor">
-        <!--Left-->
-        <div class="image-imageSlider">
-            <!-- Hình ảnh lớn hiển thị sản phẩm -->
-            <div class="main-image">
-                <img src="..//image/Thiết bị y tế/Máy đo huyết áp/7143T1 full pk.webp" alt="Hình chính">
-            </div>
-
-            <!-- Slider hình ảnh nhỏ -->
-            <div class="slider-margin">
-                <button id="preBtn" class="button">❮</button> <!-- Nút trước -->
-                <div class="slider">
-                    <img src="..//image/Thiết bị y tế/Máy đo huyết áp/7143T1 full pk.webp" alt="Ảnh nhỏ 1">
-                    <img src="..//image/Thiết bị y tế/Máy đo huyết áp/7143T1 full.webp" alt="Ảnh nhỏ 2">
-                    <img src="..//image/Thiết bị y tế/Máy đo huyết áp/7143T1 use.webp" alt="Ảnh nhỏ 3">
-                    <img src="..//image/Thiết bị y tế/Máy đo huyết áp/7143T1 infor.webp" alt="Ảnh nhỏ 4">
-                </div>
-                <button id="nextBtn" class="button">❯</button> <!-- Nút sau -->
-            </div>
-        </div>
-
-        <!--Right-->
-        <div class="show-infor-product">
-            <h1>Máy đo huyết áp Omron 7123T1</h1>
-            <p class="fs-large"><strong class="colorA">Xuất xứ:</strong> Nhật Bản</p>
-            <p class="fs-large"><strong class="colorA">Thương hiệu:</strong> Omron</p>
-            <p class="fs-large"><strong class="colorA">Mô tả:</strong> Đây là sản phẩm chất lượng cao, phù hợp cho
-                các nhu cầu sử
-                dụng cá nhân và
-                chuyên nghiệp.</p>
-            <p class="fs-large green-color"><strong class="colorA">Giá:</strong> 1.240.000 VNĐ</p>
-            <div class="purchase-options">
-                <label for="quantity">Số lượng:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1">
-                <div class="buttons-in-product-infor">
-                    <a href="..//dir_html/payment.html" id="payment-link">
-                        <button class="buy-button-in-product">Mua
-                            ngay
-                        </button>
-                    </a>
-                    <a href="..//dir_html/cart.html" id="card-link">
-                        <button class="add-to-cart-button-in-product">Thêm vào Giỏ
-                            hàng
-                        </button>
-                    </a>
+<body>
+    <div class="wrap">
+        <div class="row"></div>
+        <!-- Nội dung chính -->
+        <div class="detail-product">
+            <div class="product-slides">
+                <div class="fea-img-blk">
+                    <img src="..//image/Thiết bị y tế/7143T1 full pk.webp" alt="Main Product Image">
                 </div>
             </div>
+            <div class="product-info">
+                <h1 class="title">Máy đo đường huyết, mỡ máu, gút BeneCheck</h1>
+                <form name="" action="#" method="post" class="add-item-cart form-horizontal">
+                    <div class="product-detail-attrs">
+                        <div class="product-detail-price" style="height:auto;display: block; line-height:30px;color: red;">
+                            <div style="display: block;"><label style="width: 110px;">Giá sản phẩm:</label>
+                                <span class="price-line-through" style="display: inline-block;">1.660.000đ
+                                </span>
+                            </div>
+                        </div>
+                        <div class="product-detail-quantity">
+                            <label>Số lượng:</label>
+                            <div class="group">
+                                <i class="fa fa-minus" id="product_quantity_minus"></i>
+                                <input type="text" value="1" min="1" max="99" id="qty" name="qty">
+                                <i class="fa fa-plus" id="product_quantity_plus"></i>
+                            </div>
+                        </div>
+                        <div class="product-detail-others">
+                            <ul>
+                                <li><strong>Thương hiệu</strong>: General Life Biotechnology</li>
+                                <li><strong>Trạng thái</strong>: <span class="green">
+                                        Còn hàng</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <input type="hidden" value="81" name="id_product">
+                    <input type="hidden" value="490000" name="p_price_sales">
+                    <input type="hidden" value="1660000" name="p_price">
+                    <input type="hidden" value="Máy đo đường huyết, mỡ máu, gút BeneCheck" name="p_name">
+                    <input type="hidden" value="0" name="codeSize" id="codeSize">
+                    <input type="hidden" value="0" name="codeColor" id="codeColor">
+                    <input type="hidden" value="[]" name="otherInfo" id="otherInfo">
+                    <input type="hidden" value="" name="rate_of_discount">
+                    <input type="hidden" value="data/product/201902/2-min1551153488.nv.png" name="feature_image_thumb">
+                    <input type="hidden" value="[]" name="orther_cart">
+                    <input type="hidden" value="888fdf3a4725c2464b315f7c3b189f91" name="token">
+                    <a href="..//dir_html/payment.html" class="btn-order add-to-cart normal-btn outline btn-addtocart", style="text-decoration: none;"><i class="fa fa-shopping-cart"></i> Đặt hàng</a>
+
+                </form>
+            </div>
+        </div>
+        <!-- Menu -->
+        <div class="product-content">
+            <div class="menu">
+                <a href="#product-info">Thông tin sản phẩm</a>
+                <a href="#specifications">Thông số kỹ thuật</a>
+                <a href="#usage">Lưu ý</a>
+                <a href="#note">Đánh giá</a>
+            </div>
+            <!-- Các vùng nội dung -->
+            <div id="product-infor" class="section">
+                <h3>Thông tin sản phẩm</h3>
+                Thiết bị tầm soát sức khỏe của thời đại mới
+                Máy đo huyết áp bắp tay tự động Omron HEM 7143T1 là dòng sản phẩm mới của nhà <a id="OMRON-link"
+                    href="https://www.omron.com/global/en/">OMRON</a>
+                – thương hiệu đến từ
+                Nhật Bản. Áp dụng công nghệ IntelliSense giúp đo huyết áp tự động, nhanh chóng, chính xác và thoải mái.
+                Bên cạnh đó, sản phẩm có tích hợp tiện ích kết nối bluetooth, đồng bộ không dây với điện thoại thông
+                minh để theo dõi kết quả đo thông qua ứng dụng Omron connect, vì vậy việc xem, lưu và quản lý dữ liệu
+            </div>
+            <div id="specifications" class="section">
+                <div class="product-stats">
+                    <h3>Thông số kỹ thuật</h3>
+                    <div class="product-stat-table">
+                        <div class="product-stat-table-row">
+                            <div>Nguồn điện</div>
+                            <div>1 pin 3V CR2032</div>
+                        </div>
+                        <div class="product-stat-table-row">
+                            <div>Bộ nhớ</div>
+                            <div>Máy tự động lưu trữ với bộ nhớ 360 bao gồm cả glucose trong máu, cholesterol và acid
+                                uric toàn phần</div>
+                        </div>
+                        <div class="product-stat-table-row">
+                            <div>Mẫu máu</div>
+                            <div>1-1.5 µl (glucose và acid uric), 10 µl (cholesterol toàn phần)</div>
+                        </div>
+                        <div class="product-stat-table-row">
+                            <div>Bao gồm</div>
+                            <div>- 25 kim - 1 bút thử máu - 3 que code - 10 que đo Gút (Axit Uric ) - 5 que đo Mỡ trong
+                                máu (Cholesterol) - 10 que đo Đường huyết (Glucose)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="note" class="section">
+                <h3>Lưu ý</h3>
+                Ngừng sử dụng máy đo huyết áp Omron HEM 7143T1 và tham khảo ý kiến bác sĩ nếu bạn cảm thấy kích ứng hoặc
+                khó chịu trên da.
+            </div>
+            <div id="ratingproduct" class="section">
+                <h3>Đánh giá sản phẩm</h3>
+                <div>
+                    <form class="frmRating">
+                        <div class="ui-formRow clearfix">
+                            <input type="text" class="form-control required" name="fullname" id="fullname"
+                                placeholder="Vui lòng nhập họ tên">
+                        </div>
+                        <div class="ui-formRow clearfix">
+                            <input type="email" class="form-control required" name="email_contact" id="email_contact"
+                                placeholder="Vui lòng nhập email liên hệ">
+                        </div>
+                        <div class="ui-formRow clearfix">
+                            <textarea class="form-control required" name="contentRating" rows="5" id="contentRating"
+                                placeholder="Vui lòng nhập nội dung đánh giá"></textarea>
+                        </div>
+                        <div class="product-comment-action">
+                            <div class="list_start">
+                                <input type="radio" name="example" class="rating" value="1" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="2" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="3" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="4" style="display: none;">
+                                <input type="radio" name="example" class="rating" value="5" style="display: none;">
+                                Đánh giá
+                                <div class="stars">
+                                    <i class="fa fa-star" data-value="1"></i>
+                                    <i class="fa fa-star" data-value="2"></i>
+                                    <i class="fa fa-star" data-value="3"></i>
+                                    <i class="fa fa-star" data-value="4"></i>
+                                    <i class="fa fa-star" data-value="5"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="msg_star"></div>
+                                <button id="send" type="submit" class="ui-buttonCta btn-comment">Gửi</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <!-- Các vùng nội dung -->
-    <div id="product-info" class="section">
-        <h2>Thông tin sản phẩm</h2>
-        <h3>Thiết bị tầm soát sức khỏe của thời đại mới</h3>
-        <h4>Máy đo huyết áp bắp tay tự động Omron HEM 7143T1 là dòng sản phẩm mới của nhà <a id="OMRON-link"
-                                                                                             href="https://www.omron.com/global/en/">OMRON</a>
-            – thương hiệu đến từ
-            Nhật Bản. Áp dụng công nghệ IntelliSense giúp đo huyết áp tự động, nhanh chóng, chính xác và thoải mái.
-            Bên cạnh đó, sản phẩm có tích hợp tiện ích kết nối bluetooth, đồng bộ không dây với điện thoại thông
-            minh để theo dõi kết quả đo thông qua ứng dụng Omron connect, vì vậy việc xem, lưu và quản lý dữ liệu
-            huyết áp trở nên dễ dàng và tiện lợi hơn rất nhiều.</h4>
-
-        <h4>Máy đo huyết áp Omron HEM 7143T1 được thiết kế để đáp ứng nhu cầu kiểm soát sức khỏe tại nhà của các hộ
-            gia đình. Với kiểu dáng nhỏ gọn và dễ bảo quản, thiết bị có thể được mang theo bên cạnh mọi lúc mọi nơi
-            nhằm phục vụ cho việc theo dõi huyết áp người bệnh. Chất liệu nhựa cao cấp, bền bỉ cũng là một điểm cộng
-            trong thiết kế, có thể tránh được hư hỏng khi sử dụng lâu dài.</h4>
-    </div>
-    <div id="specifications" class="section">
-        <h2>Thông số kỹ thuật</h2>
-        <h3>Các thông số kỹ thuật của máy đo huyết áp bắp tay tự động Omron HEM 7143T1</h3>
-        <h4>Kích thước máy: 103 x 80 x 129 mm</h4>
-        <h4>Trọng lượng: 600 g (bao gồm pin)</h4>
-        <h4>Loại pin: 4 pin AA</h4>
-        <h4>Màn hình hiển thị: LCD lớn, dễ quan sát</h4>
-        <h4>Dải đo huyết áp: 0 – 299 mmHg</h4>
-        <h4>Dải đo nhịp tim: 40 – 180 nhịp/phút</h4>
-        <h4>Độ chính xác:</h4>
-        <h5>Huyết áp: ± 3 mmHg</h5>
-        <h5>Nhịp tim: ± 5%</h5>
-        <h4>Công nghệ: IntelliSense, giúp đo nhanh, chính xác, tự động điều chỉnh áp suất vòng bít.</h4>
-        <h4>Bộ nhớ: Lưu trữ được 30 kết quả đo.</h4>
-    </div>
-    <div id="usage" class="section">
-        <h2>Hướng dẫn sử dụng</h2>
-        <h3>Cách dùng Máy đo huyết áp bắp tay tự động HEM 7143T1</h3>
-
-        <h4>Bước 1: Nghỉ ngơi, thư giãn, thả lỏng để huyết áp ở trạng thái bình ổn. Không sử dụng các chất kích
-            thích, chất có cồn, trà, cà phê, thức ăn nhiều đường trước khi đo.</h4>
-
-        <h4>Bước 2: Kéo tay áo lên trên bắp tay, luôn đo trên cùng một cánh tay (bình thường là bên trái, gần với
-            tim).</h4>
-
-        <h4>Bước 3: Quấn vòng bít quanh bắp tay trái. Đảm bảo vòng bít nằm cách khuỷu tay khoảng 2 đến 3cm. Cạnh của
-            vòng bít (Đầu động mạch) phải nằm trên động mạch chạy xuống mặt trong của cánh tay. Để giữ chặt vòng
-            bít, hãy quấn nó quanh cánh tay của bạn, ấn chặt móc và vòng bít lại với nhau. Nên có ít không gian
-            trống giữa cánh tay của bạn và vòng bít. Bạn sẽ có thể đặt 2 ngón tay vào giữa cánh tay và vòng bít.
-            Vòng bít không vừa khít dẫn đến giá trị đo sai. Đo chu vi cánh tay của bạn nếu bạn không chắc chắn về độ
-            vừa vặn. Đặt cánh tay của bạn trên bàn (lòng bàn tay hướng lên trên) để vòng bít ở cùng độ cao với tim
-            của bạn. Đảm bảo ống không bị gấp khúc.</h4>
-
-        <h4>Bước 4: Ngồi thoải mái trên ghế với bàn chân đặt phẳng trên sàn.</h4>
-
-        <h4>Bước 5: Ngồi yên và không nói chuyện hoặc di chuyển trong quá trình đo. Sau khi vòng bít đã được định vị
-            thích hợp trên cánh tay và được kết nối với máy đo huyết áp, quá trình đo có thể bắt đầu:</h4>
-
-        <h4> Nhấn nút START/STOP. Máy bơm bắt đầu bơm căng vòng bít. Trong màn hình, áp suất vòng bít tăng liên tục
-            được hiển thị.
-            Sau khi tự động đạt đến áp suất riêng, máy bơm dừng lại và áp suất từ từ giảm xuống. Áp suất vòng bít
-            được hiển thị trong quá trình đo.
-            Khi thiết bị đã phát hiện nhịp đập của bạn, biểu tượng trái tim trên màn hình sẽ bắt đầu nhấp nháy.
-            Khi kết thúc phép đo, các giá trị huyết áp tâm thu và huyết áp tâm trương đo được, cũng như mạch sẽ được
-            hiển thị.
-            Kết quả đo được hiển thị cho đến khi bạn tắt thiết bị. Thiết bị sẽ tự động tắt trong 30 giây.</h4>
-
-        <h4>Đối tượng sử dụng:
-            Máy đo huyết áp Omron HEM 7143T1 dùng cho người có nhu cầu tầm soát huyết áp và nhịp tim chủ động tại
-            nhà.
-        </h4>
-    </div>
-    <div id="note" class="section">
-        <h2>Lưu ý</h2>
-        <h3>Lưu ý</h3>
-        <h4>Ngừng sử dụng máy đo huyết áp Omron HEM 7143T1 và tham khảo ý kiến bác sĩ nếu bạn cảm thấy kích ứng hoặc
-            khó chịu trên da.
-        </h4>
-        <h4>Tham khảo ý kiến bác sĩ trước khi sử dụng máy đo huyết áp này trên cánh tay đang điều trị nội mạch, có
-            đường nội mạch hay cầu nối động tĩnh mạch (AV) bởi sự cản trở tạm thời dòng lưu thông của máu có thể dẫn
-            đến thương tổn.</h4>
-        <h4>Tham khảo ý kiến bác sĩ trước khi sử dụng máy đo huyết áp này nếu bạn có vấn đề nghiêm trọng về lưu
-            thông máu hoặc rối loạn máu vì vòng bít được bơm khí có thể gây ra vết bầm tím.
-        </h4>
-        <h4>Trong quá trình đo, đảm bảo rằng không có thiết bị di động hoặc bất kỳ thiết bị điện nào khác phát ra
-            trường điện từ trong khoảng cách 30cm từ máy đo huyết áp này. Điều này có thể gây ra hoạt động không
-            bình thường của máy đo huyết áp và/hoặc khiến kết quả đo không còn chính xác.</h4>
-        <h4>Tránh tắm, uống rượu hoặc caffeine, hút thuốc, tập thể dục và ăn ít nhất 30 phút trước khi tiến hành đo.
-        </h4>
-        <h4>Nghỉ ngơi ít nhất 5 phút trước khi tiến hành đo.</h4>
-        <h4>Cởi bỏ quần áo bó sát hoặc dày khỏi cánh tay trong khi tiến hành đo.</h4>
-
-        <h4>Không cử động và không được nói chuyện trong khi tiến hành đo.</h4>
-        <h4>Chỉ sử dụng vòng bít bắp tay cho những người có chu vi cánh tay nằm trong phạm vi chỉ định của vòng bít.
-        </h4>
-        <h4> Đảm bảo rằng máy đo huyết áp này đã thích nghi với nhiệt độ phòng trước khi tiến hành đo. Tiến hành đo
-            sau khi xảy ra tình trạng thay đổi nhiệt độ quá lớn có thể khiến kết quả đo không còn chính xác. Omron
-            khuyến nghị nên đợi khoảng 2 giờ để máy đo huyết áp tăng nhiệt hoặc hạ nhiệt khi được sử dụng trong một
-            môi trường nằm trong khoảng nhiệt độ được chỉ định theo điều kiện vận hành sau khi được bảo quản ở nhiệt
-            độ bảo quản tối đa hoặc tối thiểu.</h4>
-        <h4>Không được sử dụng máy đo huyết áp này sau khi kết thúc thời hạn sử dụng.</h4>
-        <h4>Để máy đo huyết áp ở nơi khô ráo, thoáng mát.</h4>
-
-    </div>
-</div>
-<div id="footer"></div>
-<script src="..//dir_js/productInformation.js" defer></script>
-<script src="..//dir_js/merger_header_footer.js"></script>
+    <script src="..//dir_js/productInformation.js" defer></script>
 </body>
 
 </html>

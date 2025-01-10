@@ -1,0 +1,37 @@
+/* CSS chỉnh sửa */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.avatar-md {
+    width: 20px !important;
+    height: 20px !important;
+}
+.logo-box{
+    width: 200px;
+    height: auto;
+}
+.scrollbar{
+    width: 300px;
+    height: auto;
+}
+.container-fluid{
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.main-nav {
+    height: 100%;
+    float: left;
+    background-color: #262d34;
+    border-right: 2px solid #333;
+}
+.btn btn-sm btn-primary{
+    font-size: larger;
+    font-weight: bolder;
+}
