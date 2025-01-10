@@ -22,6 +22,7 @@
      <link href="../bootcss/icons.min.css" rel="stylesheet" type="text/css">
      <link href="../bootcss/app.min.css" rel="stylesheet" type="text/css">
 
+     
      <link rel="stylesheet" href="detail.css">
      <script src="./bootjs/config.js"></script>
      <style type="text/css" data-href="lib\style.css">
@@ -225,7 +226,7 @@
                                                                       <td class="px-0">
                                                                            <p
                                                                                 class="d-flex mb-0 align-items-center gap-1 fw-semibold text-dark">
-                                                                                Language : </p>
+                                                                                Ngôn ngữ : </p>
                                                                       </td>
                                                                       <td class="text-dark fw-medium px-0">English</td>
                                                                  </tr>
@@ -233,7 +234,7 @@
                                                                       <td class="px-0">
                                                                            <p
                                                                                 class="d-flex mb-0 align-items-center gap-1 fw-semibold text-dark">
-                                                                                Latest Invoice Id : </p>
+                                                                                Mã hóa đơn  : </p>
                                                                       </td>
                                                                       <td class="text-dark fw-medium px-0">#INV2540</td>
                                                                  </tr>
@@ -303,7 +304,7 @@
                                                                                 class="badge bg-primary-subtle text-primary py-1 px-2">Chờ
                                                                                 thanh toán</span>
                                                                       </td>
-                                                                      <td> $421.00 </td>
+                                                                      <td> $301.00 </td>
                                                                       <td> 01/01/2024</td>
                                                                       <td> Mastercard </td>
                                                                  </tr>
@@ -314,9 +315,31 @@
                                                                                 class="badge bg-success-subtle text-success px-2 py-1 ">Hoàn
                                                                                 thành</span>
                                                                       </td>
-                                                                      <td> $421.00 </td>
+                                                                      <td> $41.00 </td>
                                                                       <td> 01/01/2024</td>
                                                                       <td> Visa </td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td><a href="javascript: void(0);"
+                                                                                class="text-body">#INV8888</a> </td>
+                                                                      <td> <span
+                                                                                class="badge bg-success-subtle text-success px-2 py-1 ">Hoàn
+                                                                                thành</span>
+                                                                      </td>
+                                                                      <td> $41.00 </td>
+                                                                      <td> 01/01/2024</td>
+                                                                      <td> Visa </td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td><a href="javascript: void(0);"
+                                                                                class="text-body">#INV4444</a> </td>
+                                                                      <td> <span
+                                                                                class="badge bg-success-subtle text-success px-2 py-1 ">Hoàn
+                                                                                thành</span>
+                                                                      </td>
+                                                                      <td> $41.00 </td>
+                                                                      <td> 01/01/2024</td>
+                                                                      <td> Mastercard </td>
                                                                  </tr>
                                                             </tbody>
                                                        </table>
@@ -324,30 +347,28 @@
                                              </div>
                                              <div class="card-footer border-top">
                                                   <ul class="pagination pagination-rounded m-0 justify-content-end">
-                                                       <li class="page-item">
-                                                            <a href="https://techzaa.in/larkon/admin/customer-detail.html#"
-                                                                 class="page-link"><i
-                                                                      class="bx bx-left-arrow-alt"></i></a>
-                                                       </li>
-                                                       <li class="page-item active">
-                                                            <a href="https://techzaa.in/larkon/admin/customer-detail.html#"
-                                                                 class="page-link">1</a>
-                                                       </li>
-                                                       <li class="page-item">
-                                                            <a href="https://techzaa.in/larkon/admin/customer-detail.html#"
-                                                                 class="page-link">2</a>
-                                                       </li>
-                                                       <li class="page-item">
-                                                            <a href="https://techzaa.in/larkon/admin/customer-detail.html#"
-                                                                 class="page-link">3</a>
-                                                       </li>
-                                                       <li class="page-item">
-                                                            <a href="https://techzaa.in/larkon/admin/customer-detail.html#"
-                                                                 class="page-link"><i
-                                                                      class="bx bx-right-arrow-alt"></i></a>
-                                                       </li>
+                                                      <li class="page-item">
+                                                          <a class="page-link" onclick="changePage('prev')">
+                                                              <i class="fas fa-chevron-left"></i>
+                                                          </a>
+                                                      </li>
+                                                      <li class="page-item" onclick="changePage(1)">
+                                                          <a class="page-link">1</a>
+                                                      </li>
+                                                      <li class="page-item" onclick="changePage(2)">
+                                                          <a class="page-link">2</a>
+                                                      </li>
+                                                      <li class="page-item" onclick="changePage(3)">
+                                                          <a class="page-link">3</a>
+                                                      </li>
+                                                      <li class="page-item">
+                                                          <a class="page-link" onclick="changePage('next')">
+                                                              <i class="fas fa-chevron-right"></i>
+                                                          </a>
+                                                      </li>
                                                   </ul>
-                                             </div>
+                                              </div>
+                                              
                                         </div>
 
                                    </div>
