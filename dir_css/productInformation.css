@@ -1,0 +1,341 @@
+/* Cấu hình chung */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Wrapper bao bọc toàn bộ sản phẩm */
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Các phần con */
+.detail-product {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.product-content {
+    margin-top: 20px;
+}
+
+/* CSS cho Product Detail */
+.product-slides {
+    width: 50%;
+    flex: 1;
+}
+
+.fea-img-blk {
+    position: relative;
+    text-align: center;
+}
+
+.fea-img-blk img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.fea-nav-contain {
+    margin-top: 10px;
+}
+
+#fea-nav {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+}
+
+#fea-nav img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+#fea-nav img:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.product-info {
+    width: 50%;
+    flex: 1;
+}
+
+.product-info .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-rating {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.product-detail-price {
+    margin-bottom: 20px;
+    font-size: 27px;
+}
+
+.product-detail-price label {
+    font-weight: bold;
+    color: #333;
+}
+
+.product-detail-price .price-official {
+    color: #e74c3c;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.product-detail-price .price-line-through {
+    color: rgb(22, 184, 248);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.product-detail-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product-detail-quantity label {
+    font-weight: bold;
+}
+
+.product-detail-quantity .group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.product-detail-quantity input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.product-detail-quantity i {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.btn-order {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-order:hover {
+    background-color: #0056b3;
+}
+
+/* CSS cho Product Content */
+.product-content .menu {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.product-content .menu a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.product-content .menu a:hover {
+    color: #0056b3;
+}
+
+.product-content .section {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.product-content .section p {
+    margin: 10px 0;
+}
+
+/* Bảng thông số kỹ thuật */
+#specifications .product-stat-table {
+    width: 100%;
+    border: 1px solid #ddd; /* Khung bao quanh bảng */
+    border-collapse: collapse; /* Gộp các đường viền ô */
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+#specifications .product-stat-table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; /* Đường viền dưới mỗi dòng */
+}
+
+#specifications .product-stat-table-row div {
+    font-size: 14px;
+    color: #555;
+    padding: 8px;
+}
+
+#specifications .product-stat-table-row div:first-child {
+    font-weight: bold;
+}
+
+#specifications .product-stat-table-row:last-child {
+    border-bottom: none; /* Loại bỏ đường viền dưới của dòng cuối cùng */
+}
+
+/* Tạo đường viền bao quanh từng ô */
+#specifications .product-stat-table div {
+    border-right: 1px solid #ddd; /* Đường viền phải của mỗi ô */
+}
+
+#specifications .product-stat-table div:last-child {
+    border-right: none; /* Loại bỏ đường viền phải của ô cuối cùng */
+}
+
+#specifications .product-stat-table h3 {
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #ddd; /* Đường viền dưới tiêu đề */
+}
+
+
+#ratingproduct {
+    margin-top: 20px;
+}
+
+.frmRating {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.frmRating .ui-formRow input,
+.frmRating .ui-formRow textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.frmRating .stars a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    margin-right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.frmRating .stars a:hover {
+    background: #f39c12;
+}
+
+.frmRating .btn-comment {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.frmRating .btn-comment:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .detail-product {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-slides,
+    .product-info {
+        width: 100%;
+    }
+
+    .product-content .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-detail-quantity {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-order {
+        width: 100%;
+    }
+}
+.stars {
+    display: flex;
+    gap: 5px;
+}
+
+.stars i {
+    font-size: 24px;
+    color: #ddd; /* Màu sắc của sao chưa được đánh giá */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.stars i.selected {
+    color: #f39c12; /* Màu vàng cho sao đã được chọn */
+}
+
+/* Khi hover vào ngôi sao */
+.stars i:hover,
+.stars i:hover ~ i {
+    color: #f39c12; /* Đổi màu khi hover vào sao */
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+.green{
+    color: rgb(22, 243, 22);
+}
