@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Acer
@@ -6,11 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <link rel="stylesheet" href="css/menu.css">
-</head>
-<body>
 <div class="container">
     <div class="wrap">
         <div
@@ -24,11 +20,9 @@
                                 <li class="has-child">
                                     <a href="">Y Tế Gia Đình</a>
                                     <div class="dropdown">
-                                        <a href="">Máy đo huyết áp</a>
-                                        <a href="">Máy đo dường huyết</a>
-                                        <a href="">Máy xông mũi họng</a>
-                                        <a href="">Vớ y khoa</a>
-                                        <a href="">Máy trợ thính</a>
+                                        <c:forEach var="cate" items="${listCategories}">
+                                            <a href="category?cid=${cate.categoryId}">${cate.categoryName}</a>
+                                        </c:forEach>
                                     </div>
                                 </li>
                                 <li class="has-child">
@@ -68,5 +62,3 @@
         </div>
     </div>
 </div>
-</body>
-</html>
