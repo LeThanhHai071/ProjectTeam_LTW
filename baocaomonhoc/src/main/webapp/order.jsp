@@ -69,7 +69,7 @@
                                 style="margin-top: 5px"
                         >
                             <div class="product-remove product-remove product-clear">
-                                <h3 class="title">Kim lấy máu máy đo đường huyết</h3>
+                                <h3 class="title">${o.productName}</h3>
                                 <label class="check-group delete-itemorder">
                                     <input
                                             type="checkbox"
@@ -92,7 +92,7 @@
                                     <div class="product-detail-attrs">
                                         <div class="product-detail-price notsales">
                                             <label>Giá bán:</label>
-                                            <p class="price-official">25.000 vnđ</p>
+                                            <p class="price-official">${o.unitPrice}</p>
                                         </div>
                                         <div class="product-detail-quantity">
                                             <label>Số lượng:</label>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="item">
                                     <label>Cần thanh toán:</label>
-                                    <label class="price">55.000 VND</label>
+                                    <label class="price">1213132</label>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                                             id="full_name_receipt"
                                             name="full_name_receipt"
                                             value=""
-                                            placeholder="Họ và tên"
+                                            placeholder=
                                     />
                                 </div>
                             </div>
@@ -165,20 +165,10 @@
                                             id="phone_contact_receipt"
                                             name="phone_contact_receipt"
                                             value=""
-                                            placeholder="Số điện thoại"
+                                            placeholder=
                                     />
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <input
-                                    type="email"
-                                    class="form-control"
-                                    id="email_order"
-                                    name="email_order"
-                                    value=""
-                                    placeholder="Nhập Email (không bắt buộc)"
-                            />
                         </div>
                         <div class="form-group">
                             <input
@@ -187,7 +177,7 @@
                                     id="address_receipt"
                                     name="address_receipt"
                                     value=""
-                                    placeholder="Địa chỉ nhận hàng"
+                                    placeholder=
                             />
                         </div>
                         <div class="form-group"></div>
