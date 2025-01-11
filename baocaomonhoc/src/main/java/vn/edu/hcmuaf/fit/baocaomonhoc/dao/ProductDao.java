@@ -41,5 +41,4 @@ public class ProductDao {
             System.out.println(p);
         }
     }
-
 }
