@@ -3,9 +3,6 @@ package vn.edu.hcmuaf.fit.baocaomonhoc.controller;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import vn.edu.hcmuaf.fit.baocaomonhoc.dao.OrderDao;
-import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Orders;
-import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Products;
 
 import java.io.IOException;
 import java.util.List;

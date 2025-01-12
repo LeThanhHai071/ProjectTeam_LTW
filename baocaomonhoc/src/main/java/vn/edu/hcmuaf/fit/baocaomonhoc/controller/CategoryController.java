@@ -17,18 +17,43 @@ import java.util.List;
 public class CategoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductDao productDao = new ProductDao();
-        CategoryDao categoryDao = new CategoryDao();
-        List<Products> listProducts = productDao.getAll();
-        List<Categories> listCategories = categoryDao.getAll();
-        for (Products p : listProducts) {
-            System.out.println(p.getProductName());
+        try {
+            CategoryDao dao = new CategoryDao();
+            ProductDao productDao = new ProductDao();
+
+            int categoryId = Integer.parseInt(req.getParameter("cid"));
+            Categories categories = dao.getById(categoryId);//danh muc cha
+            List<Categories> categoriesList = dao.getByParentId(categoryId);//ds damh muc con
+            List<Products> products = new ArrayList<>();
+
+            if (categories.getCategoryParentId() == 0) {//neu la danh muc cha -> giu nguyen hanh dong
+
+            } else {// neu la danh muc con thi them chinh ban than no vao subcate
+                categoriesList.add(categories);
+            }
+
+            if (categoriesList.isEmpty()) {
+                products = productDao.getByCategoryId(categoryId);
+            } else {
+                for (Categories c : categoriesList) {
+                    products.addAll(productDao.getByCategoryId(c.getCategoryId()));
+                }
+            }
+
+            for (Categories c : categoriesList) {
+                System.out.println(c);
+            }
+
+            for (Products p : products) {
+                System.out.println(p);
+            }
+
+            req.setAttribute("pcate", categories);
+            req.setAttribute("subcate", categoriesList);
+            req.setAttribute("products", products);
+            req.getRequestDispatcher("/category.jsp").forward(req, resp);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        for (Categories c : listCategories) {
-            System.out.println(c.getCategoryName());
-        }
-        req.setAttribute("listProducts", listProducts);
-        req.setAttribute("listCategories", listCategories);
-        req.getRequestDispatcher("/category.jsp").forward(req, resp);
     }
 }

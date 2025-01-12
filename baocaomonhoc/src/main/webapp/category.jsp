@@ -44,8 +44,13 @@
     ></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/header2.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+<header>
+    <jsp:include page="header.jsp"></jsp:include>
+</header>
 <div>
     <div class="container">
         <div class="row"></div>
@@ -54,60 +59,15 @@
                 <div class="filter-wrap">
                     <div class="filter-pane filter-category">
                         <p class="category-title">
-                            <a href="" title="Y tế gia đình">Y tế gia đình</a>
+                            <a href="category?cid=${pcate.categoryId}" title="Y tế gia đình">${pcate.categoryName}</a>
                         </p>
                         <div class="filter-category-container">
-                            <div class="filter-category-item">
-                                <img
-                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/May-do-huyet-ap.png"
-                                        alt="Máy đo huyết áp"
-                                        width="30"
-                                        height="30"
-                                />
-                                <a class="" href="" title="Máy đo huyết áp"
-                                >Máy đo huyết áp</a
-                                >
-                            </div>
-                            <div class="filter-category-item">
-                                <img
-                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/May-do-duong-huyet.png"
-                                        alt="Máy đo đường huyết"
-                                        width="30"
-                                        height="30"
-                                />
-                                <a class="" href="" title="Máy đo đường huyết"
-                                >Máy đo đường huyết</a
-                                >
-                            </div>
-                            <div class="filter-category-item">
-                                <img
-                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/May-xong-mui-hong.png"
-                                        alt="Máy xông mũi họng"
-                                        width="30"
-                                        height="30"
-                                />
-                                <a class="" href="" title="Máy xông mũi họng"
-                                >Máy xông mũi họng</a
-                                >
-                            </div>
-                            <div class="filter-category-item">
-                                <img
-                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-new-2-1/Vo-y-khoa.png"
-                                        alt="Vớ y khoa"
-                                        width="30"
-                                        height="30"
-                                />
-                                <a class="" href="" title="Vớ y khoa">Vớ y khoa</a>
-                            </div>
-                            <div class="filter-category-item">
-                                <img
-                                        src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/icon-danhmuc/may-tro-thinh.png"
-                                        alt="Máy trợ thính"
-                                        width="30"
-                                        height="30"
-                                />
-                                <a class="" href="" title="Máy trợ thính">Máy trợ thính</a>
-                            </div>
+                            <c:forEach var="cate" items="${subcate}">
+                                <div class="filter-category-item">
+                                    <a href="category?cid=${cate.categoryId}"
+                                       title="Máy đo huyết áp">${cate.categoryName}</a>
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
                     <div class="filter-pane filter-brand">
@@ -1123,82 +1083,71 @@
                 </div>
             </div>
             <div class="col-right col-12 col-lg-8 col-md-8">
-                <c:forEach var="cate" items="${listCategories}">
+                <c:forEach var="cate" items="${subcate}">
                     <div class="cate-list">
                         <div class="cate-list-bar">
                             <h2 class="bar-title">
-                                <a class="icon" href="" title="">
-                                    <img class="img-cate-icon"
-                                         src="https://sieuthiyte.com.vn/data/images/icon-menu-mobile/iconmobile-40x40/May-do-huyet-ap.png"
-                                         width="30"
-                                         alt="Y tế gia đình"
-                                    />
-                                </a>
-                                <a href="" title="Máy đo huyết áp">${cate.categoryName}</a>
+                                <a href="${cate.categoryId}" title="Máy đo huyết áp">${cate.categoryName}</a>
                             </h2>
-                            <p class="bar-more">
-                                <a
-                                        href=""
-                                        title="Xem thêm"
-                                >Xem thêm</a
-                                >
-                            </p>
                         </div>
                         <div class="product-item product-category">
-                            <c:forEach var="p" items="${listProducts}">
-                                <div class="item-slide col-md-3 col-lg-3">
-                                    <a
-                                            href=""
-                                    >
-                                        <div class="img">
-                                            <img
-                                                    class="owl-lazy img-fluid lazyloaded"
-                                                    alt=""
-                                                    src="${p.productImage}"
-                                            />
-                                        </div>
-                                        <h3 class="title">
-                                                ${p.productName}
-                                        </h3>
-                                        <p class="price"><span><f:formatNumber value="${p.unitPrice}"/>đ</span></p>
-                                        <div class="full-stars">
-                                            <label
-                                                    aria-label="1 star"
+                            <c:forEach var="p" items="${products}">
+                                <c:if test="${p.categoryId == cate.categoryId}">
+                                    <div class="item-slide col-md-3 col-lg-3">
+                                        <a
+                                                href="#"
+                                        >
+                                            <div class="img">
+                                                <img
+                                                        class="owl-lazy img-fluid lazyloaded"
+                                                        alt=""
+                                                        src="${p.productImage}"
+                                                />
+                                            </div>
+                                            <h3 class="title">
+                                                    ${p.productName}
+                                            </h3>
+                                            <p class="price"><span><f:formatNumber value="${p.unitPrice}"/>đ</span>
+                                            </p>
+                                            <div class="full-stars">
+                                                <label
+                                                        aria-label="1 star"
+                                                        class="rating__label"
+                                                        data-rating="5"
+                                                ><i
+                                                        class="rating__icon rating__icon--star fa fa-star"
+                                                ></i></label
+                                                ><label
+                                                    aria-label="2 star"
                                                     class="rating__label"
                                                     data-rating="5"
                                             ><i
                                                     class="rating__icon rating__icon--star fa fa-star"
                                             ></i></label
                                             ><label
-                                                aria-label="2 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                                aria-label="3 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                                aria-label="4 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                                aria-label="5 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i class="rating__icon rating__icon--star fa fa-star"></i
-                                        ></label>
-                                        </div>
-                                    </a>
-                                </div>
+                                                    aria-label="3 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i
+                                                    class="rating__icon rating__icon--star fa fa-star"
+                                            ></i></label
+                                            ><label
+                                                    aria-label="4 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i
+                                                    class="rating__icon rating__icon--star fa fa-star"
+                                            ></i></label
+                                            ><label
+                                                    aria-label="5 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i class="rating__icon rating__icon--star fa fa-star"></i
+                                            ></label>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </c:if>
                             </c:forEach>
                         </div>
                     </div>
@@ -1207,6 +1156,9 @@
         </div>
     </div>
 </div>
+<footer>
+    <jsp:include page="footer.jsp"></jsp:include>
+</footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
