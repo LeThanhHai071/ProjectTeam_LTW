@@ -46,7 +46,10 @@ public class OrderDao {
                         resultSet.getDouble(3),
                         resultSet.getString(4),
                         resultSet.getString(5),
-                        resultSet.getInt(6)
+                        resultSet.getInt(6),
+                        resultSet.getInt(7),
+                        resultSet.getInt(8),
+                        resultSet.getInt(9)
                 );
             }
         } catch (SQLException e) {
