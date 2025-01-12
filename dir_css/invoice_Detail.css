@@ -30,3 +30,22 @@
     right: 0;
     left: auto;
   }
+  @media print {
+    .d-print-none {
+      display: none !important;
+    }
+    
+    body {
+      background: white;
+    }
+    
+    .card {
+      border: none;
+      box-shadow: none;
+    }
+    
+    .container-xxl {
+      width: 100%;
+      padding: 0;
+    }
+  }
