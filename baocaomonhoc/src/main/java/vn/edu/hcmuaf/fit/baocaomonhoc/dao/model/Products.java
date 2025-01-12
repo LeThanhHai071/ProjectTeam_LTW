@@ -7,21 +7,24 @@ public class Products {
     private String productDescription;
     private String productImage;
     private int productStatus;
+    private int brandId;
+    private int categoryId;
+    private int warehouseId;
 
-    public int getProductId() {
-        return productId;
-    }
 
     public Products() {
     }
 
-    public Products(int productId, String productName, double unitPrice, String productDescription, String productImage, int productStatus) {
+    public Products(int productId, String productName, double unitPrice, String productDescription, String productImage, int productStatus, int brandId, int categoryId, int warehouseId) {
         this.productId = productId;
         this.productName = productName;
         this.unitPrice = unitPrice;
         this.productDescription = productDescription;
         this.productImage = productImage;
         this.productStatus = productStatus;
+        this.brandId = brandId;
+        this.categoryId = categoryId;
+        this.warehouseId = warehouseId;
     }
 
     public void setProductId(int productId) {
@@ -68,6 +71,30 @@ public class Products {
         this.productStatus = productStatus;
     }
 
+    public int getBrandId() {
+        return brandId;
+    }
+
+    public void setBrandId(int brandId) {
+        this.brandId = brandId;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public int getWarehouseId() {
+        return warehouseId;
+    }
+
+    public void setWarehouseId(int warehouseId) {
+        this.warehouseId = warehouseId;
+    }
+
     @Override
     public String toString() {
         return "Products{" +
@@ -77,6 +104,9 @@ public class Products {
                 ", productDescription='" + productDescription + '\'' +
                 ", productImage='" + productImage + '\'' +
                 ", productStatus=" + productStatus +
+                ", brandId=" + brandId +
+                ", categoryId=" + categoryId +
+                ", warehouseId=" + warehouseId +
                 '}';
     }
 }
