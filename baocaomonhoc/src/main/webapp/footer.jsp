@@ -1,25 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous"
-    />
     <style>
         .container.footer {
             max-width: 95%;
-            height: 100%;
+            /*height: 100%;*/
             color: black;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 0 auto;
+            border-top: solid 1px black;
         }
 
         a {
@@ -84,7 +75,7 @@
                 />
             </div>
             <div class="d-none d-lg-block ms-2">
-                <a href="index.jsp" class="footer_home_link">
+                <a href="" class="footer_home_link">
                     <h3 class="pe-none text-uppercase mb-0" style="color: #707793">
                         Y Te Hoang Kim
                     </h3>
@@ -152,5 +143,4 @@
     </div>
 </div>
 </body>
-</html>
 

@@ -1,11 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -19,73 +15,35 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
     ></script>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+    />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <title>HOME</title>
-    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/header2.css">
 </head>
 <body>
 <header>
     <jsp:include page="header.jsp"></jsp:include>
 </header>
 <div id="body">
-    <div class="main-nav">
-        <div class="container">
-            <div class="wrap">
-                <div
-                        class="row align-items-center justify-content-between py-1 py-lg-0"
-                >
-                    <div class="col-12 col-lg-9 d-flex align-items-center">
-                        <div class="mb-nav-main">
-                            <div class="wrap-scroll">
-                                <nav class="box">
-                                    <ul>
-                                        <li class="has-child">
-                                            <a href="">Y Tế Gia Đình</a>
-                                            <div class="dropdown">
-                                                <a href="">Máy đo huyết áp</a>
-                                                <a href="">Máy đo dường huyết</a>
-                                                <a href="">Máy xông mũi họng</a>
-                                                <a href="">Vớ y khoa</a>
-                                                <a href="">Máy trợ thính</a>
-                                            </div>
-                                        </li>
-                                        <li class="has-child">
-                                            <a href="">Y Tế Chuyên Dụng</a>
-                                            <div class="dropdown">
-                                                <a href="">Máy tạo oxy y tế</a>
-                                                <a href="">Máy đo huyết áp chuyên dụng</a>
-                                                <a href="">Máy trợ thở</a>
-                                                <a href="">Ống nghe y tế</a>
-                                                <a href="">Dụng cụ y khoa khác</a>
-                                            </div>
-                                        </li>
-                                        <li class="has-child"><a href="">Bảo Hành</a></li>
-                                        <li class="has-child"><a href="">Tin Tức</a></li>
-                                        <li class="has-child"><a href="">Giới thiệu</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-3 d-flex justify-content-end">
-                        <div class="mb-nav-main">
-                            <div class="wrap-scroll">
-                                <nav class="box">
-                                    <ul>
-                                        <li class="has-child">
-                                            <a href=""><i class="bi bi-person-circle"></i></a>
-                                        </li>
-                                        <li class="has-child">
-                                            <a href=""><i class="bi bi-cart4"></i></a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="container home">
         <div class="home_content">
             <div class="banner_ad">
@@ -95,75 +53,75 @@
                 />
             </div>
             <div class="main_column">
-<%--                <c:forEach var="p" items="cateList">--%>
-                    <div class="main_col">
-<%--                        <c:forEach var="" items="">--%>
-                            <div class="name_sub_list">
-                                <ul class="name_pro_list">
-                                    <p class="cate_name">Y TẾ GIA ĐÌNH</p>
-<%--                                    <c:forEach var="item" items="">--%>
-<%--                                        <li class="name_pro_item"><p>${}</p></li>--%>
-<%--                                    </c:forEach>--%>
-                                </ul>
-                            </div>
-<%--                        </c:forEach>--%>
-                        <div id="product_sub_list" class="product_sub_list">
-                            <c:forEach var="p" items="${list}">
-                                <div class="item-slide col-md-3 col-lg-3">
-                                    <a
-                                            href=""
-                                    >
-                                        <div class="img">
-                                            <img
-                                                    class="owl-lazy img-fluid lazyloaded"
-                                                    alt=""
-                                                    src="${p.productImage}"
-                                            />
-                                        </div>
-                                        <h3 class="title">
-                                                ${p.productName}
-                                        </h3>
-                                        <p class="price"><span><f:formatNumber value="${p.unitPrice}"/>đ</span></p>
-                                        <div class="full-stars">
-                                            <label aria-label="1 star"
-                                                   class="rating__label"
-                                                   data-rating="5">
-                                                <i class="rating__icon rating__icon--star fa fa-star"></i>
-                                            </label>
-                                            <label
-                                                    aria-label="2 star"
-                                                    class="rating__label"
-                                                    data-rating="5"
-                                            ><i
-                                                    class="rating__icon rating__icon--star fa fa-star"
-                                            ></i></label
-                                            ><label
-                                                aria-label="3 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                                aria-label="4 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                                aria-label="5 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i class="rating__icon rating__icon--star fa fa-star"></i
-                                        ></label>
-                                        </div>
-                                    </a>
-                                </div>
-                            </c:forEach>
-                        </div>
+                <%--                <c:forEach var="p" items="cateList">--%>
+                <div class="main_col">
+                    <%--                        <c:forEach var="" items="">--%>
+                    <div class="name_sub_list">
+                        <ul class="name_pro_list">
+                            <p class="cate_name">Y TẾ GIA ĐÌNH</p>
+                            <%--                                    <c:forEach var="item" items="">--%>
+                            <%--                                        <li class="name_pro_item"><p>${}</p></li>--%>
+                            <%--                                    </c:forEach>--%>
+                        </ul>
                     </div>
-<%--                </c:forEach>--%>
+                    <%--                        </c:forEach>--%>
+                    <div id="product_sub_list" class="product_sub_list">
+                        <c:forEach var="p" items="${listProducts}">
+                            <div class="item-slide col-md-3 col-lg-3">
+                                <a
+                                        href=""
+                                >
+                                    <div class="img">
+                                        <img
+                                                class="owl-lazy img-fluid lazyloaded"
+                                                alt=""
+                                                src="${p.productImage}"
+                                        />
+                                    </div>
+                                    <h3 class="title">
+                                            ${p.productName}
+                                    </h3>
+                                    <p class="price"><span><f:formatNumber value="${p.unitPrice}"/>đ</span></p>
+                                    <div class="full-stars">
+                                        <label aria-label="1 star"
+                                               class="rating__label"
+                                               data-rating="5">
+                                            <i class="rating__icon rating__icon--star fa fa-star"></i>
+                                        </label>
+                                        <label
+                                                aria-label="2 star"
+                                                class="rating__label"
+                                                data-rating="5"
+                                        ><i
+                                                class="rating__icon rating__icon--star fa fa-star"
+                                        ></i></label
+                                        ><label
+                                            aria-label="3 star"
+                                            class="rating__label"
+                                            data-rating="5"
+                                    ><i
+                                            class="rating__icon rating__icon--star fa fa-star"
+                                    ></i></label
+                                    ><label
+                                            aria-label="4 star"
+                                            class="rating__label"
+                                            data-rating="5"
+                                    ><i
+                                            class="rating__icon rating__icon--star fa fa-star"
+                                    ></i></label
+                                    ><label
+                                            aria-label="5 star"
+                                            class="rating__label"
+                                            data-rating="5"
+                                    ><i class="rating__icon rating__icon--star fa fa-star"></i
+                                    ></label>
+                                    </div>
+                                </a>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+                <%--                </c:forEach>--%>
             </div>
             <div class="ad_pro">
                 <img
@@ -224,21 +182,4 @@
 <footer>
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const topbar = document.querySelector("header");
-        const mainNav = document.querySelector("#body .main-nav");
-
-        window.addEventListener("scroll", () => {
-            const topbarBottom = topbar.getBoundingClientRect().bottom;
-
-            if (topbarBottom <= 0) {
-                mainNav.classList.add("scroll");
-            } else {
-                mainNav.classList.remove("scroll");
-            }
-        });
-    });
-</script>
 </body>
-</html>

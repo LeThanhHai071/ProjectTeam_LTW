@@ -1,0 +1,51 @@
+.btn-soft-danger {
+    --bs-btn-color: #ef5f5f;
+    --bs-btn-bg: rgba(239, 95, 95, 0.1);
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #ef5f5f;
+    --bs-btn-hover-border-color: #ef5f5f;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #ef5f5f;
+    --bs-btn-active-border-color: #ef5f5f;
+}
+
+.btn-soft-primary {
+    --bs-btn-color: #ff6c2f;
+    --bs-btn-bg: rgba(255, 108, 47, 0.1);
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #ff6c2f;
+    --bs-btn-hover-border-color: #ff6c2f;
+}
+
+.btn-light {
+    --bs-btn-color: var(--bs-dark);
+    --bs-btn-bg: var(--bs-light);
+    --bs-btn-border-color: var(--bs-light);
+}
+
+.btn {
+    border: solid 1.5px rgb(182, 179, 179);
+}
+
+.container-xxl {
+    max-width: 1200px;
+}
+
+.card-header {
+    padding: 24px;
+    background-color: #f5f5f5;
+}
+
+.link-primary {
+    color: black;
+}
+
+td.sorting_1 {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
