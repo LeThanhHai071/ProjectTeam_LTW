@@ -31,3 +31,7 @@
     right: 0;
     left: auto;
   }
+  .container-xx1{
+    max-width: 90%f;
+    margin-left: 5%;
+  }

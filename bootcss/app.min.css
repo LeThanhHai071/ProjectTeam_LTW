@@ -18181,7 +18181,8 @@ body {
 }
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-  max-width: 95%;
+  max-width: 90%;
+  margin-left: 5%;
 }
 
 .scroll-hidden::-webkit-scrollbar {
