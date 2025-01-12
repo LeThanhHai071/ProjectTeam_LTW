@@ -61,3 +61,12 @@
 .larger-icon {
     font-size: 24px;
 }
+.row{
+    margin-left: -20%;
+}
+.mt-2 {
+    margin-top: 1.5rem !important;
+}
+.pt-3 {
+    padding-top: 1.5rem !important;
+}

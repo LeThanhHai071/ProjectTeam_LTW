@@ -1,38 +1,49 @@
+const handlePagination = () => {
+    const paginationLinks = document.querySelectorAll('.pagination .page-link');
+    const itemsPerPage = 5;
+    const customerRows = document.querySelectorAll('tbody tr');
 
-// Xử lý chuyển trang
-const pagination = document.querySelector('.pagination');
-const pageLinks = pagination.querySelectorAll('.page-link');
+    let currentPage = 1;
 
-pageLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Xóa active class từ tất cả các trang
-        pageLinks.forEach(p => p.parentElement.classList.remove('active'));
+    const showPage = (pageNum) => {
+        const start = (pageNum - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
 
-        // Thêm active class cho trang được chọn
-        if (!link.innerHTML.includes('arrow')) {
-            link.parentElement.classList.add('active');
-        }
-
-        // Logic load dữ liệu trang mới ở đây
-        const pageNumber = link.textContent;
-        loadCustomerData(pageNumber);
-    });
-});
-
-// Xử lý xóa khách hàng
-function deleteCustomer(customerId) {
-    if (confirm('Bạn có chắc chắn muốn xóa khách hàng này?')) {
-        // Thực hiện xóa khách hàng
-        // API call hoặc xử lý backend ở đây
-
-        // Sau khi xóa thành công, cập nhật UI
-        const customerRow = document.querySelector(`tr[data-customer-id="${customerId}"]`);
-        if (customerRow) {
-            customerRow.remove();
-        }
+        customerRows.forEach((row, index) => {
+            row.style.display = (index >= start && index < end) ? '' : 'none';
+        });
     }
+
+    paginationLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Handle prev/next arrows
+            if(link.innerHTML.includes('arrow-left')) {
+                if(currentPage > 1) currentPage--;
+            } else if(link.innerHTML.includes('arrow-right')) {
+                if(currentPage < Math.ceil(customerRows.length / itemsPerPage)) currentPage++;
+            } else {
+                currentPage = parseInt(link.textContent);
+            }
+
+            // Update active state
+            document.querySelector('.page-item.active').classList.remove('active');
+            link.closest('.page-item').classList.add('active');
+
+            showPage(currentPage);
+        });
+    });
+
+    // Show first page initially
+    showPage(1);
 }
+
+// Initialize pagination when DOM is loaded
+document.addEventListener('DOMContentLoaded', handlePagination);
+
+
+
 
 // Xem thông tin và xóa khách hàng trong danh sách
 function addDeleteButtons() {
