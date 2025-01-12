@@ -173,4 +173,44 @@ function toggleEditForm() {
     }
 }
 
+// Hiện trang thông tin khách hàng
+document.addEventListener('DOMContentLoaded', () => {
+   // Get stored customer data
+   const customerData = JSON.parse(localStorage.getItem('selectedCustomer'));
+    
+   if (customerData) {
+       // Update profile section
+       document.querySelector('h4.mb-1').textContent = customerData.name;
+       
+       // Update customer details
+       document.querySelector('[data-field="customerId"]').textContent = `#AC-${customerData.id}`;
+       document.querySelector('[data-field="total"]').textContent = customerData.total;
+       document.querySelector('[data-field="status"]').textContent = customerData.status;
+       document.querySelector('[data-field="payment"]').textContent = customerData.payment;
+       
+       // Update transaction history
+       updateTransactionHistory(customerData);
+       
+       // Clear stored data after use
+       localStorage.removeItem('selectedCustomer');
+   }
+});
+
+function updateTransactionHistory(customerData) {
+   const transactionTable = document.querySelector('.table tbody');
+   // Update transaction history based on customer data
+   // You can add more transactions or customize as needed
+   const transaction = `
+       <tr>
+           <td><a href="javascript: void(0);" class="text-body">#INV${customerData.id}</a></td>
+           <td><span class="badge bg-success-subtle text-success py-1 px-2">${customerData.status}</span></td>
+           <td>${customerData.total}</td>
+           <td>${customerData.expiry}</td>
+           <td>${customerData.payment}</td>
+       </tr>
+   `;
+   transactionTable.innerHTML = transaction + transactionTable.innerHTML;
+}
+
+
 

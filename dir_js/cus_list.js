@@ -33,18 +33,37 @@ function deleteCustomer(customerId) {
     }
 }
 
-// Thêm nút xóa vào mỗi hàng
+// Xem thông tin và xóa khách hàng trong danh sách
 function addDeleteButtons() {
     const rows = document.querySelectorAll('tbody tr');
     rows.forEach(row => {
         const actionCell = document.createElement('td');
         actionCell.innerHTML = `
+              <button class="btn btn-info btn-sm view-btn me-2" title="Xem chi tiết">
+                <i class="fas fa-eye"></i>
+            </button>
             <button class="btn btn-danger btn-sm delete-btn">
                 <i class="fas fa-trash"></i>
             </button>
         `;
         row.appendChild(actionCell);
-        
+        // Xử lý nút xem chi tiết
+        const viewBtn = actionCell.querySelector('.view-btn');
+        viewBtn.addEventListener('click', () => {
+            const customerId = row.dataset.customerId;
+        const customerData = {
+            id: customerId,
+            name: row.querySelector('td:nth-child(2)').textContent,
+            status: row.querySelector('td:nth-child(3) .badge').textContent,
+            total: row.querySelector('td:nth-child(4)').textContent,
+            expiry: row.querySelector('td:nth-child(5)').textContent,
+            payment: row.querySelector('td:nth-child(6)').textContent
+    };
+            localStorage.setItem('selectedCustomer', JSON.stringify(customerData));
+            window.location.href = `cus_detail.html?id=${customerId}`;
+        });
+
+        // Xử lý nút xóa
         const deleteBtn = actionCell.querySelector('.delete-btn');
         deleteBtn.addEventListener('click', () => {
             const customerId = row.dataset.customerId;
