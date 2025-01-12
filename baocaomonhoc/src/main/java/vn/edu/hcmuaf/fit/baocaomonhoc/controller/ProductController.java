@@ -9,7 +9,7 @@ import vn.edu.hcmuaf.fit.baocaomonhoc.services.ProductServices;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/category")
+@WebServlet("/product")
 public class ProductController extends HttpServlet {
 //    @Override
 //    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,13 +30,7 @@ public class ProductController extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductServices productService = new ProductServices();
-        List<Products> list = productService.getAll();
-        for (Products p : list) {
-            System.out.println(p.getProductImage());
-        }
-        req.setAttribute("list", list);
-        req.getRequestDispatcher("/category.jsp").forward(req, resp);
+
     }
 
     @Override

@@ -3,9 +3,9 @@ package vn.edu.hcmuaf.fit.baocaomonhoc.dao.db;
 import java.sql.*;
 
 public class DBConnect {
-    static String url = "jdbc:mysql://" + DBProperties.host() + ":" + DBProperties.port() + "/" + DBProperties.dbname() + "?" + DBProperties.option();
+    private final static String url = "jdbc:mysql://" + DBProperties.host() + ":" + DBProperties.port() + "/" + DBProperties.dbname() + "?" + DBProperties.option();
 
-    static Connection conn;
+    private static Connection conn;
 
     public static Statement get() {
         try {
@@ -18,9 +18,20 @@ public class DBConnect {
     }
 
     private static void makeConnect() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName(com.mysql.cj.jdbc.Driver.class.getName());
         conn = DriverManager.getConnection(url, DBProperties.username(), DBProperties.password());
     }
+
+//    public static void close() {
+//        try {
+//            if (conn != null && !conn.isClosed()) {
+//                conn.close();
+//                System.out.println("Kết nối đã đóng.");
+//            }
+//        } catch (SQLException e) {
+//            System.err.println("Lỗi khi đóng kết nối: " + e.getMessage());
+//        }
+//    }
 
     public static void main(String[] args) throws SQLException {
         Statement statement = get();
