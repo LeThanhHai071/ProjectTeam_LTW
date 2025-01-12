@@ -77,7 +77,7 @@ public class CategoryDao {
 
     public static void main(String[] args) {
         CategoryDao dao = new CategoryDao();
-        List<Categories> categories = dao.getByParentId(1);
+        List<Categories> categories = dao.getByParentId(6);
         for (Categories c : categories) {
             System.out.println(c);
         }

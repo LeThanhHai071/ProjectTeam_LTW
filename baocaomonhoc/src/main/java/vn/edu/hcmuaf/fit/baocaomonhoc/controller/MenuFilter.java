@@ -18,10 +18,6 @@ public class MenuFilter extends HttpFilter {
 
         List<Categories> list = categoryDao.getAll();
 
-        for (Categories c : list) {
-            System.out.println(c);
-        }
-
         req.setAttribute("listCate", list);
         chain.doFilter(req, res);
     }

@@ -92,6 +92,10 @@ public class ProductDao {
     }
 
     public static void main(String[] args) {
-        ProductDao dao = new ProductDao();
+        ProductDao productDao = new ProductDao();
+        List<Products> products = productDao.getByCategoryId(1);
+        for (Products product: products) {
+            System.out.println(product);
+        }
     }
 }

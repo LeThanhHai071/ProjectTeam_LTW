@@ -40,6 +40,10 @@ public class CategoryController extends HttpServlet {
                 }
             }
 
+            for (Categories c : categoriesList) {
+                System.out.println(c);
+            }
+
             for (Products p : products) {
                 System.out.println(p);
             }

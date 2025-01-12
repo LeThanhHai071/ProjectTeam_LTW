@@ -1087,7 +1087,7 @@
                     <div class="cate-list">
                         <div class="cate-list-bar">
                             <h2 class="bar-title">
-                                <a href="" title="Máy đo huyết áp">${cate.categoryName}</a>
+                                <a href="${cate.categoryId}" title="Máy đo huyết áp">${cate.categoryName}</a>
                             </h2>
                         </div>
                         <div class="product-item product-category">
@@ -1095,7 +1095,7 @@
                                 <c:if test="${p.categoryId == cate.categoryId}">
                                     <div class="item-slide col-md-3 col-lg-3">
                                         <a
-                                                href=""
+                                                href="#"
                                         >
                                             <div class="img">
                                                 <img
