@@ -1,8 +1,8 @@
 
- function toggleEditForm() {
+function toggleEditForm() {
     const form = document.getElementById('editCustomerForm');
     const overlay = document.querySelector('.overlay');
-    
+
     if(form.style.display === 'none') {
         form.style.display = 'block';
         document.body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
@@ -12,18 +12,18 @@
     }
 }
 
- function saveCustomerInfo() {
+function saveCustomerInfo() {
     // Lấy giá trị từ form
     const name = document.getElementById('customerName').value;
     const email = document.getElementById('customerEmail').value;
     const phone = document.getElementById('customerPhone').value;
     const address = document.getElementById('customerAddress').value;
-    
+
     // Cập nhật UI
     document.querySelector('.mb-1').textContent = name;
     document.querySelector('.fs-15.mb-1.mt-1 .text-dark.fw-medium').textContent = email;
     document.querySelector('.fs-15.mb-0.mt-1 .text-dark.fw-medium').textContent = phone;
-    
+
     // Đóng form
     toggleEditForm();
 }
@@ -44,7 +44,7 @@ const transactions = [
     },
     {
         id: "#INV3924",
-        status: "Hủy", 
+        status: "Hủy",
         statusClass: "bg-danger-subtle text-danger",
         amount: "$421.00",
         dueDate: "01/01/2024",
@@ -94,7 +94,7 @@ const transactions = [
 function displayTransactions(page) {
     const tableBody = document.querySelector('.table-centered tbody');
     tableBody.innerHTML = '';
-    
+
     const start = (page - 1) * transactionsPerPage;
     const end = start + transactionsPerPage;
     const pageTransactions = transactions.slice(start, end);
@@ -123,14 +123,14 @@ function updatePaginationActive(page) {
 }
 
 function changePage(page) {
-    if (page === 'prev') {          
+    if (page === 'prev') {
         currentPage = Math.max(1, currentPage - 1);
     } else if (page === 'next') {
         currentPage = Math.min(3, currentPage + 1);
     } else {
         currentPage = page;
     }
-    
+
     displayTransactions(currentPage);
     updatePaginationActive(currentPage);
 }
@@ -154,23 +154,63 @@ function toggleEditForm() {
         name.contentEditable = 'false';
         email.contentEditable = 'false';
         phone.contentEditable = 'false';
-        
+
         // Remove edit styling
         infoSection.classList.remove('editing');
-        
+
         // Update badge and username if name changed
         const username = document.querySelector('.link-primary');
         username.textContent = '@' + name.textContent.toLowerCase().replace(/\s+/g, '_');
-        
+
     } else {
         // Edit mode
         name.contentEditable = 'true';
         email.contentEditable = 'true';
         phone.contentEditable = 'true';
-        
+
         // Add edit styling
         infoSection.classList.add('editing');
     }
 }
+
+// Hiện trang thông tin khách hàng
+document.addEventListener('DOMContentLoaded', () => {
+    // Get stored customer data
+    const customerData = JSON.parse(localStorage.getItem('selectedCustomer'));
+
+    if (customerData) {
+        // Update profile section
+        document.querySelector('h4.mb-1').textContent = customerData.name;
+
+        // Update customer details
+        document.querySelector('[data-field="customerId"]').textContent = `#AC-${customerData.id}`;
+        document.querySelector('[data-field="total"]').textContent = customerData.total;
+        document.querySelector('[data-field="status"]').textContent = customerData.status;
+        document.querySelector('[data-field="payment"]').textContent = customerData.payment;
+
+        // Update transaction history
+        updateTransactionHistory(customerData);
+
+        // Clear stored data after use
+        localStorage.removeItem('selectedCustomer');
+    }
+});
+
+function updateTransactionHistory(customerData) {
+    const transactionTable = document.querySelector('.table tbody');
+    // Update transaction history based on customer data
+    // You can add more transactions or customize as needed
+    const transaction = `
+       <tr>
+           <td><a href="javascript: void(0);" class="text-body">#INV${customerData.id}</a></td>
+           <td><span class="badge bg-success-subtle text-success py-1 px-2">${customerData.status}</span></td>
+           <td>${customerData.total}</td>
+           <td>${customerData.expiry}</td>
+           <td>${customerData.payment}</td>
+       </tr>
+   `;
+    transactionTable.innerHTML = transaction + transactionTable.innerHTML;
+}
+
 
 
