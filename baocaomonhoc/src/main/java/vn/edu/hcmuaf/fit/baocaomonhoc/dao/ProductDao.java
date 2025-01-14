@@ -91,10 +91,39 @@ public class ProductDao {
         return products;
     }
 
+    public List<Products> getByCategoryPID(int categoryPId) {
+        List<Products> products = new ArrayList<>();
+        Statement statement = DBConnect.get();
+        ResultSet resultSet = null;
+        String sql = "SELECT * FROM products WHERE categoryId IN " +
+                "(SELECT categoryId FROM categories WHERE categoryParentId = " + categoryPId + ") " +
+                "ORDER BY unitPrice DESC LIMIT 10";
+        try {
+            resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                products.add(new Products(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getDouble(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getInt(6),
+                        resultSet.getInt(7),
+                        resultSet.getInt(8),
+                        resultSet.getInt(9)
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return products;
+    }
+
     public static void main(String[] args) {
         ProductDao productDao = new ProductDao();
-        List<Products> products = productDao.getByCategoryId(1);
-        for (Products product: products) {
+        List<Products> products = productDao.getByCategoryPID(6);
+        for (Products product : products) {
             System.out.println(product);
         }
     }

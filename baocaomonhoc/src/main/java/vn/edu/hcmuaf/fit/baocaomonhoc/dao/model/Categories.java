@@ -1,9 +1,22 @@
 package vn.edu.hcmuaf.fit.baocaomonhoc.dao.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Categories {
     private int categoryId;
     private String categoryName;
     private int categoryParentId;
+
+    private List<Products> products = new ArrayList<>();
+
+    public List<Products> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Products> products) {
+        this.products = products;
+    }
 
     @Override
     public String toString() {
