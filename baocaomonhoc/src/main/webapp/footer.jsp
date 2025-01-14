@@ -2,8 +2,7 @@
 <head>
     <style>
         .container.footer {
-            max-width: 95%;
-            /*height: 100%;*/
+            max-width: 95% !important;
             color: black;
             display: flex;
             flex-direction: column;

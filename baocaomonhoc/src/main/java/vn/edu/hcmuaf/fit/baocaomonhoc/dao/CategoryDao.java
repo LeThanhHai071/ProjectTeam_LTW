@@ -75,9 +75,30 @@ public class CategoryDao {
         return categories;
     }
 
+    public List<Categories> getParent() {
+        Statement statement = DBConnect.get();
+        ResultSet resultSet = null;
+        ArrayList<Categories> categories = new ArrayList<>();
+        String sql = "select * from categories where categoryParentId is null";
+        try {
+            resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                categories.add(new Categories(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getInt(3)
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return categories;
+    }
+
     public static void main(String[] args) {
         CategoryDao dao = new CategoryDao();
-        List<Categories> categories = dao.getByParentId(6);
+        List<Categories> categories = dao.getParent();
         for (Categories c : categories) {
             System.out.println(c);
         }

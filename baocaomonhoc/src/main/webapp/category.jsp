@@ -1095,12 +1095,12 @@
                                 <c:if test="${p.categoryId == cate.categoryId}">
                                     <div class="item-slide col-md-3 col-lg-3">
                                         <a
-                                                href="#"
+                                                href="product?pid=${p.productId}"
                                         >
                                             <div class="img">
                                                 <img
                                                         class="owl-lazy img-fluid lazyloaded"
-                                                        alt=""
+                                                        alt="${p.productImage}"
                                                         src="${p.productImage}"
                                                 />
                                             </div>
