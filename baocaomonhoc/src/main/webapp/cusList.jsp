@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,9 +61,6 @@
                                     <thead class="bg-light-subtle">
                                     <tr>
                                         <th style="width: 20px;">
-                                            <div class="form-check">
-                                                <label class="form-check-labe"for="customCheck1"></label>
-                                            </div>
                                         </th>
                                         <th>Tên Khách Hàng</th>
                                         <th>Trạng Thái</th>
@@ -82,10 +78,12 @@
                                             </div>
                                         </td>
                                         <td>Michael A. Miner</td>
-                                        <td> <span class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span> </td>
-                                        <td> $4,521 </td>
+                                        <td><span
+                                                class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span>
+                                        </td>
+                                        <td> $4,521</td>
                                         <td> 28/09/2024</td>
-                                        <td> Mastercard </td>
+                                        <td> Mastercard</td>
                                     </tr>
 
                                     <tr>
@@ -96,10 +94,11 @@
                                             </div>
                                         </td>
                                         <td>Theresa T. Brose</td>
-                                        <td> <span class="badge bg-danger-subtle text-danger px-2 py-1">Đã hủy</span> </td>
-                                        <td> $7,836 </td>
+                                        <td><span class="badge bg-danger-subtle text-danger px-2 py-1">Đã hủy</span>
+                                        </td>
+                                        <td> $7,836</td>
                                         <td> 28/09/2024</td>
-                                        <td> Visa </td>
+                                        <td> Visa</td>
                                     </tr>
 
                                     <tr>
@@ -113,9 +112,9 @@
                                         <td>
                                             <span class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span>
                                         </td>
-                                        <td> $1,347 </td>
+                                        <td> $1,347</td>
                                         <td>28/09/2024</td>
-                                        <td> Paypal </td>
+                                        <td> Paypal</td>
 
                                     </tr>
                                     <tr>
@@ -126,8 +125,10 @@
                                             </div>
                                         </td>
                                         <td> Lily W. Wilson</td>
-                                        <td><span class="badge bg-primary-subtle text-primary py-1 px-2"> Chờ thanh toán </span></td>
-                                        <td> $9,457 </td>
+                                        <td><span
+                                                class="badge bg-primary-subtle text-primary py-1 px-2"> Chờ thanh toán </span>
+                                        </td>
+                                        <td> $9,457</td>
                                         <td>10/08/2024</td>
                                         <td> Mastercard</td>
 
@@ -140,7 +141,8 @@
                                             </div>
                                         </td>
                                         <td>Sarah M. Brooks</td>
-                                        <td> <span class="badge bg-danger-subtle text-danger px-2 py-1 ">Đã hủy</span></td>
+                                        <td><span class="badge bg-danger-subtle text-danger px-2 py-1 ">Đã hủy</span>
+                                        </td>
                                         <td> $4,214</td>
                                         <td> 28/09/2024</td>
                                         <td> Visa</td>
@@ -148,54 +150,47 @@
                                     <tr>
                                         <td>
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck7">
-                                                <label class="form-check-label" for="customCheck7">&nbsp;</label>
+                                                <input type="checkbox" class="form-check-input" id="customCheck8">
+                                                <label class="form-check-label" for="customCheck8">&nbsp;</label>
                                             </div>
                                         </td>
                                         <td> Joe K. Hall</td>
-                                        <td> <span class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span> </td>
+                                        <td><span
+                                                class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span>
+                                        </td>
                                         <td>$2,513</td>
                                         <td>28/10/2024</td>
-                                        <td> Paypal </td>
+                                        <td> Paypal</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck7">
-                                                <label class="form-check-label" for="customCheck7">&nbsp;</label>
+                                                <input type="checkbox" class="form-check-input" id="customCheck9">
+                                                <label class="form-check-label" for="customCheck9">&nbsp;</label>
                                             </div>
                                         </td>
                                         <td>Ralph Hueber</td>
-                                        <td> <span class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span> </td>
+                                        <td><span
+                                                class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span>
+                                        </td>
                                         <td>$3,103</td>
                                         <td>20/09/2024</td>
-                                        <td> Visa </td>
+                                        <td> Visa</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck7">
-                                                <label class="form-check-label" for="customCheck7">&nbsp;</label>
+                                                <input type="checkbox" class="form-check-input" id="customCheck10">
+                                                <label class="form-check-label" for="customCheck10">&nbsp;</label>
                                             </div>
                                         </td>
-                                        <td>Sarah  Drescher</td>
-                                        <td> <span class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span> </td>
+                                        <td>Sarah Drescher</td>
+                                        <td><span
+                                                class="badge bg-success-subtle text-success py-1 px-2">Hoàn thành</span>
+                                        </td>
                                         <td>$2,416</td>
                                         <td>28/09/2024</td>
-                                        <td> Mastercard </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck7">
-                                                <label class="form-check-label" for="customCheck7">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>Leonie Meister</td>
-                                        <td><span class="badge bg-primary-subtle text-primary py-1 px-2">Chờ thanh toán</span></td>
-                                        <td>$1,367</td>
-                                        <td>28/09/2024</td>
-                                        <td> Paypal </td>
+                                        <td> Mastercard</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -224,10 +219,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
     <script src="js/cus_list.js"></script>
+</div>
 </body>
-</html>
