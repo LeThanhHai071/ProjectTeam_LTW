@@ -1,32 +1,18 @@
-
- function toggleEditForm() {
-    const form = document.getElementById('editCustomerForm');
-    const overlay = document.querySelector('.overlay');
-    
-    if(form.style.display === 'none') {
-        form.style.display = 'block';
-        document.body.insertAdjacentHTML('beforeend', '<div class="overlay"></div>');
+function toggleEditForm() {
+    const editForm = document.getElementById('editForm');
+    if (editForm.style.display === 'none') {
+        editForm.style.display = 'block';
     } else {
-        form.style.display = 'none';
-        document.querySelector('.overlay').remove();
+        editForm.style.display = 'none';
     }
 }
 
- function saveCustomerInfo() {
-    // Lấy giá trị từ form
-    const name = document.getElementById('customerName').value;
-    const email = document.getElementById('customerEmail').value;
-    const phone = document.getElementById('customerPhone').value;
-    const address = document.getElementById('customerAddress').value;
-    
-    // Cập nhật UI
-    document.querySelector('.mb-1').textContent = name;
-    document.querySelector('.fs-15.mb-1.mt-1 .text-dark.fw-medium').textContent = email;
-    document.querySelector('.fs-15.mb-0.mt-1 .text-dark.fw-medium').textContent = phone;
-    
-    // Đóng form
-    toggleEditForm();
-}
+document.getElementById('customerEditForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Add your save logic here
+    toggleEditForm(); // Hide form after saving
+});
+
 
 
 // Xử lý sự kiện chuyển đổi phần lịch sử giao dịch của khách hàng

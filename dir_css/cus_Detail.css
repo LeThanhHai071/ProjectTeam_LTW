@@ -70,3 +70,19 @@
 .pt-3 {
     padding-top: 1.5rem !important;
 }
+/* Hiện form chỉnh sửa thông tin khách hàng */
+.edit-form {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.edit-form .card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.edit-form .form-control {
+    margin-bottom: 10px;
+}
+
