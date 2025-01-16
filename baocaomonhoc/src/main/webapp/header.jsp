@@ -6,7 +6,7 @@
             <div class="d-flex align-items-center">
                 <div class="topbar-item">
                     <a
-                            href=""
+                            href="${pageContext.request.contextPath}/home"
                             type="button"
                             class="topbar-button"
                     >

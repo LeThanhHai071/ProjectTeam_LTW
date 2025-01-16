@@ -1,6 +1,6 @@
 package vn.edu.hcmuaf.fit.baocaomonhoc.dao.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class ProductReviews {
     private int reviewId;
@@ -9,20 +9,34 @@ public class ProductReviews {
     private String customerEmail;
     private int rating;
     private String comment;
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     public ProductReviews() {
     }
 
-    public ProductReviews(int reviewId, int productId, String customerName, String customerEmail, int rating, String comment) {
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public ProductReviews(int reviewId, int productId, String customerName, String customerEmail, int rating, String comment, LocalDateTime createdAt) {
         this.reviewId = reviewId;
         this.productId = productId;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
         this.rating = rating;
         this.comment = comment;
-        this.createdAt = new Date();
+        this.createdAt = createdAt;
     }
+
+    //    public ProductReviews(int reviewId, int productId, String customerName, String customerEmail, int rating, String comment, Date createdAt) {
+//        this.reviewId = reviewId;
+//        this.productId = productId;
+//        this.customerName = customerName;
+//        this.customerEmail = customerEmail;
+//        this.rating = rating;
+//        this.comment = comment;
+//        this.createdAt = createdAt;
+//    }
 
     public int getReviewId() {
         return reviewId;
@@ -72,13 +86,17 @@ public class ProductReviews {
         this.comment = comment;
     }
 
-    public Date getCreatedAt() {
+//    public Date getCreatedAt() {
+//        return createdAt;
+//    }
+//
+//    public void setCreatedAt(Date createdAt) {
+//        this.createdAt = createdAt;
+
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+//    }
 
     @Override
     public String toString() {

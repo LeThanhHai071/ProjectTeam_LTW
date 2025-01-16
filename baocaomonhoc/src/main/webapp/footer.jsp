@@ -74,7 +74,7 @@
                 />
             </div>
             <div class="d-none d-lg-block ms-2">
-                <a href="" class="footer_home_link">
+                <a href="${pageContext.request.contextPath}/home" class="footer_home_link">
                     <h3 class="pe-none text-uppercase mb-0" style="color: #707793">
                         Y Te Hoang Kim
                     </h3>

@@ -37,6 +37,13 @@
     <title>HOME</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/header2.css">
+    <style>
+        .product-item.product-category {
+            overflow-y: scroll;
+            max-height: 500px;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 <body>
 <header>

@@ -38,8 +38,14 @@
                     <div class="wrap-scroll">
                         <nav class="box">
                             <ul>
-                                <li class="has-child">
-                                    <a href=""><i class="bi bi-person-circle"></i></a>
+                                <li class="has-child d-flex align-items-center">
+                                    <c:if test="${sessionScope.user==null}">
+                                        <a href="${pageContext.request.contextPath}/login"><i class="bi bi-person-circle"></i></a>
+                                    </c:if>
+                                    <c:if test="${sessionScope.user!=null}">
+                                        <span>Xin chao ${sessionScope.user.userName}</span>
+                                        <a href="${pageContext.request.contextPath}/"><i class="bi bi-person-circle"></i></a>
+                                    </c:if>
                                 </li>
                                 <li class="has-child">
                                     <a href=""><i class="bi bi-cart4"></i></a>
