@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <form
-<%--                            action="#"--%>
+                    <%--                            action="#"--%>
                             action="${pageContext.request.contextPath}/cart"
                             method="get"
                             class="add-item-cart form-horizontal"
@@ -310,11 +310,11 @@
                                                         Đánh giá
 
                                                         <div class="stars">
-                                                            <a class="star" title="1"></a
-                                                            ><a class="star" title="2"></a
-                                                        ><a class="star" title="3"></a
-                                                        ><a class="star" title="4"></a
-                                                        ><a class="star" title="5"></a>
+                                                            <a class="star" title="1" data-rating="1"></a
+                                                            ><a class="star" title="2" data-rating="2"></a
+                                                        ><a class="star" title="3" data-rating="3"></a
+                                                        ><a class="star" title="4" data-rating="4"></a
+                                                        ><a class="star" title="5" data-rating="5"></a>
                                                         </div>
                                                     </div>
                                                     <div>
@@ -328,6 +328,9 @@
                                                         </button>
                                                     </div>
                                                 </div>
+                                                <input type="hidden" name="rating" id="rating" value="">
+                                                <input type="hidden" name="proId" value="${p.productId}">
+
                                             </form>
                                         </div>
                                     </div>
@@ -420,6 +423,25 @@
 <footer>
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
+<script>
+    // Lấy tất cả các sao
+    const stars = document.querySelectorAll('.star');
+
+    // Lắng nghe sự kiện click trên các sao
+    stars.forEach(star => {
+        star.addEventListener('click', function () {
+            // Lấy số sao từ data-rating
+            const rating = this.getAttribute('data-rating');
+
+            // Cập nhật giá trị vào trường ẩn rating
+            document.getElementById('rating').value = rating;
+
+            // Hiển thị số sao đã chọn
+            document.getElementById('msg_star').innerHTML = "Bạn đã chọn " + rating + " sao.";
+        });
+    });
+
+</script>
 <script>
     const decreaseBtn = document.getElementById("decreaseQty");
     const increaseBtn = document.getElementById("increaseQty");
