@@ -3,16 +3,15 @@ package vn.edu.hcmuaf.fit.baocaomonhoc.controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import vn.edu.hcmuaf.fit.baocaomonhoc.dao.OrderDao;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.ProductDao;
-import vn.edu.hcmuaf.fit.baocaomonhoc.dao.ProductReviewDao;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.ProductSpecificationDao;
+import vn.edu.hcmuaf.fit.baocaomonhoc.dao.ProductReviewDao;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.ProductReviews;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.ProductSpecification;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Products;
-import vn.edu.hcmuaf.fit.baocaomonhoc.services.ProductServices;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(value = "/product")

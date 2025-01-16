@@ -3,22 +3,20 @@ package vn.edu.hcmuaf.fit.baocaomonhoc.dao.model;
 public class OrderDetails {
     private int orderDetailId;
     private int orderDetailQuantity;
-    private double orderDetailAmount;
+    private double orderAmount;
     private int orderId;
     private int productId;
 
     public OrderDetails() {
     }
 
-
-    public OrderDetails(int orderDetailId, int orderDetailQuantity, double orderDetailAmount, int orderId, int productId) {
+    public OrderDetails(int orderDetailId, int orderDetailQuantity, double orderAmount, int orderId, int productId) {
         this.orderDetailId = orderDetailId;
         this.orderDetailQuantity = orderDetailQuantity;
-        this.orderDetailAmount = orderDetailAmount;
+        this.orderAmount = orderAmount;
         this.orderId = orderId;
         this.productId = productId;
     }
-
 
     public int getOrderDetailId() {
         return orderDetailId;
@@ -36,12 +34,12 @@ public class OrderDetails {
         this.orderDetailQuantity = orderDetailQuantity;
     }
 
-    public double getOrderDetailAmount() {
-        return orderDetailAmount;
+    public double getOrderAmount() {
+        return orderAmount;
     }
 
-    public void setOrderDetailAmount(double orderDetailAmount) {
-        this.orderDetailAmount = orderDetailAmount;
+    public void setOrderAmount(double orderAmount) {
+        this.orderAmount = orderAmount;
     }
 
     public int getOrderId() {
@@ -65,7 +63,7 @@ public class OrderDetails {
         return "OrderDetails{" +
                 "orderDetailId=" + orderDetailId +
                 ", orderDetailQuantity=" + orderDetailQuantity +
-                ", orderDetailAmount=" + orderDetailAmount +
+                ", orderAmount=" + orderAmount +
                 ", orderId=" + orderId +
                 ", productId=" + productId +
                 '}';

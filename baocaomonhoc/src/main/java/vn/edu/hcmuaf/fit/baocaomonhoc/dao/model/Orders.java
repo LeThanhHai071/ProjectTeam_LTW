@@ -4,26 +4,26 @@ import java.util.Date;
 
 public class Orders {
     private int orderId;
+    private Date orderDate;
+    private String orderStatus;
     private double orderAmount;
     private String customerName;
     private String customerAddress;
     private String customerPhone;
-    private String orderStatus;
     private int userId;
-    private Date orderDate;
 
     public Orders() {
     }
 
-    public Orders(int orderId, double orderAmount, String customerName, String customerAddress, String customerPhone, String orderStatus, int userId, Date orderDate) {
+    public Orders(int orderId, Date orderDate, String orderStatus, double orderAmount, String customerName, String customerAddress, String customerPhone, int userId) {
         this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.orderStatus = orderStatus;
         this.orderAmount = orderAmount;
         this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.customerPhone = customerPhone;
-        this.orderStatus = orderStatus;
         this.userId = userId;
-        this.orderDate = orderDate;
     }
 
     public int getOrderId() {
@@ -32,6 +32,22 @@ public class Orders {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
     }
 
     public double getOrderAmount() {
@@ -66,13 +82,6 @@ public class Orders {
         this.customerPhone = customerPhone;
     }
 
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public String getOrderStatus() {
-        return orderStatus;
-    }
 
     public void setUserId(int userId) {
         this.userId = userId;
@@ -82,13 +91,6 @@ public class Orders {
         return userId;
     }
 
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public Date getOrderDate() {
-        return orderDate;
-    }
 
     @Override
     public String toString() {
