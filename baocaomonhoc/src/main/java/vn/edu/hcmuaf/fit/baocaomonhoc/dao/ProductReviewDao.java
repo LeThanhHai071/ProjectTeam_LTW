@@ -1,4 +1,4 @@
-package vn.edu.hcmuaf.fit.baocaomonhoc.controller;
+package vn.edu.hcmuaf.fit.baocaomonhoc.dao;
 
 import org.jdbi.v3.core.Jdbi;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.db.DBConnect;
