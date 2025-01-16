@@ -27,7 +27,14 @@ public class ProductReviews {
         this.comment = comment;
         this.createdAt = createdAt;
     }
-
+    public ProductReviews(int productId, String customerName, String customerEmail, int rating, String comment, LocalDateTime createdAt) {
+        this.productId = productId;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.rating = rating;
+        this.comment = comment;
+        this.createdAt = createdAt;
+    }
     //    public ProductReviews(int reviewId, int productId, String customerName, String customerEmail, int rating, String comment, Date createdAt) {
 //        this.reviewId = reviewId;
 //        this.productId = productId;

@@ -12,6 +12,7 @@ import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Products;
 import vn.edu.hcmuaf.fit.baocaomonhoc.services.ProductServices;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet(value = "/product")
@@ -38,6 +39,16 @@ public class ProductController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+//        String comment = request.getParameter("contentRating");
+//        String email = request.getParameter("email_contact");
+//        String name = request.getParameter("fullname");
+//        int proId = Integer.parseInt(request.getParameter("proId"));
+//        int rating = Integer.parseInt(request.getParameter("rating"));
+//        LocalDateTime now = LocalDateTime.now();
+//
+//        ProductReviews productReview = new ProductReviews(proId, name, email, rating, comment, now);
+//
+//        ProductReviewDao dao = new ProductReviewDao();
+//        dao.insert(productReview);
     }
 }
