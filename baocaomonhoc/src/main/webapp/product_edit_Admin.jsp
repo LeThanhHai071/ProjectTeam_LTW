@@ -24,7 +24,7 @@
 </head>
 <body>
 <header>
-    <jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="admin/headerAdmin.jsp"></jsp:include>
 </header>
 <div>
     <div class="container">
@@ -171,9 +171,6 @@
 
     </div>
 </div>
-<footer>
-    <jsp:include page="footer.jsp"></jsp:include>
-</footer>
 <script src="js/product_edit_Admin.js"></script>
 </body>
 
