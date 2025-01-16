@@ -9,6 +9,16 @@
 <html>
 <head>
     <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="../dir_css/product_listAdmin.css">
+    <link rel="stylesheet" href="..//dir_css/admin_home.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+            integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/product_list_Admin.css">
 </head>
 <body>
 <header>
@@ -45,7 +55,7 @@
                                     <tr>
                                         <th style="width: 20px;">
                                             <div class="form-check ms-1">
-                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                <input type="checkbox" class="form-check-input" id="customCheck">
                                                 <label class="form-check-label" for="customCheck1"></label>
                                             </div>
                                         </th>
@@ -61,7 +71,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check ms-1">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
+                                                <input type="checkbox" class="form-check-input" id="customCheck1">
                                                 <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                             </div>
                                         </td>
@@ -194,6 +204,6 @@
 <footer>
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
-<script src="js/product_listAdmin.js"></script>
+<script src="js/product_list_Admin.js"></script>
 </body>
 
