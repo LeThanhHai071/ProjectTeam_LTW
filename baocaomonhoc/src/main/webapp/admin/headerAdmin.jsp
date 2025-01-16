@@ -42,7 +42,7 @@
                                 <img
                                         class="rounded-circle"
                                         width="32"
-                                        src="img/home.png"
+                                        src="../img/home.png"
                                         alt="avatar-3"
                                 />
                             </a>
@@ -85,7 +85,7 @@
         <div class="logo-box">
             <a href="dashboardAdmin.jsp" class="logo-light">
                 <img
-                        src="img/home_lg.png"
+                        src="../img/home_lg.png"
                         class="logo-lg"
                         alt="logo light"
                 />
@@ -109,7 +109,7 @@
                                     <li class="nav-item active">
                                         <a
                                                 class="nav-link active"
-                                                href="dashboardAdmin.jsp"
+                                                href="${pageContext.request.contextPath}/dashboardAdmin.jsp"
                                         >
                           <span class="nav-icon">
                             <i class="bi bi-columns-gap"></i>
@@ -135,24 +135,24 @@
                                         <div class="collapse" id="sidebarProducts">
                                             <ul class="nav sub-navbar-nav">
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="product-list.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Danh sách</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
                                                     <a
                                                             class="sub-nav-link"
-                                                            href="product-details.html"
+                                                            href=""
                                                     >Chi tiết</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="product-edit.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Chỉnh sửa</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="product-add.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Tạo mới</a
                                                     >
                                                 </li>
@@ -177,17 +177,17 @@
                                         <div class="collapse" id="sidebarCategory">
                                             <ul class="nav sub-navbar-nav">
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="category-list.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Danh sách</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="category-edit.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Chỉnh sửa</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="category-add.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Tạo mới</a
                                                     >
                                                 </li>
@@ -212,12 +212,12 @@
                                         <div class="collapse" id="sidebarOrders">
                                             <ul class="nav sub-navbar-nav">
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="orders-list.html"
+                                                    <a class="sub-nav-link" href="${pageContext.request.contextPath}/order_list_Admin.jsp"
                                                     >Danh sách</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="order-detail.html"
+                                                    <a class="sub-nav-link" href="${pageContext.request.contextPath}/order_detail_Admin.jsp"
                                                     >Chi tiết</a
                                                     >
                                                 </li>
@@ -242,19 +242,19 @@
                                         <div class="collapse" id="sidebarInvoice">
                                             <ul class="nav sub-navbar-nav">
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="invoice-list.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Danh sách</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
                                                     <a
                                                             class="sub-nav-link"
-                                                            href="invoice-details.html"
+                                                            href=""
                                                     >Chi tiết</a
                                                     >
                                                 </li>
                                                 <li class="sub-nav-item">
-                                                    <a class="sub-nav-link" href="invoice-add.html"
+                                                    <a class="sub-nav-link" href=""
                                                     >Tạo mới</a
                                                     >
                                                 </li>

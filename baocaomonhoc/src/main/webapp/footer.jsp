@@ -107,7 +107,7 @@
                     <a href="#">Chính sách thanh toán</a>
                 </li>
                 <li class="policy_item">
-                    <a href="">Chính sách giao hàng</a>
+                    <a href="${pageContext.request.contextPath}/policy.jsp">Chính sách giao hàng</a>
                 </li>
                 <li class="policy_item">
                     <a href="#">Chính sách đổi trả</a>

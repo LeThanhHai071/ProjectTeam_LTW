@@ -25,9 +25,9 @@
                                         </li>
                                     </c:if>
                                 </c:forEach>
-                                <li class="has-child"><a href="">Bảo Hành</a></li>
-                                <li class="has-child"><a href="">Tin Tức</a></li>
-                                <li class="has-child"><a href="">Giới thiệu</a></li>
+                                <li class="has-child"><a href="${pageContext.request.contextPath}/guarantee.jsp">Bảo Hành</a></li>
+                                <li class="has-child"><a href="${pageContext.request.contextPath}/news.jsp">Tin Tức</a></li>
+                                <li class="has-child"><a href="${pageContext.request.contextPath}/intro.jsp">Giới thiệu</a></li>
                             </ul>
                         </nav>
                     </div>

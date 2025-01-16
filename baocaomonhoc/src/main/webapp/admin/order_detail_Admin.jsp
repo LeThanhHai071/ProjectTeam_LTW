@@ -40,8 +40,8 @@
             src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"
     ></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="css/order_detail_Admin.css">
-    <link rel="stylesheet" href="css/homeAdmin.css">
+    <link rel="stylesheet" href="../css/order_detail_Admin.css">
+    <link rel="stylesheet" href="../css/homeAdmin.css">
 </head>
 <body>
 <div class="wrapper">
@@ -399,7 +399,7 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
     ></script>
-    <script src="js/paging.js"></script>
-    <script src="js/edit_address.js"></script>
+    <script src="../js/paging.js"></script>
+    <script src="../js/edit_address.js"></script>
 </div>
 </body>
