@@ -45,30 +45,33 @@
 <div class="body">
     <div class="container login">
         <div class="tabs">
-            <div id="login-tab" class="active">
+            <div id="login-tab">
                 <a href="${pageContext.request.contextPath}/login">Đăng Nhập</a>
             </div>
-            <div id="register-tab">
+            <div id="register-tab" class="active">
                 <a href="${pageContext.request.contextPath}/register">Đăng Ký</a>
             </div>
         </div>
-        <!--Form đăng nhập-->
-        <form method="post" action="login">
-            <div class="form-container" id="login-form" style="display: block">
-                <h2>Đăng Nhập</h2>
+        <!--Form Đăng Ký-->
+        <form method="post" action="register">
+            <div class="form-container" id="register-form" style="display: block">
+                <h2>Đăng Ký</h2>
                 <%
                     String error = (String) request.getAttribute("error");
 //                    String uname = request.getParameter("username");
-                    if (error==null) error="";
-//                    if (uname==null) uname="";
+//                    String pass = request.getParameter("password");
+                    if (error == null) error = "";
+//                    if (pass == null) pass = "";
+//                    if (uname == null) uname = "";
                 %>
-                <p style="text-align: center;"><%= error %> </p>
+                <p style="text-align: center;"><%= error %>
+                </p>
                 <div class="form-gr">
                     <input
                             type="text"
-                            id="login_username"
+                            id="register_username"
                             placeholder="Tên người dùng"
-<%--                            value="<%= uname %>"--%>
+                    <%--                            value="<%= uname %>"--%>
                             name="username"
                             required
                     />
@@ -76,17 +79,28 @@
                 <div class="form-gr">
                     <input
                             type="password"
-                            id="login_password"
+                            id="register_password"
+                            placeholder="Mật khẩu"
+                    <%--                            value="<%= pass %>"--%>
                             name="password"
-                            placeholder="Nhập mật khẩu"
                             required
                     />
                 </div>
                 <div class="form-gr">
-                    <button type="submit">Đăng Nhập</button>
+                    <input
+                            type="password"
+                            id="reg-confirm-password"
+                            placeholder="Nhập lại mật khẩu"
+                            required
+                    />
                 </div>
                 <div class="form-gr">
-                    <p><a href="#">Quên mật khẩu?</a></p>
+                    <button type="submit" onclick="register()">Đăng Ký</button>
+                </div>
+                <div class="form-gr">
+                    <p>
+                        Bạn đã có mật khẩu?<a href="${pageContext.request.contextPath}/login">Đăng Nhập</a>
+                    </p>
                 </div>
             </div>
         </form>

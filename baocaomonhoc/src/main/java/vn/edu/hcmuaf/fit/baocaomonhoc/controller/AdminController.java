@@ -18,8 +18,6 @@ public class AdminController extends HttpServlet {
             resp.sendRedirect("../login");
             return;
         }
-        PrintWriter out = resp.getWriter();
-        out.println("Admnin login complete");
-        out.println(req.getRequestURI());
+        req.getRequestDispatcher("dashboardAdmin.jsp").forward(req, resp);
     }
 }

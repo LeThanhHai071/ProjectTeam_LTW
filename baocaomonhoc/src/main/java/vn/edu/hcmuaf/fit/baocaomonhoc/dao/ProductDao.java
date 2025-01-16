@@ -38,6 +38,54 @@ public class ProductDao {
         return jdbi.withHandle(handle -> handle.createQuery(sql).bind("categoryPId", categoryPId).mapToBean(Products.class).list());
     }
 
+    public boolean insert(Products product) {
+        String sql = "INSERT INTO products (productName, unitPrice, productDescription, productImage,productStatus,brandId,categoryId,warehouseId)" +
+                "VALUES (:name,:price,:dest,:img,:status,:brandId,:categoryId,:warehouseId)";
+        return jdbi.withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("name", product.getProductName())
+                        .bind("price", product.getUnitPrice())
+                        .bind("dest", product.getProductDescription())
+                        .bind("img", product.getProductImage())
+                        .bind("status", product.getProductStatus())
+                        .bind("brandId", product.getProductId())
+                        .bind("categoryId", product.getCategoryId())
+                        .bind("warehouseId", product.getWarehouseId())
+                        .execute() > 0
+        );
+    }
+
+    public boolean update(Products product) {
+        String sql = "UPDATE products" +
+                "SET productName = :name," +
+                "unitPrice = :price," +
+                "productDescription = :dest," +
+                "productImage = :img," +
+                "productStatus = :statu," +
+                "brandId = :bid," +
+                "categoryId = :cid," +
+                "warehouseId = :wid" +
+                "WHERE productId = :id";
+        return jdbi.withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("id", product.getProductId())
+                        .bind("name", product.getProductName())
+                        .bind("price", product.getUnitPrice())
+                        .bind("dest", product.getProductDescription())
+                        .bind("img", product.getProductImage())
+                        .bind("statu", product.getProductStatus())
+                        .bind("bid", product.getBrandId())
+                        .bind("cid", product.getCategoryId())
+                        .bind("wid", product.getWarehouseId()).execute() > 0
+        );
+    }
+
+    public boolean delete(int id) {
+        String sql = "DELETE FROM products WHERE productId = :id";
+        return jdbi.withHandle(handle ->
+                handle.createUpdate(sql).bind("id", id).execute()>0);
+    }
+
     public static void main(String[] args) {
         ProductDao productDao = new ProductDao();
         List<Products> products = productDao.getByCategoryPID(5);

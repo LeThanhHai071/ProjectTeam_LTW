@@ -270,6 +270,21 @@ nav ul li a i {
 .mb-nav-main li.has-child:hover {
     background-color: orange;
 }
+.mb-nav-main li.has-child.login:hover {
+    background-color: unset;
+}
+a#name-login:hover {
+    background-color: orange !important;
+    border-radius: 8px;
+}
+a#logout {
+    background-color: red;
+    border-radius: 25%;
+}
+a#logout:hover {
+    background-color: green !important;
+    border-radius: 25%;
+}
 
 .mb-nav-main li.has-child:hover > .dropdown {
     top: 100%;
