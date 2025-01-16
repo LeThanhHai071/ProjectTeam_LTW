@@ -37,6 +37,13 @@
     <title>HOME</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/header2.css">
+    <style>
+        .product-item.product-category {
+            overflow-y: scroll;
+            max-height: 500px;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -53,75 +60,81 @@
                 />
             </div>
             <div class="main_column">
-                <%--                <c:forEach var="p" items="cateList">--%>
-                <div class="main_col">
-                    <%--                        <c:forEach var="" items="">--%>
-                    <div class="name_sub_list">
-                        <ul class="name_pro_list">
-                            <p class="cate_name">Y TẾ GIA ĐÌNH</p>
-                            <%--                                    <c:forEach var="item" items="">--%>
-                            <%--                                        <li class="name_pro_item"><p>${}</p></li>--%>
-                            <%--                                    </c:forEach>--%>
-                        </ul>
-                    </div>
-                    <%--                        </c:forEach>--%>
-                    <div id="product_sub_list" class="product_sub_list">
-                        <c:forEach var="p" items="${listProducts}">
-                            <div class="item-slide col-md-3 col-lg-3">
-                                <a
-                                        href=""
-                                >
-                                    <div class="img">
-                                        <img
-                                                class="owl-lazy img-fluid lazyloaded"
-                                                alt=""
-                                                src="${p.productImage}"
-                                        />
+                <c:forEach var="catepid" items="${parentCategories}">
+                    <div class="main_col">
+                        <div class="name_sub_list col-12 col-md-3 col-lg-2">
+                            <ul class="name_pro_list">
+                                <a href="category?cid=${catepid.categoryId}"
+                                   class="cate_name">${catepid.categoryName}</a>
+                                <c:forEach var="cate" items="${childCategories}">
+                                    <c:if test="${catepid.categoryId == cate.categoryParentId}">
+                                        <li class="name_pro_item"><a
+                                                href="category?cid=${cate.categoryId}">${cate.categoryName}</a></li>
+                                    </c:if>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                        <div class="product-item product-category">
+                            <c:forEach var="p" items="${catepid.products}">
+                                    <div class="item-slide col-md-3 col-lg-3">
+                                        <a
+                                                href="product?pid=${p.productId}"
+                                        >
+                                            <div class="img">
+                                                <img
+                                                        class="owl-lazy img-fluid lazyloaded"
+                                                        alt=""
+                                                        src="${p.productImage}"
+                                                />
+                                            </div>
+                                            <h3 class="title">
+                                                    ${p.productName}
+                                            </h3>
+                                            <p class="price"><span><f:formatNumber value="${p.unitPrice}"/>đ</span>
+                                            </p>
+                                            <div class="full-stars">
+                                                <label
+                                                        aria-label="1 star"
+                                                        class="rating__label"
+                                                        data-rating="5"
+                                                ><i
+                                                        class="rating__icon rating__icon--star fa fa-star"
+                                                ></i></label
+                                                ><label
+                                                    aria-label="2 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i
+                                                    class="rating__icon rating__icon--star fa fa-star"
+                                            ></i></label
+                                            ><label
+                                                    aria-label="3 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i
+                                                    class="rating__icon rating__icon--star fa fa-star"
+                                            ></i></label
+                                            ><label
+                                                    aria-label="4 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i
+                                                    class="rating__icon rating__icon--star fa fa-star"
+                                            ></i></label
+                                            ><label
+                                                    aria-label="5 star"
+                                                    class="rating__label"
+                                                    data-rating="5"
+                                            ><i class="rating__icon rating__icon--star fa fa-star"></i
+                                            ></label>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <h3 class="title">
-                                            ${p.productName}
-                                    </h3>
-                                    <p class="price"><span><f:formatNumber value="${p.unitPrice}"/>đ</span></p>
-                                    <div class="full-stars">
-                                        <label aria-label="1 star"
-                                               class="rating__label"
-                                               data-rating="5">
-                                            <i class="rating__icon rating__icon--star fa fa-star"></i>
-                                        </label>
-                                        <label
-                                                aria-label="2 star"
-                                                class="rating__label"
-                                                data-rating="5"
-                                        ><i
-                                                class="rating__icon rating__icon--star fa fa-star"
-                                        ></i></label
-                                        ><label
-                                            aria-label="3 star"
-                                            class="rating__label"
-                                            data-rating="5"
-                                    ><i
-                                            class="rating__icon rating__icon--star fa fa-star"
-                                    ></i></label
-                                    ><label
-                                            aria-label="4 star"
-                                            class="rating__label"
-                                            data-rating="5"
-                                    ><i
-                                            class="rating__icon rating__icon--star fa fa-star"
-                                    ></i></label
-                                    ><label
-                                            aria-label="5 star"
-                                            class="rating__label"
-                                            data-rating="5"
-                                    ><i class="rating__icon rating__icon--star fa fa-star"></i
-                                    ></label>
-                                    </div>
-                                </a>
-                            </div>
-                        </c:forEach>
+                            </c:forEach>
+                        </div>
+
                     </div>
-                </div>
-                <%--                </c:forEach>--%>
+                </c:forEach>
             </div>
             <div class="ad_pro">
                 <img
@@ -182,4 +195,9 @@
 <footer>
     <jsp:include page="footer.jsp"></jsp:include>
 </footer>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+></script>
 </body>

@@ -1,100 +1,95 @@
 package vn.edu.hcmuaf.fit.baocaomonhoc.dao;
 
+import org.jdbi.v3.core.Jdbi;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.db.DBConnect;
-import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Categories;
 import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Products;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDao {
+    Jdbi jdbi;
+
+    public ProductDao() {
+        jdbi = DBConnect.get();
+    }
+
+    public ProductDao(Jdbi jdbi) {
+        this.jdbi = jdbi;
+    }
+
     public List<Products> getAll() {
-        Statement statement = DBConnect.get();
-        ResultSet resultSet = null;
-        ArrayList<Products> products = new ArrayList<>();
-        String sql = "select * from products";
-        try {
-            resultSet = statement.executeQuery(sql);
-            while (resultSet.next()) {
-                products.add(new Products(
-                        resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getDouble(3),
-                        resultSet.getString(4),
-                        resultSet.getString(5),
-                        resultSet.getInt(6),
-                        resultSet.getInt(7),
-                        resultSet.getInt(8),
-                        resultSet.getInt(9)
-                ));
-            }
-            return products;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return products;
+        return jdbi.withHandle(handle -> handle.createQuery("select * from products").mapToBean(Products.class).list());
     }
 
     public Products getById(int id) {
-        Statement statement = DBConnect.get();
-        ResultSet resultSet = null;
-        String sql = "select * from products where id = " + id;
-        try {
-            resultSet = statement.executeQuery(sql);
-            while (resultSet.next()) {
-                return new Products(
-                        resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getDouble(3),
-                        resultSet.getString(4),
-                        resultSet.getString(5),
-                        resultSet.getInt(6),
-                        resultSet.getInt(7),
-                        resultSet.getInt(8),
-                        resultSet.getInt(9)
-                );
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        String sql = "select * from products where productId = :id";
+        return jdbi.withHandle(handle -> handle.createQuery(sql).bind("id", id).mapToBean(Products.class).findOne().orElse(null));
     }
 
     public List<Products> getByCategoryId(int categoryId) {
-        Statement statement = DBConnect.get();
-        ResultSet resultSet = null;
-        ArrayList<Products> products = new ArrayList<>();
-        String sql = "select * from products where categoryId = " + categoryId;
-        try {
-            resultSet = statement.executeQuery(sql);
-            while (resultSet.next()) {
-                products.add(new Products(
-                        resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getDouble(3),
-                        resultSet.getString(4),
-                        resultSet.getString(5),
-                        resultSet.getInt(6),
-                        resultSet.getInt(7),
-                        resultSet.getInt(8),
-                        resultSet.getInt(9)
-                ));
-            }
-            return products;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return products;
+        String sql = "select * from products where categoryId = :categoryId";
+        return jdbi.withHandle(handle -> handle.createQuery(sql).bind("categoryId", categoryId).mapToBean(Products.class).list());
+    }
+
+    public List<Products> getByCategoryPID(int categoryPId) {
+        String sql = "SELECT * FROM products WHERE categoryId IN " +
+                "(SELECT categoryId FROM categories WHERE categoryParentId = :categoryPId)" +
+                "ORDER BY unitPrice DESC LIMIT 10";
+        return jdbi.withHandle(handle -> handle.createQuery(sql).bind("categoryPId", categoryPId).mapToBean(Products.class).list());
+    }
+
+    public boolean insert(Products product) {
+        String sql = "INSERT INTO products (productName, unitPrice, productDescription, productImage,productStatus,brandId,categoryId,warehouseId)" +
+                "VALUES (:name,:price,:dest,:img,:status,:brandId,:categoryId,:warehouseId)";
+        return jdbi.withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("name", product.getProductName())
+                        .bind("price", product.getUnitPrice())
+                        .bind("dest", product.getProductDescription())
+                        .bind("img", product.getProductImage())
+                        .bind("status", product.getProductStatus())
+                        .bind("brandId", product.getProductId())
+                        .bind("categoryId", product.getCategoryId())
+                        .bind("warehouseId", product.getWarehouseId())
+                        .execute() > 0
+        );
+    }
+
+    public boolean update(Products product) {
+        String sql = "UPDATE products" +
+                "SET productName = :name," +
+                "unitPrice = :price," +
+                "productDescription = :dest," +
+                "productImage = :img," +
+                "productStatus = :statu," +
+                "brandId = :bid," +
+                "categoryId = :cid," +
+                "warehouseId = :wid" +
+                "WHERE productId = :id";
+        return jdbi.withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("id", product.getProductId())
+                        .bind("name", product.getProductName())
+                        .bind("price", product.getUnitPrice())
+                        .bind("dest", product.getProductDescription())
+                        .bind("img", product.getProductImage())
+                        .bind("statu", product.getProductStatus())
+                        .bind("bid", product.getBrandId())
+                        .bind("cid", product.getCategoryId())
+                        .bind("wid", product.getWarehouseId()).execute() > 0
+        );
+    }
+
+    public boolean delete(int id) {
+        String sql = "DELETE FROM products WHERE productId = :id";
+        return jdbi.withHandle(handle ->
+                handle.createUpdate(sql).bind("id", id).execute()>0);
     }
 
     public static void main(String[] args) {
         ProductDao productDao = new ProductDao();
-        List<Products> products = productDao.getByCategoryId(1);
-        for (Products product: products) {
+        List<Products> products = productDao.getByCategoryPID(5);
+        for (Products product : products) {
             System.out.println(product);
         }
     }

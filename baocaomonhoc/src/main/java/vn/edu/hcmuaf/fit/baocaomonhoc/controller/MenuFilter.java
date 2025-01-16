@@ -9,7 +9,7 @@ import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Categories;
 import java.io.IOException;
 import java.util.List;
 
-@WebFilter("/*")
+@WebFilter(value = "/*")
 public class MenuFilter extends HttpFilter {
 
     @Override

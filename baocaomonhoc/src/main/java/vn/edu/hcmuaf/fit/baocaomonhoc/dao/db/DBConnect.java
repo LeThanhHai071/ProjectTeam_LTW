@@ -1,51 +1,43 @@
 package vn.edu.hcmuaf.fit.baocaomonhoc.dao.db;
 
-import java.sql.*;
+import com.mysql.cj.jdbc.MysqlDataSource;
+import org.jdbi.v3.core.Jdbi;
+import vn.edu.hcmuaf.fit.baocaomonhoc.dao.model.Products;
+
+import java.sql.SQLException;
+import java.util.List;
 
 public class DBConnect {
+
     private final static String url = "jdbc:mysql://" + DBProperties.host() + ":" + DBProperties.port() + "/" + DBProperties.dbname() + "?" + DBProperties.option();
+    static Jdbi jdbi;
 
-    private static Connection conn;
+    public  static  Jdbi get(){
+        if(jdbi == null){makeConnect();}
+        return jdbi;
+    }
 
-    public static Statement get() {
+    private static void makeConnect() {
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setURL(url);
+        dataSource.setUser(DBProperties.username());
+        dataSource.setPassword(DBProperties.password());
+
         try {
-            if (conn == null || conn.isClosed()) makeConnect();
-            return conn.createStatement();
-        } catch (SQLException | ClassNotFoundException e) {
-            System.out.println(e.getMessage());
-            return null;
+            dataSource.setUseCompression(true);
+            dataSource.setAutoReconnect(true);
+        } catch (SQLException e) {
         }
+        jdbi = Jdbi.create(dataSource);
     }
 
-    private static void makeConnect() throws ClassNotFoundException, SQLException {
-        Class.forName(com.mysql.cj.jdbc.Driver.class.getName());
-        conn = DriverManager.getConnection(url, DBProperties.username(), DBProperties.password());
-    }
-
-//    public static void close() {
-//        try {
-//            if (conn != null && !conn.isClosed()) {
-//                conn.close();
-//                System.out.println("Kết nối đã đóng.");
-//            }
-//        } catch (SQLException e) {
-//            System.err.println("Lỗi khi đóng kết nối: " + e.getMessage());
-//        }
-//    }
-
-    public static void main(String[] args) throws SQLException {
-        Statement statement = get();
-        ResultSet resultSet = statement.executeQuery("select * from products");
-        while (resultSet.next()) {
-            System.out.println(resultSet.getInt(1) +
-                    resultSet.getString(2) +
-                    resultSet.getDouble(3) +
-                    resultSet.getString(4) +
-                    resultSet.getString(5) +
-                    resultSet.getInt(6) +
-                    resultSet.getInt(7) +
-                    resultSet.getInt(8) +
-                    resultSet.getInt(9));
+    public static void main(String[] args) {
+        Jdbi jdbi = get();
+        List<Products> productsList = jdbi.withHandle(handle -> {
+            return handle.createQuery("select * from products").mapToBean(Products.class).list();
+        });
+        for (Products products : productsList) {
+            System.out.println(products);
         }
     }
 }
