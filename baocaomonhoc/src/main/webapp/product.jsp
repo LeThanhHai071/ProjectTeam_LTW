@@ -110,9 +110,9 @@
                         </div>
                     </div>
                     <form
-                            name="${p.productName}"
-                            action="#"
-                            method="post"
+<%--                            action="#"--%>
+                            action="${pageContext.request.contextPath}/cart"
+                            method="get"
                             class="add-item-cart form-horizontal"
                     >
                         <div class="product-detail-attrs">
@@ -136,7 +136,7 @@
                                             min="1"
                                             max="99"
                                             id="qty"
-                                            name="qty"
+                                            name="quantity"
                                     />
                                     <div class="minus dash" id="increaseQty">
                                         <i class="bi bi-plus-circle"></i>
@@ -164,11 +164,16 @@
                                 </ul>
                             </div>
                         </div>
+                        <input type="hidden" value="${p.productId}" name="productId">
+                        <input type="hidden" value="${p.productName}" name="productName">
+                        <input type="hidden" value="${p.unitPrice}" name="unitPrice">
+                        <input type="hidden" value="${p.productImage}" name="productImage">
+                        <input type="hidden" value="${p.productStatus}" name="productStatus">
                         <button
                                 type="submit"
                                 class="btn-order add-to-cart normal-btn outline btn-addtocart"
                         >
-                            <i class="fa fa-shopping-cart"></i> Đặt hàng
+                            Đặt hàng
                         </button>
                     </form>
                 </div>
@@ -351,7 +356,8 @@
                                                                 <img
                                                                         src="https://sieuthiyte.com.vn/themes/images/user_comment_icon.png"
                                                                 />
-                                                                ${review.customerName}-${review.rating} <span class="star"></span>
+                                                                    ${review.customerName}-${review.rating} <span
+                                                                    class="star"></span>
                                                             </h5>
                                                             <div class="contentquestion">
                                                                     ${review.comment}

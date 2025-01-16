@@ -19,7 +19,6 @@
     padding-bottom: 5px;
     padding-left: 36px;
     border-bottom: solid 2px orange;
-    position: relative;
 }
 .invoice-detail-left {
     flex: 0 calc(50% - 25px);

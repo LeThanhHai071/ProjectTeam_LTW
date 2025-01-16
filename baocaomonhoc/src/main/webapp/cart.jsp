@@ -47,8 +47,18 @@
     ></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="stylesheet" href="css/order.css"/>
+    <link rel="stylesheet" href="css/header2.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+<%--<c:if test="${sessionScope.cart == null}">--%>
+<%--    <script>--%>
+<%--        window.location.href = "home";--%>
+<%--    </script>--%>
+<%--</c:if>--%>
+<header>
+    <jsp:include page="header.jsp"></jsp:include>
+</header>
 <div id="content" class="container desktop">
     <div class="">
         <div class="invoice-head">
@@ -69,7 +79,7 @@
                                 style="margin-top: 5px"
                         >
                             <div class="product-remove product-remove product-clear">
-                                <h3 class="title">${o.productName}</h3>
+                                <h3 class="title">${productName}</h3>
                                 <label class="check-group delete-itemorder">
                                     <input
                                             type="checkbox"
@@ -84,7 +94,7 @@
                                 <div class="product-info-image">
                                     <img
                                             class="img-fluid"
-                                            src="img/home.png"
+                                            src="${img}"
                                             alt="Kim lấy máu máy đo đường huyết"
                                     />
                                 </div>
@@ -92,7 +102,7 @@
                                     <div class="product-detail-attrs">
                                         <div class="product-detail-price notsales">
                                             <label>Giá bán:</label>
-                                            <p class="price-official">${o.unitPrice}</p>
+                                            <p class="price-official">${unitPrice}</p>
                                         </div>
                                         <div class="product-detail-quantity">
                                             <label>Số lượng:</label>
@@ -119,7 +129,7 @@
                             <div class="product-summary-total">
                                 <div class="item">
                                     <label>Tổng tiền:</label>
-                                    <label>25.000 VND</label>
+                                    <label><f:formatNumber value="${totalPrice}"/>VND</label>
                                 </div>
                                 <div class="item">
                                     <label>Phí vận chuyển:</label>
@@ -127,7 +137,7 @@
                                 </div>
                                 <div class="item">
                                     <label>Cần thanh toán:</label>
-                                    <label class="price">1213132</label>
+                                    <label class="price"><f:formatNumber value="${totalPrice + 30000}"/> VND</label>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +163,7 @@
                                             id="full_name_receipt"
                                             name="full_name_receipt"
                                             value=""
-                                            placeholder=
+                                            placeholder="Họ và tên"
                                     />
                                 </div>
                             </div>
@@ -165,10 +175,20 @@
                                             id="phone_contact_receipt"
                                             name="phone_contact_receipt"
                                             value=""
-                                            placeholder=
+                                            placeholder="Số điện thoại"
                                     />
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email_order"
+                                    name="email_order"
+                                    value=""
+                                    placeholder="Nhập Email (không bắt buộc)"
+                            />
                         </div>
                         <div class="form-group">
                             <input
@@ -177,7 +197,7 @@
                                     id="address_receipt"
                                     name="address_receipt"
                                     value=""
-                                    placeholder=
+                                    placeholder="Địa chỉ nhận hàng"
                             />
                         </div>
                         <div class="form-group"></div>
@@ -222,7 +242,6 @@
                                         <div class="img_pttt">
                                             <img
                                                     src="img/home.png"
-                                                    alt=""
                                                     width="100%"
                                                     height="auto"
                                             />
@@ -279,6 +298,9 @@
         </div>
     </div>
 </div>
+<footer>
+    <jsp:include page="footer.jsp"></jsp:include>
+</footer>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const radioInputs = document.querySelectorAll('input[name="payment_method"]');
