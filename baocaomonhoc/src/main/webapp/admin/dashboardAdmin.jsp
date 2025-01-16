@@ -48,8 +48,8 @@
             src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"
     ></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="css/dashboard.css" />
-    <link rel="stylesheet" href="css/headerAdmin.css"/>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/headerAdmin.css"/>
     <style>
         @media (max-width: 1200px) {
             #orders-table {
@@ -341,7 +341,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"
 ></script>
-<script src="js/dashboard.js"></script>
-<script src="js/paging.js"></script>
+<script src="../js/dashboard.js"></script>
+<script src="../js/paging.js"></script>
 </body>
 </html>
