@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Acer
-  Date: 14-01-2025
-  Time: 08:42
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/header2.css">
@@ -239,22 +234,6 @@
                                         </span>
                                     </span>
                                 </p>
-                                <p style="text-align: justify">
-                                    <span style="font-size: 12pt; color: #000000"
-                                    ><span style="font-weight: 400"
-                                    >Toàn bộ vùng mắt và cả thái dương cũng sẽ được xoa dịu
-                                        đau nhức khi bạn sử dụng </span
-                                    ><em><b>Repor RP-I50 </b></em
-                                    ><span style="font-weight: 400"
-                                    >với 8 đầu massage ngón tay, 2 đầu massage nén nóng và 2
-                                        đầu massage túi khí. </span
-                                    ><em><b>Máy massage mắt thông minh Repor RP-I50 </b></em>
-                                        <span style="font-weight: 400">mang đến sự thoải mái tối đa nhờ công nghệ sưởi ấm dễ
-                                        chịu, cường độ rung đến 10.000 lần/phút và thiết kế hoàn
-                                        hảo theo dáng mặt của người Châu Á.
-                                        </span>
-                                    </span>
-                                </p>
                             </div>
                         </div>
                         <div id="product_tech_tab">
@@ -266,30 +245,12 @@
                                     />Thông số kỹ thuật
                                 </h3>
                                 <div class="product-stat-table">
-                                    <div class="product-stat-table-row">
-                                        <div>Model</div>
-                                        <div>RP-I50</div>
-                                    </div>
-                                    <div class="product-stat-table-row">
-                                        <div>Điện áp định mức</div>
-                                        <div>5V</div>
-                                    </div>
-                                    <div class="product-stat-table-row">
-                                        <div>Công suất định mức</div>
-                                        <div>5W</div>
-                                    </div>
-                                    <div class="product-stat-table-row">
-                                        <div>Dung lượng PIN</div>
-                                        <div>3.7V/1000mAh/3.7Wh</div>
-                                    </div>
-                                    <div class="product-stat-table-row">
-                                        <div>Thời gian hoạt động mặc định</div>
-                                        <div>15 phút</div>
-                                    </div>
-                                    <div class="product-stat-table-row">
-                                        <div>Tiêu chuẩn điều hành</div>
-                                        <div>GB4706.1-2005 GB4706.10-2008</div>
-                                    </div>
+                                    <c:forEach items="${specs}" var="pspe">
+                                        <div class="product-stat-table-row">
+                                            <div>${pspe.specificationName}</div>
+                                            <div>${pspe.specificationValue}</div>
+                                        </div>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </div>
@@ -367,7 +328,7 @@
                                     </div>
                                     <div class="product-comment-info-bar">
                                         <div class="product-comment-info-bar">
-                                            <div class="product-comment-count">3 Bình luận</div>
+                                            <div class="product-comment-count">${comnumber} Đánh giá</div>
                                         </div>
                                         <div id="topComment" data-totalcomment="3">
                                             <div
@@ -376,66 +337,68 @@
                                                     data-token="15b19e7bcc5a5d81910cc4fd23163cd4"
                                                     data-comment="1736783728"
                                             >
-                                                <div
-                                                        id="comment_id_4660"
-                                                        class="row-comment"
-                                                        data-subcomment="4660"
-                                                        data-pagesubcomment="1"
-                                                >
+                                                <c:forEach var="review" items="${reviews}">
                                                     <div
-                                                            class="itemComment ri product-comment-question"
+                                                            id="comment_id_4660"
+                                                            class="row-comment"
+                                                            data-subcomment="4660"
+                                                            data-pagesubcomment="1"
                                                     >
-                                                        <h5>
-                                                            <img
-                                                                    src="https://sieuthiyte.com.vn/themes/images/user_comment_icon.png"
-                                                            />
-                                                            Le Thanh Hai
-                                                        </h5>
-                                                        <div class="contentquestion">
-                                                            shop huong dan chi tiet, like.
-                                                        </div>
                                                         <div
-                                                                class="product-comment-box actionuser"
-                                                                data-cl="0"
-                                                                data-id="4660"
-                                                                data-parent="4660"
-                                                                data-subparent="4660"
-                                                                data-idsanpham="1352"
-                                                                data-token="cf5db2298105d29849fd00c59485d175"
-                                                                data-fullname="Le Thanh Hai"
-                                                                data-total="3"
+                                                                class="itemComment ri product-comment-question"
                                                         >
-                                                            <span> 2025-01-05 09:57:02</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-reply-comment">
-                                                        <div
-                                                                class="product-comment-answer itemComment reply-item actionuser"
-                                                                data-id="4660"
-                                                                data-parent="4660"
-                                                                data-subparent="4660"
-                                                                data-idsanpham="1352"
-                                                                data-token="cf5db2298105d29849fd00c59485d175"
-                                                                data-fullname="Quản trị viên"
-                                                        >
-                                                            <div class="comment-answer-head">
+                                                            <h5 class="d-flex">
                                                                 <img
-                                                                        class="img-fluid"
-                                                                        src="https://sieuthiyte.com.vn/themes/images/logo_comment.png"
+                                                                        src="https://sieuthiyte.com.vn/themes/images/user_comment_icon.png"
                                                                 />
-                                                                <label class="admin-reply"
-                                                                >Quản trị viên</label
-                                                                >
+                                                                ${review.customerName}-${review.rating} <span class="star"></span>
+                                                            </h5>
+                                                            <div class="contentquestion">
+                                                                    ${review.comment}
                                                             </div>
-                                                            <p>Chào Le Thanh Hai,</p>
-                                                            <p>
-                                                                Dạ, cảm ơn Anh/Chị đã tin dùng sản phẩm của
-                                                                Siêu thị Y tế ạ !
-                                                            </p>
-                                                            <span> 2025-01-07 08:11:33</span>
+                                                            <div
+                                                                    class="product-comment-box actionuser"
+                                                                    data-cl="0"
+                                                                    data-id="4660"
+                                                                    data-parent="4660"
+                                                                    data-subparent="4660"
+                                                                    data-idsanpham="1352"
+                                                                    data-token="cf5db2298105d29849fd00c59485d175"
+                                                                    data-fullname="Le Thanh Hai"
+                                                                    data-total="3"
+                                                            >
+                                                                <span>${review.createdAt}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="list-reply-comment">
+                                                            <div
+                                                                    class="product-comment-answer itemComment reply-item actionuser"
+                                                                    data-id="4660"
+                                                                    data-parent="4660"
+                                                                    data-subparent="4660"
+                                                                    data-idsanpham="1352"
+                                                                    data-token="cf5db2298105d29849fd00c59485d175"
+                                                                    data-fullname="Quản trị viên"
+                                                            >
+                                                                <div class="comment-answer-head">
+                                                                    <img
+                                                                            class="img-fluid"
+                                                                            src="https://sieuthiyte.com.vn/themes/images/logo_comment.png"
+                                                                    />
+                                                                    <label class="admin-reply"
+                                                                    >Quản trị viên</label
+                                                                    >
+                                                                </div>
+                                                                <p>Chào ${review.customerName},</p>
+                                                                <p>
+                                                                    Dạ, cảm ơn Anh/Chị đã tin dùng sản phẩm của
+                                                                    Siêu thị Y tế ạ !
+                                                                </p>
+                                                                <span>${review.createdAt}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </c:forEach>
                                             </div>
                                         </div>
                                     </div>
